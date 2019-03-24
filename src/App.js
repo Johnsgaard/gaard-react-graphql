@@ -10,8 +10,7 @@ import { token } from './config'
 
 // Components
 import GraphQLDump from './components/GraphQLDump';
-import logo from './logo.svg';
-import './App.css';
+import './template-css/App.css';
 
 
 // Global.Apollo
@@ -34,10 +33,6 @@ class App extends Component {
       <ApolloProvider client={client}>
         <div className="App">
           <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <p>
-              Edit <code>src/App.js</code> and save to reload.
-            </p>
             <GraphQLDump />
             <a
               className="App-link"

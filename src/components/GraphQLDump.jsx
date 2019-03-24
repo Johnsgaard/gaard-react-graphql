@@ -28,7 +28,7 @@ const GraphQLDump = () => {
             <div>{data.viewer.login}</div>
             <div>{data.viewer.status.message}</div>
             <Emoji text={data.viewer.status.emoji} />
-            <img src={data.viewer.avatarUrl} />
+            <img alt="github-avatar" src={data.viewer.avatarUrl} />
           </React.Fragment>
         );
       }}
