@@ -22,7 +22,7 @@ const SidePanel = (props) => {
     <Query query={SIDE_PANEL_QUERY}>
       {({ loading, error, data}) => {
         if (error) { return <div className="side-panel white"> Error! {error} </div>}
-        if (loading) return "Loading...";
+        if (loading) return null;
         return (
           <React.Fragment>
             <div onClick={props.toggleSidePanel} className={`sp-overlay ${props.spOpen ? 'open' : ''}`}></div>
@@ -50,7 +50,7 @@ const SidePanel = (props) => {
                     </li>
 
                     <li>
-                      <a href="#about">About</a>
+                      <a href="#resume">Resume / CV</a>
                     </li>
 
                     {  /* Item With Sub */ }
@@ -111,9 +111,9 @@ const SidePanel = (props) => {
 
                 {  /* Social Links */ }
                 <div className="sp-social-links">
-                  <a href="https://www.facebook.com/joshua.johnsgaard" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
-                  <a href="https://www.linkedin.com/in/joshua-johnsgaard-9ba83a58/" title="LinkedIn+" target="_blank"><i class="fa fa-linkedin"></i></a>
-                  <a href="https://github.com/Johnsgaard" title="GitHub+" target="_blank"><i class="fa fa-github"></i></a>
+                  <a href="https://www.facebook.com/joshua.johnsgaard" title="Facebook" target="_blank"><i className="fa fa-facebook"></i></a>
+                  <a href="https://www.linkedin.com/in/joshua-johnsgaard-9ba83a58/" title="LinkedIn+" target="_blank"><i className="fa fa-linkedin"></i></a>
+                  <a href="https://github.com/Johnsgaard" title="GitHub+" target="_blank"><i className="fa fa-github"></i></a>
               </div>
               {  /* End Social Links */ }
 

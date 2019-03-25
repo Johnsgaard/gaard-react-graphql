@@ -10,8 +10,13 @@ import { token } from './config'
 
 // Components
 import SidePanel from './components/SidePanel';
-import './template-css/App.scss';
 import MenuButton from './components/MenuButton';
+import AboutMe from './components/AboutMe';
+import Resume from './components/Resume';
+
+// Styles 
+import './template-css/bootstrap.min.css';
+import './template-css/App.scss';
 
 
 // Global.Apollo
@@ -46,6 +51,12 @@ class App extends Component {
         <div className="App">
           <MenuButton toggleSidePanel={this.toggleSidePanel} />
           <SidePanel spOpen={this.state.spOpen} toggleSidePanel={this.toggleSidePanel} />
+          <div className="appear-animate">
+            <div className="page" id="top">
+              <AboutMe />
+              <Resume />
+            </div>
+          </div>
         </div>
       </ApolloProvider>
     );
