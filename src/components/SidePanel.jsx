@@ -111,9 +111,9 @@ const SidePanel = (props) => {
 
                 {  /* Social Links */ }
                 <div className="sp-social-links">
-                  <a href="#" target="_blank"><i className="fa fa-facebook"></i></a>
-                  <a href="#" target="_blank"><i className="fa fa-twitter"></i></a>
-                  <a href="#" target="_blank"><i className="fa fa-pinterest"></i></a>
+                  <a href="https://www.facebook.com/joshua.johnsgaard" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                  <a href="https://www.linkedin.com/in/joshua-johnsgaard-9ba83a58/" title="LinkedIn+" target="_blank"><i class="fa fa-linkedin"></i></a>
+                  <a href="https://github.com/Johnsgaard" title="GitHub+" target="_blank"><i class="fa fa-github"></i></a>
               </div>
               {  /* End Social Links */ }
 

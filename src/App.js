@@ -9,7 +9,6 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 import { token } from './config'
 
 // Components
-import GraphQLDump from './components/GraphQLDump';
 import SidePanel from './components/SidePanel';
 import './template-css/App.scss';
 import MenuButton from './components/MenuButton';

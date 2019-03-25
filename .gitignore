@@ -26,9 +26,9 @@ yarn-error.log*
 /src/config.js
 
 
-# template
-template-css/
-template-fonts/
-template-images/
-template-rs-plugin/
-template-js/
+# # template
+# template-css/
+# template-fonts/
+# template-images/
+# template-rs-plugin/
+# template-js/
