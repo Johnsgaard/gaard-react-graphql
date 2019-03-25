@@ -25,7 +25,7 @@ const SidePanel = (props) => {
         if (loading) return "Loading...";
         return (
           <React.Fragment>
-            <div className={`sp-overlay ${props.spOpen ? 'open' : ''}`}></div>
+            <div onClick={props.toggleSidePanel} className={`sp-overlay ${props.spOpen ? 'open' : ''}`}></div>
               <div className={`side-panel white ${props.spOpen ? '' : 'closed'}`}>
                 { /* close button */ }      
                 <span onClick={props.toggleSidePanel} className="sp-close-button"></span>
