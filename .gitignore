@@ -30,3 +30,5 @@ yarn-error.log*
 template-css/
 template-fonts/
 template-images/
+template-rs-plugin/
+template-js/

@@ -10,7 +10,9 @@ import { token } from './config'
 
 // Components
 import GraphQLDump from './components/GraphQLDump';
-import './template-css/App.css';
+import SidePanel from './components/SidePanel';
+import './template-css/App.scss';
+import MenuButton from './components/MenuButton';
 
 
 // Global.Apollo
@@ -28,21 +30,23 @@ const client = new ApolloClient({
 
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      spOpen: false,
+    };
+  }
+
+  toggleSidePanel = () => {
+    this.setState({ spOpen: !this.state.spOpen });
+  }
+
   render() {
     return (
       <ApolloProvider client={client}>
         <div className="App">
-          <header className="App-header">
-            <GraphQLDump />
-            <a
-              className="App-link"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn React
-            </a>
-          </header>
+          <MenuButton toggleSidePanel={this.toggleSidePanel} />
+          <SidePanel spOpen={this.state.spOpen} toggleSidePanel={this.toggleSidePanel} />
         </div>
       </ApolloProvider>
     );
