@@ -13,6 +13,7 @@ import SidePanel from './components/SidePanel';
 import MenuButton from './components/MenuButton';
 import AboutMe from './components/AboutMe';
 import Resume from './components/Resume';
+import ParallaxBreak from './components/ParallaxBreak';
 
 // Styles 
 import './template-css/bootstrap.min.css';
@@ -54,6 +55,7 @@ class App extends Component {
           <div className="appear-animate">
             <div className="page" id="top">
               <AboutMe />
+              <ParallaxBreak />
               <Resume />
             </div>
           </div>
