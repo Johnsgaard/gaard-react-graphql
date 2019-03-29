@@ -1,4 +1,25 @@
 import React from 'react';
+import TrackVisibility from 'react-on-screen';
+import { AgeFromDateString } from 'age-calculator';
+import CountUp from 'react-countup';
+import CountTo from 'react-count-to';
+import { gql } from 'apollo-boost';
+import { Query } from 'react-apollo';
+
+const CONTRIBUTIONS = gql`
+{
+  viewer {
+    contributionsCollection {
+      totalIssueContributions
+      totalCommitContributions
+      totalRepositoryContributions
+      totalPullRequestReviewContributions
+      totalPullRequestContributions
+      restrictedContributionsCount
+    }
+  }
+}
+`;
 
 const Resume = () => (
   <section className="page-section" id="resume">
@@ -10,67 +31,143 @@ const Resume = () => (
         <div className="section-text mb-20 mb-sm-10">
           <div className="row">
             <div className="col-md-12 col-sm-12 mb-sm-50 mb-xs-30">
-               Talented and professional Web Developer with experience in design, software architecture, development, deployment, and management of web applications.
+              Talented and professional Web Developer with experience in design, software architecture, development, deployment, and management of web applications.
             </div>
           </div>
         </div>
-        <div className="section-text mb-20 mb-sm-10">
-          <div className="row">
+        <TrackVisibility partialVisibility>
+        {({isVisible}) => (
+          <div className="section-text mb-20 mb-sm-10">
+            <div className="row">
 
-            <div className="col-md-6 mb-sm-50 mb-xs-30">
+              <div className="col-md-6 mb-sm-50 mb-xs-30">
 
-              { /* Bar Item */ }
-              <div className="progress tpl-progress">
-                <div className="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style={{ width: '100%' }}>
-                  HTML / CSS % <span>100</span>
+                { /* Bar Item */ }
+                <div className="progress tpl-progress">
+                  {isVisible
+                    ? (<CountTo from={70} to={100} speed={100}>
+                      {(value) => {
+                        const barWidth = value ? value : 100;
+                        const barPercentString = `${barWidth}%`;
+                        return (
+                        <div
+                          className="progress-bar"
+                          role="progressbar"
+                          style={{ width: barPercentString}}
+                        >
+                          HTML / CSS <span>{barPercentString}</span>
+                        </div>
+                      )}}
+                    </CountTo>) : null}
                 </div>
-              </div>
-              { /* End Bar Item */ }
+                { /* End Bar Item */ }
 
-              { /* Bar Item */ }
-              <div className="progress tpl-progress">
-                <div className="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style={{ width: '95%' }}>
-                  JavaScript / React / Node / GraphQL % <span>95</span>
+                { /* Bar Item */ }
+                <div className="progress tpl-progress">
+                  {isVisible
+                    ? ( <CountTo from={70} to={95} speed={95}>
+                    {(value) => {
+                      const barWidth = value ? value : 0;
+                      const barPercentString = `${barWidth}%`;
+                      return (
+                      <div
+                        className="progress-bar"
+                        role="progressbar"
+                        style={{ width: barPercentString}}
+                      >
+                        JS / React / Node / GraphQL <span>{barPercentString}</span>
+                      </div>
+                    )}}
+                  </CountTo>) : null}
                 </div>
-              </div>
-              { /* End Bar Item */ }
+                { /* End Bar Item */ }
 
-              { /* Bar Item */ }
-              <div className="progress tpl-progress">
-                <div className="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style={{ width: '80%' }}>
-                  Servers / Deployment % <span>80</span>
+                { /* Bar Item */ }
+                <div className="progress tpl-progress">
+                  {isVisible
+                    ? (<CountTo from={70} to={90} speed={90}>
+                    {(value) => {
+                      const barWidth = value ? value : 0;
+                      const barPercentString = `${barWidth}%`;
+                      return (
+                      <div
+                        className="progress-bar"
+                        role="progressbar"
+                        style={{ width: barPercentString}}
+                      >
+                        Servers / Deployment <span>{barPercentString}</span>
+                      </div>
+                    )}}
+                  </CountTo>) : null}
                 </div>
-              </div>
-              { /* End Bar Item */ }
+                { /* End Bar Item */ }
 
-            </div>
-            <div className="col-md-6 mb-sm-50 mb-xs-30">
-              { /* Bar Item */ }
-              <div className="progress tpl-progress">
-                <div className="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style={{ width: '90%' }}>
-                  Git / AWS / Tools % <span>90</span>
-                </div>
               </div>
-              { /* End Bar Item */ }
+              <div className="col-md-6 mb-sm-50 mb-xs-30">
+                { /* Bar Item */ }
+                <div className="progress tpl-progress">
+                  {isVisible
+                    ? (<CountTo from={70} to={90} speed={100}>
+                    {(value) => {
+                      const barWidth = value ? value : 0;
+                      const barPercentString = `${barWidth}%`;
+                      return (
+                      <div
+                        className="progress-bar"
+                        role="progressbar"
+                        style={{ width: barPercentString}}
+                      >
+                        Git / AWS / Tools <span>{barPercentString}</span>
+                      </div>
+                    )}}
+                  </CountTo>) : null }
+                </div>
+                { /* End Bar Item */ }
 
-              { /* Bar Item */ }
-              <div className="progress tpl-progress">
-                <div className="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style={{ width: '80%' }}>
-                  UI / UX / Design, % <span>80</span>
+                { /* Bar Item */ }
+                <div className="progress tpl-progress">
+                  {isVisible
+                    ? (<CountTo from={70} to={85} speed={100}>
+                    {(value) => {
+                      const barWidth = value ? value : 0;
+                      const barPercentString = `${barWidth}%`;
+                      return (
+                      <div
+                        className="progress-bar"
+                        role="progressbar"
+                        style={{ width: barPercentString}}
+                      >
+                        UI / UX / Design <span>{barPercentString}</span>
+                      </div>
+                    )}}
+                  </CountTo>) : null }
                 </div>
-              </div>
-              { /* End Bar Item */ }
+                { /* End Bar Item */ }
 
-              { /* Bar Item */ }
-              <div className="progress tpl-progress">
-                <div className="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style={{ width: '100%' }}>
-                  Team player / Enjoy what I do, % <span>100</span>
+                { /* Bar Item */ }
+                <div className="progress tpl-progress">
+                  {isVisible
+                    ? (<CountTo from={70} to={100} speed={100}>
+                    {(value) => {
+                      const barWidth = value ? value : 0;
+                      const barPercentString = `${barWidth}%`;
+                      return (
+                      <div
+                        className="progress-bar"
+                        role="progressbar"
+                        style={{ width: barPercentString}}
+                      >
+                        Team player / Enjoy what I do <span>{barPercentString}</span>
+                      </div>
+                    )}}
+                  </CountTo>) : null }
                 </div>
+                { /* End Bar Item */ }
               </div>
-              { /* End Bar Item */ }
             </div>
           </div>
-        </div>
+        )}
+        </TrackVisibility>
         <hr className="mt-0 mb-20 " />
         <div className="section-text mb-60 mb-sm-40">
           <div className="row">
@@ -223,58 +320,73 @@ const Resume = () => (
         </div>
 
         { /* Counters */ }
-        <div className="count-wrapper mb-60 mb-sm-40">
-          <div className="row">
-            { /* Counter Item */ }
-            <div className="col-xs-6 col-sm-3">
-              <div className="count-number">
-                27
-              </div>
-              <div className="count-descr font-alt">
-                <i className="fa fa-heart-o"></i>
-                <span className="count-title">Age</span>
-              </div>
-            </div>
-            { /* End Counter Item */ }
+        <TrackVisibility partialVisibility>
+          {({ isVisible }) => {
+            return (
+              <div className="count-wrapper mb-60 mb-sm-40">
+                <div className="row">
+                  { /* Counter Item */ }
+                  <div className="col-xs-6 col-sm-3">
+                    <div className="count-number">
+                      { isVisible ? <CountUp start={0} end={new AgeFromDateString('1991-11-19').age} /> : 0}
+                    </div>
+                    <div className="count-descr font-alt">
+                      <i className="fa fa-heart-o"></i>
+                      <span className="count-title"> Age</span>
+                    </div>
+                  </div>
+                  { /* End Counter Item */ }
 
-            { /* Counter Item */ }
-            <div className="col-xs-6 col-sm-3">
-              <div className="count-number">
-                5
-              </div>
-              <div className="count-descr font-alt">
-                <i className="fa fa-code"></i>
-                <span className="count-title">Years exp.</span>
-              </div>
-            </div>
-            { /* End Counter Item */ }
+                  { /* Counter Item */ }
+                  <div className="col-xs-6 col-sm-3">
+                    <div className="count-number">
+                      { isVisible ? <CountUp start={0} end={new AgeFromDateString('2014-01-01').age} /> : 0}
+                    </div>
+                    <div className="count-descr font-alt">
+                      <i className="fa fa-code"></i>
+                      <span className="count-title"> Years exp.</span>
+                    </div>
+                  </div>
+                  { /* End Counter Item */ }
 
-            { /* Counter Item */ }
-            <div className="col-xs-6 col-sm-3">
-              <div className="count-number">
-                535
-              </div>
-              <div className="count-descr font-alt">
-                <i className="fa fa-code-fork"></i>
-                <span className="count-title">Contributions this year</span>
-              </div>
-            </div>
-            { /* End Counter Item */ }
+                  { /* Counter Item */ }
+                  <div className="col-xs-6 col-sm-3">
+                    <div className="count-number">
+                      <Query query={CONTRIBUTIONS}>
+                        {({loading, error, data}) => {
+                          if (loading) { return 0; }
+                          if (error) { console.error(error); return 0;}
+                          const { contributionsCollection } = data.viewer;
+                          console.log(contributionsCollection);
+                          let totalCount =
+                            contributionsCollection.totalIssueContributions + contributionsCollection.totalCommitContributions + contributionsCollection.totalRepositoryContributions + contributionsCollection.totalPullRequestReviewContributions + contributionsCollection.totalPullRequestContributions + contributionsCollection.restrictedContributionsCount;
+                          return isVisible ? (<CountUp start={0} end={totalCount} />) : 0;
+                        }}
+                      </Query>
+                    </div>
+                    <div className="count-descr font-alt">
+                      <i className="fa fa-github"></i>
+                      <span className="count-title"> GitHub Contributions This Year</span>
+                    </div>
+                  </div>
+                  { /* End Counter Item */ }
 
-            { /* Counter Item */ }
-            <div className="col-xs-6 col-sm-3">
-              <div className="count-number">
-                100
-              </div>
-              <div className="count-descr font-alt">
-                <i className="fa fa-thumbs-o-up"></i>
-                <span className="count-title">% Team player</span>
-              </div>
-            </div>
-            { /* End Counter Item */ }
+                  { /* Counter Item */ }
+                  <div className="col-xs-6 col-sm-3">
+                    <div className="count-number">
+                      { isVisible ? <CountUp start={0} end={100} /> : 0}
+                    </div>
+                    <div className="count-descr font-alt">
+                      <i className="fa fa-thumbs-o-up"></i>
+                      <span className="count-title"> % Team player</span>
+                    </div>
+                  </div>
+                  { /* End Counter Item */ }
 
-          </div>
-        </div>
+                </div>
+              </div>);
+            }}
+        </TrackVisibility>
         { /* End Counters */ }
 
       </div>
