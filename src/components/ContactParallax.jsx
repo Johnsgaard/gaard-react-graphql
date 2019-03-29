@@ -2,7 +2,7 @@ import React from 'react';
 import GreyFloral from '../images/greyfloral.png';
 
 const ContactParallax = () => (
-  <section  className="small-section bg-dark-alfa-50" style={{
+  <section  className="small-section bg-dark-alfa-20" style={{
     backgroundImage: `url(${GreyFloral})`,
     backgroundRepeat: 'repeat',
     backgroundSize: '200px',
@@ -10,7 +10,7 @@ const ContactParallax = () => (
       <div  className="container relative">
 
         <div  className="align-center">
-          <h3  className="bg-light font-alt">Want to discuss your new project?</h3>
+          <h3  className="bg-light font-alt">Want to discuss your next project?</h3>
           <div>
             <a href="mailto:hello@gaard.ca"  className="btn btn-mod btn-w btn-medium btn-round">Lets talk</a>
           </div>

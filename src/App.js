@@ -61,11 +61,11 @@ class App extends Component {
           <div className="appear-animate">
             <div className="page" id="top">
               <AboutMe />
-              <ParallaxBreak />
+              <ParallaxBreak type="wheat" size="400px" height="8px" />
               <Resume />
-              <ParallaxBreak />
+              <ParallaxBreak type="universe" size="500px" height="8px" />
               <Services />
-              <ParallaxBreak />
+              <ParallaxBreak type="universe" size="400px" height="8px" />
               <Contact />
               <ContactParallax />
               <Footer />
