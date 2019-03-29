@@ -8,10 +8,14 @@ const SIDE_PANEL_QUERY = gql`
 {
   viewer {
     name
+    login
     avatarUrl
     status {
       emoji
       message
+    }
+    followers {
+      totalCount
     }
   }
 }
@@ -33,10 +37,15 @@ const SidePanel = (props) => {
                 {  /* Your text or image into link tag */ }
                 <div className="sp-logo-wrap local-scroll mb-40 mb-md-10 mb-xs-0">
                   <span className="logo">
-                    <img src={loading ? '../template-images/loader.gif' : data.viewer.avatarUrl} width="119" height="119" alt="" />
+                    <img src={loading ? '../images/GAARDfooter.png' : data.viewer.avatarUrl} width="119" height="119" alt="" />
                     <div className="ci-title font-alt">{data.viewer.name}</div>
                     <div className="ci-title font-alt" style={{ fontWeight: 700 }}><Emoji text={data.viewer.status.emoji} />{data.viewer.status.message}</div>
                   </span>
+                  <a className="btn btn-mod btn-glass btn-circle relative" href="https://github.com/Johnsgaard" data-show-count="true" aria-label="@Johnsgaard on GitHub">
+                    <span className="label-new label-for-button gaard-tooltip round">{data.viewer.followers.totalCount}</span>
+                    <i className="fa fa-github"></i>
+                    <span> @{data.viewer.login}</span>
+                  </a>
                 </div>
                 {  /* End Logo */ }
 
