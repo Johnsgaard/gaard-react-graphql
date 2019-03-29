@@ -15,9 +15,13 @@ import AboutMe from './components/AboutMe';
 import Resume from './components/Resume';
 import ParallaxBreak from './components/ParallaxBreak';
 import Services from './components/Services';
+import Contact from './components/Contact';
+import ContactParallax from './components/ContactParallax';
+import Footer from './components/Footer';
 
 // Styles 
 import './template-css/bootstrap.min.css';
+import './template-css/animate.min.css';
 import './template-css/App.scss';
 
 
@@ -61,6 +65,10 @@ class App extends Component {
               <Resume />
               <ParallaxBreak />
               <Services />
+              <ParallaxBreak />
+              <Contact />
+              <ContactParallax />
+              <Footer />
             </div>
           </div>
         </div>

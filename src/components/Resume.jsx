@@ -193,7 +193,7 @@ const Resume = () => (
                     </p>
                     <p>
                       <strong>Website:</strong>
-                      <a href="http://www.vizworx.com" target="_blank">vizworx.com</a>
+                      <a href="http://www.vizworx.com" rel="noopener noreferrer" target="_blank">vizworx.com</a>
                     </p>
                   </div>
                 </div>
@@ -237,7 +237,7 @@ const Resume = () => (
                     </p>
                     <p>
                       <strong>Website:</strong>
-                      <a href="http://www.aware360.com" target="_blank">aware360.com</a>
+                      <a href="http://www.aware360.com" rel="noopener noreferrer" target="_blank">aware360.com</a>
                     </p>
                   </div>
                 </div>
@@ -357,7 +357,6 @@ const Resume = () => (
                           if (loading) { return 0; }
                           if (error) { console.error(error); return 0;}
                           const { contributionsCollection } = data.viewer;
-                          console.log(contributionsCollection);
                           let totalCount =
                             contributionsCollection.totalIssueContributions + contributionsCollection.totalCommitContributions + contributionsCollection.totalRepositoryContributions + contributionsCollection.totalPullRequestReviewContributions + contributionsCollection.totalPullRequestContributions + contributionsCollection.restrictedContributionsCount;
                           return isVisible ? (<CountUp start={0} end={totalCount} />) : 0;

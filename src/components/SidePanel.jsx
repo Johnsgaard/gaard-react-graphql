@@ -55,54 +55,15 @@ const SidePanel = (props) => {
 
                     {  /* Item With Sub */ }
                   <li>
-                    <a href="#" className="sp-has-sub" className="active">
-                      Portfolio
-                      <i className="fa fa-angle-down"></i>
+                    <a href="#services">
+                      Services
                     </a>
-
-                    <ul className="sp-sub">
-                      <li>
-                        <a href="work.html">Nature</a>
-                      </li>
-                      <li>
-                        <a href="work.html">People</a>
-                      </li>
-                      <li>
-                        <a href="work.html">Lifestyle</a>
-                      </li>
-                      <li>
-                        <a href="work.html">Places</a>
-                      </li>
-                    </ul>
-
                   </li>
                   {  /* End Item With Sub */ }
 
                   <li>
                     <a href="#contact">Contact</a>
                   </li>
-
-                  {  /* Item With Sub */ }
-                  <li>
-                  <a href="#" className="sp-has-sub">Search <i className="fa fa-angle-down"></i></a>
-                    <ul className="sp-sub">
-                      <li>
-                        <div className="mn-wrap">
-                          <form method="post" className="form align-center">
-                            <div className="search-wrap inline-block sp-search">
-                              <button className="search-button animate" type="submit" title="Start Search">
-                                <i className="fa fa-search"></i>
-                              </button>
-                              <input type="text" className="form-control search-field round" placeholder="Search..." />
-                            </div>
-                          </form>
-                        </div>
-                      </li>
-                    </ul>
-
-                  </li>
-                {  /* End Item With Sub */ }
-
                 </ul>
 
                 </div>
@@ -111,9 +72,9 @@ const SidePanel = (props) => {
 
                 {  /* Social Links */ }
                 <div className="sp-social-links">
-                  <a href="https://www.facebook.com/joshua.johnsgaard" title="Facebook" target="_blank"><i className="fa fa-facebook"></i></a>
-                  <a href="https://www.linkedin.com/in/joshua-johnsgaard-9ba83a58/" title="LinkedIn+" target="_blank"><i className="fa fa-linkedin"></i></a>
-                  <a href="https://github.com/Johnsgaard" title="GitHub+" target="_blank"><i className="fa fa-github"></i></a>
+                  <a href="https://www.facebook.com/joshua.johnsgaard" title="Facebook" rel="noopener noreferrer" target="_blank"><i className="fa fa-facebook"></i></a>
+                  <a href="https://www.linkedin.com/in/joshua-johnsgaard-9ba83a58/" rel="noopener noreferrer" title="LinkedIn+" target="_blank"><i className="fa fa-linkedin"></i></a>
+                  <a href="https://github.com/Johnsgaard" title="GitHub+" rel="noopener noreferrer" target="_blank"><i className="fa fa-github"></i></a>
               </div>
               {  /* End Social Links */ }
 

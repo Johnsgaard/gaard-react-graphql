@@ -1,0 +1,23 @@
+import React from 'react';
+import GreyFloral from '../images/greyfloral.png';
+
+const ContactParallax = () => (
+  <section  className="small-section bg-dark-alfa-50" style={{
+    backgroundImage: `url(${GreyFloral})`,
+    backgroundRepeat: 'repeat',
+    backgroundSize: '200px',
+   }}>
+      <div  className="container relative">
+
+        <div  className="align-center">
+          <h3  className="bg-light font-alt">Want to discuss your new project?</h3>
+          <div>
+            <a href="mailto:hello@gaard.ca"  className="btn btn-mod btn-w btn-medium btn-round">Lets talk</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+);
+
+export default ContactParallax;

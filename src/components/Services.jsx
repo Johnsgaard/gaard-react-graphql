@@ -1,36 +1,46 @@
 import React from 'react';
 
 class Services extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      visibleService: 'web-design',
+    };
+  }
+  updateVisibleService = (service) => () => {
+    this.setState({ visibleService: service });
+  }
+
   render () {
     return (
       <section className="page-section" id="services">
         <div className="container relative">
 
           <h3 className="section-title font-alt mb-70 mb-sm-40">
-                          Services
-                      </h3>
+            Services
+          </h3>
 
           { /*Nav tabs  */ }
           <ul className="nav nav-tabs tpl-alt-tabs font-alt pt-30 pt-sm-0 pb-30 pb-sm-0">
-            <li className="active">
-              <a href="#service-web-design" data-toggle="tab">
+            <li className={this.state.visibleService === 'web-design' ? 'active' : ''}>
+              <i onClick={this.updateVisibleService('web-design')} data-toggle="tab">
 
                 <div className="alt-tabs-icon">
                   <span className="icon-desktop"></span>
                 </div>
 
                 Web Design
-              </a>
+              </i>
             </li>
-            <li>
-              <a href="#service-development" data-toggle="tab">
+            <li className={this.state.visibleService === 'development' ? 'active' : ''}>
+              <i onClick={this.updateVisibleService('development')} data-toggle="tab">
 
                 <div className="alt-tabs-icon">
                   <span className="icon-gears"></span>
                 </div>
 
                 Development
-              </a>
+              </i>
             </li>
           </ul>
           { /*End Nav tabs  */ }
@@ -39,7 +49,7 @@ class Services extends React.Component {
           <div className="tab-content tpl-tabs-cont">
 
             { /*Service Item  */ }
-            <div className="tab-pane fade in active" id="service-web-design">
+            <div className={`tab-pane fade in ${this.state.visibleService === 'web-design' ? 'active' : ''}`} id="service-web-design">
 
               <div className="section-text">
                 <div className="row">
@@ -66,7 +76,7 @@ class Services extends React.Component {
             { /*End Service Item  */ }
 
             { /*Service Item  */ }
-            <div className="tab-pane fade" id="service-development">
+            <div className={`tab-pane fade in ${this.state.visibleService === 'development' ? 'active' : ''}`}  id="service-development">
 
               <div className="section-text">
                 <div className="row">
@@ -81,9 +91,9 @@ class Services extends React.Component {
                     </blockquote>
                   </div>
                   <div className="col-md-8 col-sm-12 mb-sm-50 mb-xs-30">
-                    &lt;Johnsgaard&gt; Development is something I am truly passionate about and I am always looking for new tools and libraries to work into my projects.
+                    Development is something I am truly passionate about and I am always looking for new tools and libraries to work into my projects.
                     As a developer I love problem solving and challening myself. I follow development procedures that ensure the code is properly tested before it reaches production.
-                    Most importantly I like to make the development process easy and enjoyable for everyone. &lt;/ Johnsgaard&gt;
+                    Most importantly I like to make the development process easy and enjoyable for everyone.
                   </div>
                 </div>
               </div>
@@ -113,7 +123,7 @@ class Services extends React.Component {
                 <div className="alt-features-icon">
                   <span className="icon-chat"></span>
                 </div>
-                <h3 className="alt-features-title font-alt">1. Plan</h3>
+                <h3 className="alt-features-title font-alt">1. Plan / Architect</h3>
               </div>
             </div>
             { /*End Features Item  */ }
@@ -135,7 +145,7 @@ class Services extends React.Component {
                 <div className="alt-features-icon">
                   <span className="icon-refresh"></span>
                 </div>
-                <h3 className="alt-features-title font-alt">3. Validate</h3>
+                <h3 className="alt-features-title font-alt">3. Weekly Update / Repeat</h3>
               </div>
             </div>
             { /*End Features Item  */ }
