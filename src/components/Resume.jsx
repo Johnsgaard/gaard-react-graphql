@@ -25,7 +25,7 @@ const Resume = () => (
   <section className="page-section" id="resume">
       <div className="container relative">
         <h3 className="section-title font-alt mb-70 mb-sm-40">
-          Resume
+          Résumé
         </h3>
         { /* Experience */ }
         <div className="section-text mb-20 mb-sm-10">

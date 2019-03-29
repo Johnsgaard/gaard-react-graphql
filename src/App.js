@@ -14,10 +14,12 @@ import MenuButton from './components/MenuButton';
 import AboutMe from './components/AboutMe';
 import Resume from './components/Resume';
 import ParallaxBreak from './components/ParallaxBreak';
+import Services from './components/Services';
 
 // Styles 
 import './template-css/bootstrap.min.css';
 import './template-css/App.scss';
+
 
 
 // Global.Apollo
@@ -57,6 +59,8 @@ class App extends Component {
               <AboutMe />
               <ParallaxBreak />
               <Resume />
+              <ParallaxBreak />
+              <Services />
             </div>
           </div>
         </div>
