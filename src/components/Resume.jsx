@@ -352,7 +352,7 @@ const Resume = () => (
                   { /* Counter Item */ }
                   <div className="col-xs-6 col-sm-3">
                     <div className="count-number">
-                      <Query pollInterval={500} query={CONTRIBUTIONS}>
+                      <Query pollInterval={3500} query={CONTRIBUTIONS}>
                         {({loading, error, data, startPolling, stopPolling}) => {
                           if (loading) { return 0; }
                           if (error) { console.error(error); return 0;}

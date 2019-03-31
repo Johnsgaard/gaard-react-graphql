@@ -23,7 +23,7 @@ const SIDE_PANEL_QUERY = gql`
 
 const SidePanel = (props) => {
   return (
-    <Query query={SIDE_PANEL_QUERY} pollInterval={500}>
+    <Query query={SIDE_PANEL_QUERY} pollInterval={3500}>
       {({ loading, error, data, startPolling, stopPolling }) => {
         if (error) { return <div className="side-panel white"> Error! {error} </div>}
         if (loading) return null;
