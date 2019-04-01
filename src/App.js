@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 // Apollo
 import { ApolloProvider } from "react-apollo";
+
 import ApolloClient from "apollo-boost";
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
