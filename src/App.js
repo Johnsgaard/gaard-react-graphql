@@ -45,7 +45,12 @@ class App extends Component {
     super(props);
     this.state = {
       spOpen: false,
+      loading: true,
     };
+  }
+
+  componentWillMount() {
+    this.setState({ loading: false });
   }
 
   toggleSidePanel = () => {
@@ -53,6 +58,11 @@ class App extends Component {
   }
 
   render() {
+    if (this.state.loading) {
+      return (<div className="page-loader">
+          <div className="loader">Loading...</div>
+      </div>);
+    }
     return (
       <ApolloProvider client={client}>
         <div className="App">
