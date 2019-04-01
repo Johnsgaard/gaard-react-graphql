@@ -9,6 +9,7 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 import { token } from './config'
 
 // Components
+import Loader from './components/Loader'
 import SidePanel from './components/SidePanel';
 import MenuButton from './components/MenuButton';
 import AboutMe from './components/AboutMe';
@@ -49,7 +50,7 @@ class App extends Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.setState({ loading: false });
   }
 
@@ -59,9 +60,7 @@ class App extends Component {
 
   render() {
     if (this.state.loading) {
-      return (<div className="page-loader">
-          <div className="loader">Loading...</div>
-      </div>);
+      return <Loader />;
     }
     return (
       <ApolloProvider client={client}>
