@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 // Apollo
 import { ApolloProvider } from "react-apollo";
-
 import ApolloClient from "apollo-boost";
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
@@ -10,7 +9,6 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 import { token } from './config'
 
 // Components
-import Loader from './components/Loader'
 import SidePanel from './components/SidePanel';
 import MenuButton from './components/MenuButton';
 import AboutMe from './components/AboutMe';
@@ -47,12 +45,7 @@ class App extends Component {
     super(props);
     this.state = {
       spOpen: false,
-      loading: true,
     };
-  }
-
-  componentDidMount() {
-    this.setState({ loading: false });
   }
 
   toggleSidePanel = () => {
@@ -60,9 +53,6 @@ class App extends Component {
   }
 
   render() {
-    if (this.state.loading) {
-      return <Loader />;
-    }
     return (
       <ApolloProvider client={client}>
         <div className="App">
