@@ -37,7 +37,7 @@ const SidePanel = (props) => {
                 {  /* Your text or image into link tag */ }
                 <div className="sp-logo-wrap local-scroll mb-40 mb-md-10 mb-xs-0">
                   <span className="logo">
-                    <img src={loading ? '../images/GAARDfooter.png' : data.viewer.avatarUrl} width="119" height="119" alt="" />
+                    <img src={loading ? '../images/GAARDfooter.png' : data.viewer.avatarUrl} width="230" height="230" alt="" />
                     <div className="ci-title font-alt">{data.viewer.name}</div>
                     <div className="ci-title font-alt" style={{ fontWeight: 700 }}><Emoji text={data.viewer.status.emoji} />{data.viewer.status.message}</div>
                   </span>
