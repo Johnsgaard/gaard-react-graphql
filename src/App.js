@@ -28,15 +28,8 @@ import './template-css/App.scss';
 
 // Global.Apollo
 const client = new ApolloClient({
-  uri: 'https://api.github.com/graphql',
-  request: operation => {
-    operation.setContext({
-      headers: {
-        authorization: `Bearer ${token}`,
-      },
-    });
-  },
-  cache: new InMemoryCache()
+  uri: 'https://gaard.ca/graphql',
+  cache: new InMemoryCache(),
 });
 
 
