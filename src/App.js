@@ -5,8 +5,6 @@ import { ApolloProvider } from "react-apollo";
 import ApolloClient from "apollo-boost";
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
-// Auth
-import { token } from './config'
 
 // Components
 import SidePanel from './components/SidePanel';
