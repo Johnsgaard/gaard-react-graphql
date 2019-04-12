@@ -354,7 +354,7 @@ const Resume = () => (
                     <div className="count-number">
                       <Query pollInterval={3500} query={CONTRIBUTIONS}>
                         {({loading, error, data, startPolling, stopPolling}) => {
-                          if (loading) { return 0; }
+                          if (loading) { return 'loading'; }
                           if (error) { console.error(error); return 0;}
                           const { contributionsCollection } = data.viewer;
                           let totalCount =
