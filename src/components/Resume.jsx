@@ -5,6 +5,7 @@ import CountUp from 'react-countup';
 import CountTo from 'react-count-to';
 import { gql } from 'apollo-boost';
 import { Query } from 'react-apollo';
+import Loader from './Loader';
 
 const CONTRIBUTIONS = gql`
 {
@@ -354,7 +355,7 @@ const Resume = () => (
                     <div className="count-number">
                       <Query pollInterval={3500} query={CONTRIBUTIONS}>
                         {({loading, error, data, startPolling, stopPolling}) => {
-                          if (loading) { return 'loading'; }
+                          if (loading) { return <div className="loading-spinner" />; }
                           if (error) { console.error(error); return 0;}
                           const { contributionsCollection } = data.viewer;
                           let totalCount =
