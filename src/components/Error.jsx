@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import MyImage from '../images/surf_sep-min.png';
+import MyImage from '../images/surf_black-min.png';
 
 const Error = () => (
   <section className="page-section bg-dark bg-red" data-background="" id="home">
