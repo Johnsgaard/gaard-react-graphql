@@ -26,7 +26,7 @@ const Error = () => (
             </div>
           </div>
           <br />
-          <div className="col-sm-6 col-lg-offset-3">
+          <div className="hs-wrap" style={{ border: 'none' }}>
             <img src={MyImage} className="polaroid" alt=""/>
           </div>
       </div>
