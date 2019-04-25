@@ -5,7 +5,6 @@ import CountUp from 'react-countup';
 import CountTo from 'react-count-to';
 import { gql } from 'apollo-boost';
 import { Query } from 'react-apollo';
-import Loader from './Loader';
 
 const CONTRIBUTIONS = gql`
 {

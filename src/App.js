@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+} from "react-router-dom";
 
 // Apollo
 import { ApolloProvider } from "react-apollo";
@@ -9,13 +14,8 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 // Components
 import SidePanel from './components/SidePanel';
 import MenuButton from './components/MenuButton';
-import AboutMe from './components/AboutMe';
-import Resume from './components/Resume';
-import ParallaxBreak from './components/ParallaxBreak';
-import Services from './components/Services';
-import Contact from './components/Contact';
-import ContactParallax from './components/ContactParallax';
-import Footer from './components/Footer';
+import Page from './components/Page';
+import MissingPage from './components/MissingPage';
 
 // Styles 
 import './template-css/bootstrap.min.css';
@@ -45,25 +45,18 @@ class App extends Component {
 
   render() {
     return (
-      <ApolloProvider client={client}>
+      <Router>
+        <ApolloProvider client={client}>
         <div className="App">
           <MenuButton toggleSidePanel={this.toggleSidePanel} />
           <SidePanel spOpen={this.state.spOpen} toggleSidePanel={this.toggleSidePanel} />
-          <div className="appear-animate">
-            <div className="page" id="top">
-              <AboutMe />
-              <ParallaxBreak type="wheat" size="400px" height="8px" />
-              <Resume />
-              <ParallaxBreak type="universe" size="500px" height="8px" />
-              <Services />
-              <ParallaxBreak type="universe" size="400px" height="8px" />
-              <Contact />
-              <ContactParallax />
-              <Footer />
-            </div>
-          </div>
+          <Switch>
+            <Route path="/" exact component={Page} />
+            <Route component={MissingPage} />
+          </Switch>
         </div>
       </ApolloProvider>
+      </Router>
     );
   }
 }

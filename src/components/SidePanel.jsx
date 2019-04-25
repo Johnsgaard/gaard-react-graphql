@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { gql } from 'apollo-boost';
 import { Query } from 'react-apollo';
 import Emoji from 'react-emoji-render';
+import { HashLink as Link } from 'react-router-hash-link';
 
 const SIDE_PANEL_QUERY = gql`
 {
@@ -41,7 +42,7 @@ const SidePanel = (props) => {
                     <div className="ci-title font-alt">{data.viewer.name}</div>
                     <div className="ci-title font-alt" style={{ fontWeight: 700 }}><Emoji text={data.viewer.status.emoji} />{data.viewer.status.message}</div>
                   </span>
-                  <a className="btn btn-mod btn-glass btn-circle relative" href="https://github.com/Johnsgaard" data-show-count="true" aria-label="@Johnsgaard on GitHub">
+                  <a className="btn btn-mod btn-glass btn-circle relative" rel="noopener noreferrer" target="_blank" href="https://github.com/Johnsgaard" data-show-count="true" aria-label="@Johnsgaard on GitHub">
                     <span className="label-new label-for-button gaard-tooltip round">{data.viewer.followers.totalCount}</span>
                     <i className="fa fa-github"></i>
                     <span> @{data.viewer.login}</span>
@@ -55,23 +56,23 @@ const SidePanel = (props) => {
                   <ul className="sp-menu-links local-scroll">
 
                     <li>
-                      <a href="#home">Home</a>
+                      <Link to="/#home">Home</Link>
                     </li>
 
                     <li>
-                      <a href="#resume">Resume / CV</a>
+                      <Link to="/#resume">Resume / CV</Link>
                     </li>
 
                     {  /* Item With Sub */ }
                   <li>
-                    <a href="#services">
+                    <Link to="/#services">
                       Services
-                    </a>
+                    </Link>
                   </li>
                   {  /* End Item With Sub */ }
 
                   <li>
-                    <a href="#contact">Contact</a>
+                    <Link to="/#contact">Contact</Link>
                   </li>
                 </ul>
 

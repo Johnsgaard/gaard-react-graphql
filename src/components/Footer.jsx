@@ -1,6 +1,7 @@
 import React from 'react';
 import GaardLogo from '../images/GAARDfooter.png';
 import TrackVisibility from 'react-on-screen';
+import { HashLink as Link } from 'react-router-hash-link';
 
 const Footer = () => (
   <footer  className="page-section bg-gray-lighter footer pb-60">
@@ -13,7 +14,7 @@ const Footer = () => (
             className={`local-scroll mb-30 wow ${isVisible ? 'fadeInUp' : ''}`}
             style={{ visibility: 'visible', animationDuration: '1.5s', animationName: isVisible ? 'fadeInUp': '' }}
           >
-            {isVisible ? <a href="#home"><img src={GaardLogo} width="78" height="36" alt="" /></a> : <div width="78" height="36"></div> }
+            {isVisible ? <Link to="/#home"><img src={GaardLogo} width="78" height="36" alt="" /></Link> : <div width="78" height="36"></div> }
           </div>
         )}
       </TrackVisibility>
@@ -32,7 +33,7 @@ const Footer = () => (
 
     { /*  Top Link  */ }
     <div  className="local-scroll">
-      <a href="#top"  className="link-to-top"><i  className="fa fa-caret-up"></i></a>
+      <Link to="/#top"  className="link-to-top"><i  className="fa fa-caret-up"></i></Link>
     </div>
     { /*  End Top Link  */ }
 
