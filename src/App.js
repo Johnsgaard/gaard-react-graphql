@@ -16,6 +16,7 @@ import SidePanel from './components/SidePanel';
 import MenuButton from './components/MenuButton';
 import Page from './components/Page';
 import MissingPage from './components/MissingPage';
+import DatesToRemember from './components/DatesToRemember';
 
 // Styles 
 import './template-css/bootstrap.min.css';
@@ -52,6 +53,7 @@ class App extends Component {
           <SidePanel spOpen={this.state.spOpen} toggleSidePanel={this.toggleSidePanel} />
           <Switch>
             <Route path="/" exact component={Page} />
+            <Route path="/dates" exact component={DatesToRemember} />
             <Route component={MissingPage} />
           </Switch>
         </div>
