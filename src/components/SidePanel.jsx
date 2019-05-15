@@ -85,7 +85,8 @@ const SidePanel = (props) => {
                   <a href="https://www.facebook.com/joshua.johnsgaard" title="Facebook" rel="noopener noreferrer" target="_blank"><i className="fa fa-facebook"></i></a>
                   <a href="https://www.linkedin.com/in/joshua-johnsgaard-9ba83a58/" rel="noopener noreferrer" title="LinkedIn+" target="_blank"><i className="fa fa-linkedin"></i></a>
                   <a href="https://github.com/Johnsgaard" title="GitHub+" rel="noopener noreferrer" target="_blank"><i className="fa fa-github"></i></a>
-              </div>
+                  <Link to="/dates"><i className="fa fa-calendar-o"></i></Link>
+                </div>
               {  /* End Social Links */ }
 
             </div>
