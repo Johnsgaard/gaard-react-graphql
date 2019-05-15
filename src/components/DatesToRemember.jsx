@@ -41,18 +41,6 @@ class DatesPage extends React.Component {
           title: 'X-mas',
           date: `${this.currentYear}-12-25`,
         },
-        {
-          title: 'Testing 5 days from now',
-          date: `${this.currentYear}-05-20`,
-        },
-        {
-          title: 'Testing 4 days from now',
-          date: `${this.currentYear}-05-19`,
-        },
-        {
-          title: 'Testing today',
-          date: `${this.currentYear}-05-15`,
-        },
       ],
     };
   }
