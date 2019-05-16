@@ -1214,13 +1214,25 @@ a.bg-video-button-muted{
 .hs-green-n-bold {
     margin-top: 0;
     position: relative;
-    font-size: 26px;
-    font-weight: 100;
+    font-size: 20px;
+    font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     line-height: 1.8;
     opacity: .9;
     color: #1db954;
+}
+
+.hs-line-red {
+    margin-top: 0;
+    position: relative;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: 1.8;
+    opacity: 1;
+    color: #ff3333;
 }
 
 .hs-wrap-1{
@@ -4661,9 +4673,6 @@ a.blog-item-more:hover{
 
 /* Widget tags */
 
-.tags{
-    
-}
 .tags a{
     display: inline-block;
     margin: 0 2px 5px 0;
