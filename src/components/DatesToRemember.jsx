@@ -3,6 +3,15 @@ import TrackVisibility from 'react-on-screen';
 import CountUp from 'react-countup';
 import Emoji from 'react-emoji-render';
 
+import Cohen from '../images/CohenLarge.png';
+import Wedding from '../images/wedding.png';
+import ActualWedding from '../images/actualWedding.png';
+import Becks from '../images/Becks.png';
+import Me from '../images/Me.png';
+import Dating from '../images/dating.png';
+import Kobber from '../images/Kobber.png';
+import Xmas from '../images/xmas.png';
+
 // page components
 import ParallaxBreak from './ParallaxBreak';
 import Footer from './Footer';
@@ -16,30 +25,42 @@ class DatesPage extends React.Component {
         {
           title: 'Cohen\'s Birthday',
           date: `${this.currentYear}-07-16`,
+          image: Cohen,
         },
         {
           title: 'Wedding Anniversary',
           date: `${this.currentYear}-09-23`,
+          image: Wedding,
+        },
+        {
+          title: 'Actual Wedding Anniversary',
+          date: `${this.currentYear}-07-23`,
+          image: ActualWedding,
         },
         {
           title: 'Beck\'s Birthday',
           date: `${this.currentYear}-12-27`,
+          image: Becks,
         },
         {
           title: 'My Birthday',
-          date: `${this.currentYear}-11-19`,  
+          date: `${this.currentYear}-11-19`,
+          image: Me,
         },
         {
           title: 'Dating Anniversary',
           date: `${this.currentYear}-04-15`,
+          image: Dating,
         },
         {
           title: 'Kobber\'s Birthday',
           date: `${this.currentYear}-07-31`,
+          image: Kobber,
         },
         {
           title: 'X-mas',
           date: `${this.currentYear}-12-25`,
+          image: Xmas,
         },
       ],
     };
@@ -56,20 +77,21 @@ class DatesPage extends React.Component {
   }
 
   getDateItems = () => (
-    this.state.events.map((event, i) => (
-      <div key={event.title}>
-        <div className="hs-line no-transp font-alt mb-10">
-          <span>{event.title}</span>
-          <TrackVisibility partialVisibility>
+    this.state.events.map((event) => (
+      <li className="clearfix">
+        <img src={event.image} alt={event.title} className="widget-posts-img" />
+        <div>
+          <span className="ci-title font-alt">{event.title}</span>
+          <TrackVisibility>
             {({isVisible}) => {
               if (isVisible === true) {
                 if (this.getTimeDifference(event.date) === 0) {
                   return (
-                    <div className="hs-green-n-bold">
-                      <Emoji text=":tada:" />
-                      CELEBRATE GOOD TIMES, C'MON
-                      <Emoji text=":tada:" />
-                    </div>
+                        <div className="hs-green-n-bold">
+                          <Emoji text=":tada:" />
+                          CELEBRATE GOOD TIMES, C'MON
+                          <Emoji text=":tada:" />
+                        </div>
                   );
                 }
                 if (this.getTimeDifference(event.date) <= 5) {
@@ -81,14 +103,14 @@ class DatesPage extends React.Component {
                     </div>
                   );
                 }
-                return (<div className="hs-line-6"><CountUp start={0} end={this.getTimeDifference(event.date)} /> Days</div>)
+                return (<div className="hs-line-red"><CountUp start={0} end={this.getTimeDifference(event.date)} /> Days</div>)
               }
               return 'Uh oh! Invalid data.'
             }}
           </TrackVisibility>
         </div>
         <br />
-      </div>
+    </li>
     )));
 
   render() {
@@ -104,9 +126,11 @@ class DatesPage extends React.Component {
                       <div className="hs-line-11 font-alt mb-10">
                         Days to remember
                       </div>
-                      <br />
-                        { this.getDateItems() }
-                      <br />
+                      <div className="widget-body">
+                        <ul className="clearlist widget-posts">
+                          { this.getDateItems() }
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
