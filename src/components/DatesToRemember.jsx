@@ -24,27 +24,27 @@ class DatesPage extends React.Component {
       events: [
         {
           title: 'Cohen\'s Birthday',
-          date: `${this.currentYear}-07-16`,
+          date: `Jul 16, ${this.currentYear}`,
           image: Cohen,
         },
         {
           title: 'Wedding Anniversary',
-          date: `${this.currentYear}-09-23`,
+          date: `Sep 23, ${this.currentYear}`,
           image: Wedding,
         },
         {
           title: 'Actual Wedding Anniversary',
-          date: `${this.currentYear}-07-23`,
+          date: `Jul 23, ${this.currentYear}`,
           image: ActualWedding,
         },
         {
           title: 'Beck\'s Birthday',
-          date: `${this.currentYear}-12-27`,
+          date: `Dec 27, ${this.currentYear}`,
           image: Becks,
         },
         {
           title: 'My Birthday',
-          date: `${this.currentYear}-11-19`,
+          date: `Nov 19, ${this.currentYear}`,
           image: Me,
         },
         {
@@ -54,12 +54,12 @@ class DatesPage extends React.Component {
         },
         {
           title: 'Kobber\'s Birthday',
-          date: `${this.currentYear}-07-31`,
+          date: `Jul 31, ${this.currentYear}`,
           image: Kobber,
         },
         {
           title: 'X-mas',
-          date: `${this.currentYear}-12-25`,
+          date: `Dec 25, ${this.currentYear}`,
           image: Xmas,
         },
       ],
@@ -69,6 +69,7 @@ class DatesPage extends React.Component {
   getTimeDifference = (stringDate) => {
     const currentDate = new Date();
     const formattedDate = new Date(stringDate);
+    console.log(currentDate, formattedDate);
     const diffTime = formattedDate.getTime() - currentDate.getTime();
     if (Math.ceil(diffTime / (1000 * 60 * 60 * 24)) < 0) {
       return 365 + Math.ceil(diffTime / (1000 * 60 * 60 * 24));
