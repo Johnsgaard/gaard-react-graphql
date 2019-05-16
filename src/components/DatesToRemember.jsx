@@ -69,7 +69,6 @@ class DatesPage extends React.Component {
   getTimeDifference = (stringDate) => {
     const currentDate = new Date();
     const formattedDate = new Date(stringDate);
-    console.log(currentDate, formattedDate);
     const diffTime = formattedDate.getTime() - currentDate.getTime();
     if (Math.ceil(diffTime / (1000 * 60 * 60 * 24)) < 0) {
       return 365 + Math.ceil(diffTime / (1000 * 60 * 60 * 24));
