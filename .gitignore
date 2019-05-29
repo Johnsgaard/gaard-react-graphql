@@ -21,3 +21,14 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# config
+/src/config.js
+
+
+# # template
+# template-css/
+# template-fonts/
+# template-images/
+# template-rs-plugin/
+# template-js/
