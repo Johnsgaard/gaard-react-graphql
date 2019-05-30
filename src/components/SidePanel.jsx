@@ -56,23 +56,23 @@ const SidePanel = (props) => {
                   <ul className="sp-menu-links local-scroll">
 
                     <li>
-                      <Link to="/#home">Home</Link>
+                      <Link to="/#home" onClick={props.toggleSidePanel}>Home</Link>
                     </li>
 
                     <li>
-                      <Link to="/#resume">Resume / CV</Link>
+                      <Link to="/#resume" onClick={props.toggleSidePanel}>Resume / CV</Link>
                     </li>
 
                     {  /* Item With Sub */ }
                   <li>
-                    <Link to="/#services">
+                    <Link to="/#services" onClick={props.toggleSidePanel}>
                       Services
                     </Link>
                   </li>
                   {  /* End Item With Sub */ }
 
                   <li>
-                    <Link to="/#contact">Contact</Link>
+                    <Link to="/#contact" onClick={props.toggleSidePanel}>Contact</Link>
                   </li>
                 </ul>
 
@@ -82,10 +82,10 @@ const SidePanel = (props) => {
 
                 {  /* Social Links */ }
                 <div className="sp-social-links">
-                  <a href="https://www.facebook.com/joshua.johnsgaard" title="Facebook" rel="noopener noreferrer" target="_blank"><i className="fa fa-facebook"></i></a>
+                  <a href="https://www.facebook.com/joshua.johnsgaard" title="Facebook" rel="noopener noreferrer" target="_blank" ><i className="fa fa-facebook"></i></a>
                   <a href="https://www.linkedin.com/in/joshua-johnsgaard-9ba83a58/" rel="noopener noreferrer" title="LinkedIn+" target="_blank"><i className="fa fa-linkedin"></i></a>
                   <a href="https://github.com/Johnsgaard" title="GitHub+" rel="noopener noreferrer" target="_blank"><i className="fa fa-github"></i></a>
-                  <Link to="/dates" title="Countdown"><i className="fa fa-calendar-o"></i></Link>
+                  <Link to="/dates" title="Countdown" onClick={props.toggleSidePanel}><i className="fa fa-calendar-o"></i></Link>
                 </div>
               {  /* End Social Links */ }
 
