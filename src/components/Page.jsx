@@ -20,7 +20,7 @@ const Page = () => (
       <ParallaxBreak type="universe" size="400px" height="8px" />
       <Contact />
       <ContactParallax />
-      <Footer />
+      <Footer returnToTop />
     </div>
   </div>
 );
