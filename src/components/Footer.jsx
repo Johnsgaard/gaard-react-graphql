@@ -3,7 +3,7 @@ import GaardLogo from '../images/GAARDfooter.png';
 import TrackVisibility from 'react-on-screen';
 import { HashLink as Link } from 'react-router-hash-link';
 
-const Footer = () => (
+const Footer = (props) => (
   <footer  className="page-section bg-gray-lighter footer pb-60">
     <div  className="container">
 
@@ -32,9 +32,11 @@ const Footer = () => (
 
 
     { /*  Top Link  */ }
-    <div  className="local-scroll">
-      <Link to="/#top"  className="link-to-top"><i  className="fa fa-caret-up"></i></Link>
-    </div>
+    {props.returnToTop
+      ? (<div  className="local-scroll"><Link to="/#top"  className="link-to-top"><i  className="fa fa-caret-up"></i></Link></div>)
+      : null
+    }
+    
     { /*  End Top Link  */ }
 
   </footer>
