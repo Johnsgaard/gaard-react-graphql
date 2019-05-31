@@ -9,6 +9,7 @@
     "apollo-client": "^2.5.1",
     "apollo-link-context": "^1.0.17",
     "apollo-link-http": "^1.5.14",
+    "apollo-server": "^2.5.1",
     "base-64": "^0.1.0",
     "graphql": "^14.1.1",
     "graphql-tag": "^2.10.1",
@@ -40,6 +41,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "node-sass": "^4.11.0"
+    "node-sass": "^4.11.0",
+    "request-promise": "^4.2.4"
   }
 }
