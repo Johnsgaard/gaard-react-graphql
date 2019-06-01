@@ -18,12 +18,18 @@ const gitHub = [
 // Type definitions define the "shape" of your data and specify
 // which ways the data can be fetched from the GraphQL server.
 const typeDefs = gql`
-  # Comments in GraphQL are defined with the hash (#) symbol.
-
+  # The GitHub status
+  type Status {
+    emoji: String!
+    message: String!
+  }
   # This "Book" type can be used in other type declarations.
-  type GitHub {
-    title: String
-    author: String
+  type GitGaard {
+    name: String!
+    userName: String!
+    avatarUrl: String!
+    status: [Status]
+    followerCount: Int!
   }
 
   # The "Query" type is the root of all GraphQL queries.
