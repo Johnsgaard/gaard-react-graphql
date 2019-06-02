@@ -45,7 +45,9 @@ class App extends Component {
   }
 
   render() {
+    console.log('hello?');
     return (
+
       <Router>
         <ApolloProvider client={client}>
         <div className="App">
