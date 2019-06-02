@@ -1,20 +1,6 @@
 const { ApolloServer, gql } = require('apollo-server');
 const gitConnect = require('./githubConnect');
 
-// This is a (sample) collection of books we'll be able to query
-// the GraphQL server for.  A more complete example might fetch
-// from an existing data source like a REST API or database.
-const gitHub = [
-  {
-    title: 'Harry Potter and the Chamber of Secrets',
-    author: 'J.K. Rowling',
-  },
-  {
-    title: 'Jurassic Park',
-    author: 'Michael Crichton',
-  },
-];
-
 // Type definitions define the "shape" of your data and specify
 // which ways the data can be fetched from the GraphQL server.
 const typeDefs = gql`
@@ -35,7 +21,7 @@ const typeDefs = gql`
   # The "Query" type is the root of all GraphQL queries.
   # (A "Mutation" type will be covered later on.)
   type Query {
-    gitHub: [GitHub]
+    viewer: [GitGaard]
   }
 `;
 
@@ -43,9 +29,14 @@ const typeDefs = gql`
 // schema.  We'll retrieve books from the "books" array above.
 const resolvers = {
   Query: {
-    gitHub(root, args, context) {
-      return gitConnect();
-    }
+    viewer(root, args, context) {
+      return gitConnect().then(response => {
+        console.log(response);
+        const parsed = JSON.parse(response)
+        console.log(Object.keys(parsed.data
+          ));
+      });
+    },
   },
 };
 
