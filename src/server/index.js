@@ -27,15 +27,22 @@ const typeDefs = gql`
 
 // Resolvers define the technique for fetching the types in the
 // schema.  We'll retrieve books from the "books" array above.
+let cache = null;
 const resolvers = {
   Query: {
     viewer(root, args, context) {
-      return gitConnect().then(response => {
-        console.log(response);
-        const parsed = JSON.parse(response)
-        console.log(Object.keys(parsed.data
-          ));
-      });
+      let fetchPromise = Promise.resolve();
+      if (!cache || cache.time > Date.now() - 120) {
+        // fetch apollo and add it to the cache
+        fetcbhPromise = gitConnect().then((data) => {
+          console.log(data);
+          cache = {
+            time: Date.now(),
+            data,
+          }
+        });
+      }
+      return fetchPromise.then(() => {console.log(cache); return cache.data});
     },
   },
 };

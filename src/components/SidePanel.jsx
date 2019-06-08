@@ -26,8 +26,6 @@ const SidePanel = (props) => {
   return (
     <Query query={SIDE_PANEL_QUERY} pollInterval={3500}>
       {({ loading, error, data, startPolling, stopPolling }) => {
-        if (error) { return <div className="side-panel white"> Error! {error} </div>}
-        if (loading) return null;
         return (
           <React.Fragment>
             <div onClick={props.toggleSidePanel} className={`sp-overlay ${props.spOpen ? 'open' : ''}`}></div>
@@ -39,13 +37,13 @@ const SidePanel = (props) => {
                 <div className="sp-logo-wrap local-scroll mb-40 mb-md-10 mb-xs-0">
                   <span className="logo">
                     <img src={loading ? '../images/GAARDfooter.png' : data.viewer.avatarUrl} width="230" height="230" alt="" />
-                    <div className="ci-title font-alt">{data.viewer.name}</div>
-                    <div className="ci-title font-alt" style={{ fontWeight: 700 }}><Emoji text={data.viewer.status.emoji} />{data.viewer.status.message}</div>
+                    <div className="ci-title font-alt">{!loading ? data.viewer.name : 'Loading'}</div>
+                    <div className="ci-title font-alt" style={{ fontWeight: 700 }}><Emoji text={!loading ? data.viewer.status.emoji : 'tada'} />{!loading ? data.viewer.status.message : 'Loading'}</div>
                   </span>
                   <a className="btn btn-mod btn-glass btn-circle relative" rel="noopener noreferrer" target="_blank" href="https://github.com/Johnsgaard" data-show-count="true" aria-label="@Johnsgaard on GitHub">
-                    <span className="label-new label-for-button gaard-tooltip round">{data.viewer.followers.totalCount}</span>
+                    <span className="label-new label-for-button gaard-tooltip round">{!loading ? data.viewer.followers.totalCount : 0}</span>
                     <i className="fa fa-github"></i>
-                    <span> @{data.viewer.login}</span>
+                    <span>{!loading ? `@${data.viewer.login}` : 'Loading'}</span>
                   </a>
                 </div>
                 {  /* End Logo */ }
