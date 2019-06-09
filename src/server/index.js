@@ -9,19 +9,24 @@ const typeDefs = gql`
     emoji: String!
     message: String!
   }
-  # This "Book" type can be used in other type declarations.
+
+  # Follower
+  type Followers {
+    totalCount: Int!
+  }
+
+  # Viewer
   type GitGaard {
     name: String!
-    userName: String!
+    login: String!
     avatarUrl: String!
-    status: [Status]
-    followerCount: Int!
+    status: Status
+    followers: Followers
   }
 
   # The "Query" type is the root of all GraphQL queries.
-  # (A "Mutation" type will be covered later on.)
   type Query {
-    viewer: [GitGaard]
+    viewer: GitGaard
   }
 `;
 
@@ -30,19 +35,18 @@ const typeDefs = gql`
 let cache = null;
 const resolvers = {
   Query: {
-    viewer(root, args, context) {
+    viewer(root, args, context, info) {
       let fetchPromise = Promise.resolve();
       if (!cache || cache.time > Date.now() - 120) {
         // fetch apollo and add it to the cache
-        fetcbhPromise = gitConnect().then((data) => {
-          console.log(data);
+        fetchPromise = gitConnect().then(({ data, error, loading }) => {
           cache = {
             time: Date.now(),
             data,
           }
         });
       }
-      return fetchPromise.then(() => {console.log(cache); return cache.data});
+      return fetchPromise.then(() => cache.data.viewer);
     },
   },
 };
