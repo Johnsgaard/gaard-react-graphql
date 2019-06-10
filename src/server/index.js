@@ -22,6 +22,16 @@ const typeDefs = gql`
     avatarUrl: String!
     status: Status
     followers: Followers
+    contributionsCollection: Contributions
+  }
+
+  type Contributions {
+    totalIssueContributions: Int!
+    totalCommitContributions: Int!
+    totalRepositoryContributions: Int!
+    totalPullRequestReviewContributions: Int!
+    totalPullRequestContributions: Int!
+    restrictedContributionsCount: Int!
   }
 
   # The "Query" type is the root of all GraphQL queries.

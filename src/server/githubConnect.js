@@ -17,6 +17,14 @@ const VIEWER = gql`
       followers {
         totalCount
       }
+      contributionsCollection {
+        totalIssueContributions
+        totalCommitContributions
+        totalRepositoryContributions
+        totalPullRequestReviewContributions
+        totalPullRequestContributions
+        restrictedContributionsCount
+      }
     }
   }
 `;
