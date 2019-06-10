@@ -1,16 +1,51 @@
-const rp = require('request-promise');
+const { ApolloClient, gql } = require('apollo-boost');
+const { createHttpLink } = require('apollo-link-http');
+const { InMemoryCache } = require('apollo-cache-inmemory');
+const fetch = require('node-fetch')
 const token = require('../config');
 
-function gitConnect() { 
-  return rp({
-    uri: `https://api.github.com/graphql`,
-    headers: {
-      'User-Agent': 'client'
-    },
-    auth: {
-      'bearer': token
+const VIEWER = gql`
+  {
+    viewer {
+      name
+      login
+      avatarUrl
+      status {
+        emoji
+        message
+      }
+      followers {
+        totalCount
+      }
+      contributionsCollection {
+        totalIssueContributions
+        totalCommitContributions
+        totalRepositoryContributions
+        totalPullRequestReviewContributions
+        totalPullRequestContributions
+        restrictedContributionsCount
+      }
     }
-  });
-}
+  }
+`;
 
-module.exports = gitConnect;
+const opts = {
+  credentials: 'same-origin',
+  headers: {
+    'authorization': `bearer ${token}`,
+  },
+};
+
+ function gitConnect() {
+    const client = new ApolloClient({
+    link: createHttpLink({
+      uri: "https://api.github.com/graphql",
+      fetch: fetch,
+      ...opts,
+    }),
+    cache: new InMemoryCache(),
+  });
+  return client.query({ query: VIEWER })
+ }
+
+ module.exports = gitConnect;
