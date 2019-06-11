@@ -42,12 +42,17 @@ const typeDefs = gql`
 
 // Resolvers define the technique for fetching the types in the
 // schema.  We'll retrieve books from the "books" array above.
-let cache = null;
+let cache = {
+  data: null,
+  time: null,
+};
+
 const resolvers = {
   Query: {
     viewer(root, args, context, info) {
       let fetchPromise = Promise.resolve();
-      if (!cache || cache.time > Date.now() - 120) {
+      console.log(Date.now() - (60 * 60 * 1000), cache.time);
+      if (!cache.data || !cache.time || cache.time < Date.now() - (5 * 1000)) {
         // fetch apollo and add it to the cache
         fetchPromise = gitConnect().then(({ data, error, loading }) => {
           cache = {
