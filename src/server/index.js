@@ -51,7 +51,6 @@ const resolvers = {
   Query: {
     viewer(root, args, context, info) {
       let fetchPromise = Promise.resolve();
-      console.log(Date.now() - (60 * 60 * 1000), cache.time);
       if (!cache.data || !cache.time || cache.time < Date.now() - (5 * 1000)) {
         // fetch apollo and add it to the cache
         fetchPromise = gitConnect().then(({ data, error, loading }) => {
