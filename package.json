@@ -9,7 +9,7 @@
     "apollo-client": "2.6.4",
     "apollo-link-context": "1.0.18",
     "apollo-link-http": "1.5.15",
-    "apollo-server": "2.9.0",
+    "apollo-server": "2.9.1",
     "base-64": "0.1.0",
     "graphql": "14.5.3",
     "graphql-tag": "2.10.1",
