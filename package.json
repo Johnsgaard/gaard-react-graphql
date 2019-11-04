@@ -44,6 +44,6 @@
   ],
   "devDependencies": {
     "node-sass": "4.13.0",
-    "request-promise": "4.2.4"
+    "request-promise": "4.2.5"
   }
 }
