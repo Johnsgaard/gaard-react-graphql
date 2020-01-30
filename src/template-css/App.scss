@@ -386,9 +386,9 @@ img:not([draggable]), embed, object, video{
 
 body{
     color: #111;
-    font-size: 14px;
+    font-size: 15px;
     font-family: "Open Sans", arial, sans-serif;
-    line-height: 1.6;    
+    line-height: 1.5;    
     -webkit-font-smoothing: antialiased;
 }
 
@@ -402,7 +402,6 @@ a:hover{
 }
 
 h1,h2,h3,h4,h5,h6{
-    margin-bottom: 1.3em;
     line-height: 1.4;
     font-weight: 400;
    
@@ -2737,6 +2736,7 @@ a.logo:hover{
 .bg-blue{ background-color: #43a5de !important; }
 .bg-purple{ background-color: #375acc !important; }
 .bg-red{ background-color: #e13939 !important; }
+.bg-beige{ background-color: #d3b589 !important; }
 
 .section-title {
     margin-bottom: 15px;
