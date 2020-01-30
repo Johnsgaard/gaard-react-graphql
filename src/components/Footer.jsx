@@ -1,5 +1,5 @@
 import React from 'react';
-import GaardLogo from '../images/GAARDfooter.png';
+import GaardLogo from '../images/logo.png';
 import TrackVisibility from 'react-on-screen';
 import { HashLink as Link } from 'react-router-hash-link';
 

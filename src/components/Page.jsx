@@ -13,11 +13,11 @@ const Page = () => (
   <div className="appear-animate">
     <div className="page" id="top">
       <AboutMe />
-      <ParallaxBreak type="wheat" size="400px" height="8px" />
+      <ParallaxBreak type="wheat" size="400px" height="20px" />
       <Resume />
-      <ParallaxBreak type="universe" size="500px" height="8px" />
+      <ParallaxBreak type="universe" size="400px" height="5px" />
       <Services />
-      <ParallaxBreak type="universe" size="400px" height="8px" />
+      <ParallaxBreak type="universe" size="400px" height="5px" />
       <Contact />
       <ContactParallax />
       <Footer returnToTop />
