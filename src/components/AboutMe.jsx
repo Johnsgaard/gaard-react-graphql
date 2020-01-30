@@ -25,7 +25,7 @@ const AboutMe = () => (
                                 just hanging out with family & friends.
                               </p>
                               <hr className="red" />
-                              <div className="mb-70 mb-xs-40">
+                              <div className="post-prev-img">
                                   <div>
                                       <strong>Age:</strong>
                                       &nbsp;{new AgeFromDateString('1991-11-19').age}
