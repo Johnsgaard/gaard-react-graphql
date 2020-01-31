@@ -5,6 +5,7 @@ import { Query } from 'react-apollo';
 import Emoji from 'react-emoji-render';
 import { HashLink as Link } from 'react-router-hash-link';
 import { reportAnalytics } from '../utilities';
+import GaardLogo from '../images/logo.png';
 
 const SIDE_PANEL_QUERY = gql`
 {
@@ -37,7 +38,7 @@ const SidePanel = (props) => {
                 {  /* Your text or image into link tag */ }
                 <div className="sp-logo-wrap local-scroll mb-40 mb-md-10 mb-xs-0">
                   <span className="logo">
-                    <img src={loading ? '../images/GAARDfooter.png' : data.viewer.avatarUrl} width="230" height="230" alt="" />
+                    <img src={loading ? GaardLogo : data.viewer.avatarUrl} width="230" height="230" alt="" />
                     <div className="ci-title font-alt">{!loading ? data.viewer.name : 'Loading'}</div>
                     <div className="ci-title font-alt" style={{ fontWeight: 700 }}><Emoji text={!loading ? data.viewer.status.emoji : 'tada'} />{!loading ? data.viewer.status.message : 'Loading'}</div>
                   </span>
