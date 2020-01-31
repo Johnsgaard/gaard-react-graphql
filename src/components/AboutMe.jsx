@@ -11,21 +11,21 @@ const AboutMe = () => (
                       
                       <div className="col-sm-7 col-md-5 col-lg-5 align-center pt-20 pt-lg-0 mb-xs-30">
                           <div className="hs-line-4 mb-20 text-left">Joshua Johnsgaard</div>
-                          <h1 className="text-justify hs-line-7 mb-40 mb-xs-10">Web Application Developer</h1>
-                          <div className="mb-70 mb-xs-40 text-justify">
-                              <p>
+                          <h1 className="text-left hs-line-7 mb-40 mb-xs-10">Web Application Developer</h1>
+                          <div className="row mb-70 mb-xs-40 text-justify">
+                              <p className="col-sm-10 col-md-12 col-lg-12" >
                                   <span className="dropcap font-alt">H</span>ello, I'm Joshua. I am a web developer & programmer
                                    living in Calgary, Alberta Canada. I am passionate about designing and developing web applications and user interfaces.
                                    I have experience in a diverse set of programming languages and tools, ranging from client side (HTML5, SCSS, Javascript, React, Apollo), 
                                    to server side (PHP, Node, C#, Java, GraphQL), all the way to the database (MySQL, Knex). I am always looking for more challenges 
                                    to help me grow as a developer.
                               </p>
-                              <p>
+                              <p className="col-sm-10 col-md-12 col-lg-12">
                                 Aside from being a web dev, I love to spend my time camping, drawing, playing video games, or 
                                 just hanging out with family & friends.
                               </p>
-                              <hr className="red" />
-                              <div className="post-prev-img">
+                              <hr className="red col-sm-9 col-md-12 col-lg-12"/>
+                              <div className="post-prev-img col-sm-8 col-md-12 col-lg-12">
                                   <div>
                                       <strong>Age:</strong>
                                       &nbsp;{new AgeFromDateString('1991-11-19').age}
