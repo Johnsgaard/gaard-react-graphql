@@ -25,6 +25,9 @@ yarn-error.log*
 # config
 /src/config.js
 
+#logs
+/src/server/stdout.txt
+/src/server/stderr.txt
 
 # # template
 # template-css/

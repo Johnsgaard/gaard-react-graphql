@@ -27,7 +27,7 @@ import './template-css/App.scss';
 
 // Global.Apollo
 const client = new ApolloClient({
-  uri: 'https://gaard.ca/graphql',
+  uri: 'https://gaard.ca/gaardql',
   cache: new InMemoryCache(),
 });
 

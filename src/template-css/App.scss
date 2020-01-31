@@ -386,9 +386,9 @@ img:not([draggable]), embed, object, video{
 
 body{
     color: #111;
-    font-size: 14px;
+    font-size: 15px;
     font-family: "Open Sans", arial, sans-serif;
-    line-height: 1.6;    
+    line-height: 1.5;    
     -webkit-font-smoothing: antialiased;
 }
 
@@ -402,7 +402,6 @@ a:hover{
 }
 
 h1,h2,h3,h4,h5,h6{
-    margin-bottom: 1.3em;
     line-height: 1.4;
     font-weight: 400;
    
@@ -1309,7 +1308,7 @@ a.bg-video-button-muted{
 .hs-line-7{
     margin-top: 0;
     position: relative;
-    font-size: 64px;
+    font-size: 50px;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -2737,6 +2736,7 @@ a.logo:hover{
 .bg-blue{ background-color: #43a5de !important; }
 .bg-purple{ background-color: #375acc !important; }
 .bg-red{ background-color: #e13939 !important; }
+.bg-beige{ background-color: #d3b589 !important; }
 
 .section-title {
     margin-bottom: 15px;
@@ -6048,12 +6048,13 @@ section:hover .small-item-carousel .owl-next{
     position: fixed;
     top: 20px;
     left: 20px;
-    width: 54px;
-    height: 54px;
-    background: #ff3333e6;
-    opacity: .85;
+    width: 44px;
+    height: 44px;
+    background: #ff3333;
+    opacity: .75;
     text-indent: -12345px;
     z-index: 1030;
+    cursor: pointer;
     
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
