@@ -2,6 +2,7 @@ import React from 'react';
 import GaardLogo from '../images/logo.png';
 import TrackVisibility from 'react-on-screen';
 import { HashLink as Link } from 'react-router-hash-link';
+import { reportAnalytics } from '../utilities';
 
 const Footer = (props) => (
   <footer  className="page-section bg-gray-lighter footer pb-60">
@@ -22,9 +23,9 @@ const Footer = (props) => (
 
       { /*  Social Links  */ }
       <div  className="footer-social-links mb-110 mb-xs-60">
-        <a href="https://www.facebook.com/joshua.johnsgaard" rel="noopener noreferrer" title="Facebook" target="_blank"><i  className="fa fa-facebook"></i></a>
-        <a href="https://www.linkedin.com/in/joshua-johnsgaard-9ba83a58/" rel="noopener noreferrer" title="LinkedIn+" target="_blank"><i  className="fa fa-linkedin"></i></a>
-        <a href="https://github.com/Johnsgaard" title="GitHub+" rel="noopener noreferrer" target="_blank"><i  className="fa fa-github"></i></a>
+        <a href="https://www.facebook.com/joshua.johnsgaard" rel="noopener noreferrer" title="Facebook" target="_blank" onClick={() => reportAnalytics('Facebook Clicked', 'Social Media', 'facebook')}><i  className="fa fa-facebook"></i></a>
+        <a href="https://www.linkedin.com/in/joshua-johnsgaard-9ba83a58/" rel="noopener noreferrer" title="LinkedIn+" target="_blank" onClick={() => reportAnalytics('LinkedIn Clicked', 'Social Media', 'linkedin')}><i  className="fa fa-linkedin"></i></a>
+        <a href="https://github.com/Johnsgaard" title="GitHub+" rel="noopener noreferrer" target="_blank"><i  className="fa fa-github" onClick={() => reportAnalytics('GitHub Clicked', 'Repos', 'GitHub')}></i></a>
       </div>
       { /*  End Social Links  */ }
 

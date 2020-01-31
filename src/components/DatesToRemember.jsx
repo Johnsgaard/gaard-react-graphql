@@ -78,7 +78,7 @@ class DatesPage extends React.Component {
 
   getDateItems = () => (
     this.state.events.map((event) => (
-      <li className="clearfix">
+      <li key={event.title} className="clearfix">
         <img src={event.image} alt={event.title} className="widget-posts-img" />
         <div>
           <span className="ci-title font-alt">{event.title}</span>
