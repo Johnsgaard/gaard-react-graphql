@@ -4,14 +4,14 @@ import MyImage from '../images/surf_black-min.png';
 
 const AboutMe = () => (
   <section className="page-section bg-dark bg-beige" data-background="" id="home">
-      <div className="relative container">
+      <div className="relative container breakword">
           <div className="home-content">
               <div className="home-text">
                   <div className="row mt-60 mt-xs-20">
                       
                       <div className="col-sm-7 col-md-5 col-lg-5 align-center pt-20 pt-lg-0 mb-xs-30">
                           <div className="hs-line-4 mb-20 text-left">Joshua Johnsgaard</div>
-                          <h1 className="text-left hs-line-7 mb-40 mb-xs-10">Web Application Developer</h1>
+                          <h1 className="text-left hs-line-7 mb-40 mb-xs-10 noletterspace">Web Application Developer</h1>
                           <div className="row mb-70 mb-xs-40 text-justify">
                               <p className="col-sm-10 col-md-12 col-lg-12" >
                                   <span className="dropcap font-alt">H</span>ello, I'm Joshua. I am a web developer & programmer

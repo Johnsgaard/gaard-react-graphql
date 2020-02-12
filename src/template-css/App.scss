@@ -105,6 +105,7 @@ Section Text:       15px/1.7 "Open Sans", arial, sans-serif;
 .left{float:left !important;}
 .right{float:right !important;}
 .relative{position:relative;}
+.breakword{word-break: break-word;}
 .hidden{display:none;}
 .inline-block{display:inline-block;}
 .white{ color: #fff !important; }
@@ -6506,3 +6507,5 @@ section:hover .small-item-carousel .owl-next{
     .multi-columns-row .col-lg-2:nth-child(6n + 7) { clear: left; }
     .multi-columns-row .col-lg-1:nth-child(12n + 13) { clear: left; }
 }
+
+.noletterspace{letter-spacing: 0px;}

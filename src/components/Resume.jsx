@@ -218,7 +218,7 @@ const Resume = () => (
                   myself and another co-worker to perform database backups, testing and pushing code up to production.
                 </p>
                 <p>
-                  In order to keep the project on-track and in-line with the client requirements, I had weekly demonstrations, frequent communication and sprint scheduling with the client.
+                  In order to keep the project on-track and in-line with requirements, I had weekly demonstrations, frequent communication and sprint scheduling with the client.
                 </p>
               </div>
             </div>
@@ -249,7 +249,7 @@ const Resume = () => (
                 At Aware360 I was responsible for creating and optimizing components to be used on their innovative real time web application.
                 Throughout this process I grew as a developer, designer and team player. I broadened my experience with languages and development tools, and the most
                 important part is that I enjoyed every bit of it. Git, JIRA and development were a daily routine and helped me accomplish all of my tasks on time and to spec.
-                Throughout my career at Aware360 I had the opportunity to work with PHP, HTML, CSS, SCSS, Javascript, JQuery, React, Node, NPM, MySQL, and C#.
+                Throughout my career at Aware360 I had the opportunity to work with PHP (Laravel), HTML, SCSS, Javascript, JQuery, React, Node, NPM, MySQL, and C#.
               </div>
             </div>
           </div>
