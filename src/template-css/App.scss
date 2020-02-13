@@ -1615,9 +1615,6 @@ a.logo:hover{
     -ms-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000); 
     transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
 }
-.inner-nav ul > li:first-child > a{
-
-}  
 .inner-nav ul li a:hover,
 .inner-nav ul li a.active{
     color: #000;
@@ -2034,9 +2031,6 @@ a.logo:hover{
  * Aligned left menu 
  */
 
-.mn-align-left{
-
-}
 .mn-align-left .inner-nav{
     float: none;
     width: 100%;
@@ -2317,9 +2311,6 @@ a.logo:hover{
     color: #fff;
 }
 
-.fm-has-sub{
-    
-}
 .fm-has-sub .fa{
     font-size: 14px;
 }
@@ -2800,6 +2791,8 @@ a.logo:hover{
     text-align: center;
     -webkit-backface-visibility: hidden;
     -webkit-transform: translateZ(0); 
+    backface-visibility: hidden;
+    transform: translateZ(0);
 }
 .image-fullwidth img{
     width: 100%;
@@ -2996,12 +2989,6 @@ a.logo:hover{
    Team
    ============================== */
 
-.team-grid{
-    
-}
-.team-item{
-    
-}
 .team-item-image{
     position: relative;
     overflow: hidden;
@@ -3771,9 +3758,6 @@ a.logo:hover{
     margin: -40px 0 0 0;
     text-align: right;
 }
-.banner-image img{
-    
-}
 
 
 /* ==============================
@@ -3795,9 +3779,6 @@ a.logo:hover{
 }
 .testimonial p{
     font-size: 18px;
-}
-.testimonial-author{
-
 }
 
 /*
@@ -3836,9 +3817,6 @@ a.logo:hover{
    Post previews
    ============================== */
 
-.post-grid{
-    
-}
 .post-prev-img{
     margin-bottom: 23px;
     position: relative;
@@ -3914,12 +3892,6 @@ a.logo:hover{
 }
 .form input.newsletter-field{
     max-width: 293px;
-}
-.form input.newsletter-field:hover{
-    
-}
-.form input.newsletter-field:focus{
-    
 }
 
 .form input.newsletter-field::-webkit-input-placeholder{
@@ -4514,9 +4486,6 @@ a.blog-item-more:hover{
 /*
  * Comments
  */
-.comment-list{
-
-}
 .comment-item{
     padding-top: 30px !important;
     border-top: 1px dotted #e9e9e9;
@@ -4757,10 +4726,6 @@ a.blog-item-more:hover{
 /* ==============================
    Shop
    ============================== */
-  
-.shopping-cart-table{
-
-}
 .shopping-cart-table a{
     text-decoration: none;
 }
@@ -5203,9 +5168,6 @@ section:hover .small-item-carousel .owl-next{
     color: #000;
     cursor: default;
 }
-.tpl-minimal-tabs-cont{
-}
-
 
 /*
  * Tabs Alternative
@@ -5255,9 +5217,6 @@ section:hover .small-item-carousel .owl-next{
     font-size: 48px;
     letter-spacing: 0;
 }
-.tpl-minimal-tabs-cont{
-}
-
 
 /*
  * Alert messages
@@ -5347,7 +5306,6 @@ section:hover .small-item-carousel .owl-next{
     top: 50%;
     right: 10px;
     font-family: 'FontAwesome';
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
@@ -5426,7 +5384,6 @@ section:hover .small-item-carousel .owl-next{
     top: 50%;
     right: 10px;
     font-family: 'FontAwesome';
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
@@ -5932,7 +5889,7 @@ section:hover .small-item-carousel .owl-next{
     width: 100%;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
-    -border-radius: 2px;
+    border-radius: 2px;
     
     -webkit-box-shadow: 0px 1px 5px rgba(0, 0, 0, .75);
     -moz-box-shadow: 0px 1px 5px rgba(0, 0, 0, .75);
@@ -6187,9 +6144,6 @@ section:hover .small-item-carousel .owl-next{
     color: #fff;
 }
 
-.sp-has-sub{
-    
-}
 .sp-has-sub .fa{
     font-size: 14px;
 }
@@ -6508,4 +6462,167 @@ section:hover .small-item-carousel .owl-next{
     .multi-columns-row .col-lg-1:nth-child(12n + 13) { clear: left; }
 }
 
+
+
 .noletterspace{letter-spacing: 0px;}
+
+
+/* Tooltip Styles */
+
+[tooltip] {
+  position: relative; /* opinion 1 */
+}
+/* Applies to all tooltips */
+[tooltip]::before,
+[tooltip]::after {
+  text-transform: none; /* opinion 2 */
+  font-size: .9em; /* opinion 3 */
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+  position: absolute;
+  display: none;
+  opacity: 0;
+}
+[tooltip]::before {
+  content: '';
+  border: 5px solid transparent; /* opinion 4 */
+  z-index: 1001; /* absurdity 1 */
+}
+[tooltip]::after {
+  content: attr(tooltip); /* magic! */
+  
+  /* most of the rest of this is opinion */
+  font-family: Helvetica, sans-serif;
+  text-align: center;
+  
+  /* 
+    Let the content set the size of the tooltips 
+    but this will also keep them from being obnoxious
+    */
+  min-width: 3em;
+  max-width: 21em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 1ch 1.5ch;
+  border-radius: .3ch;
+  box-shadow: 0 1em 2em -.5em rgba(0, 0, 0, 0.35);
+  background: #333;
+  color: #fff;
+  z-index: 1000; /* absurdity 2 */
+}
+
+/* Make the tooltips respond to hover */
+[tooltip]:hover::before,
+[tooltip]:hover::after {
+  display: block;
+}
+
+/* don't show empty tooltips */
+[tooltip='']::before,
+[tooltip='']::after {
+  display: none !important;
+}
+
+/* FLOW: UP */
+[tooltip]:not([flow])::before,
+[tooltip][flow^="up"]::before {
+  bottom: 100%;
+  border-bottom-width: 0;
+  border-top-color: #333;
+}
+[tooltip]:not([flow])::after,
+[tooltip][flow^="up"]::after {
+  bottom: calc(100% + 5px);
+}
+[tooltip]:not([flow])::before,
+[tooltip]:not([flow])::after,
+[tooltip][flow^="up"]::before,
+[tooltip][flow^="up"]::after {
+  left: 50%;
+  transform: translate(-50%, -.5em);
+}
+
+/* FLOW: DOWN */
+[tooltip][flow^="down"]::before {
+  top: 100%;
+  border-top-width: 0;
+  border-bottom-color: #333;
+}
+[tooltip][flow^="down"]::after {
+  top: calc(100% + 5px);
+}
+[tooltip][flow^="down"]::before,
+[tooltip][flow^="down"]::after {
+  left: 50%;
+  transform: translate(-50%, -1em);
+}
+
+/* FLOW: LEFT */
+[tooltip][flow^="left"]::before {
+  top: 50%;
+  border-right-width: 0;
+  border-left-color: #333;
+  left: calc(0em - 5px);
+  transform: translate(-.5em, -50%);
+}
+[tooltip][flow^="left"]::after {
+  top: 50%;
+  right: calc(100% + 5px);
+  transform: translate(-.5em, -50%);
+}
+
+/* FLOW: RIGHT */
+[tooltip][flow^="right"]::before {
+  top: 50%;
+  border-left-width: 0;
+  border-right-color: #333;
+  right: calc(0em - 5px);
+  transform: translate(.5em, -50%);
+}
+[tooltip][flow^="right"]::after {
+  top: 50%;
+  left: calc(100% + 5px);
+  transform: translate(.5em, -50%);
+}
+
+/* KEYFRAMES */
+@keyframes tooltips-vert {
+  to {
+    opacity: .9;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes tooltips-horz {
+  to {
+    opacity: .9;
+    transform: translate(0, -50%);
+  }
+}
+
+/* FX All The Things */ 
+[tooltip]:not([flow]):hover::before,
+[tooltip]:not([flow]):hover::after,
+[tooltip][flow^="up"]:hover::before,
+[tooltip][flow^="up"]:hover::after,
+[tooltip][flow^="down"]:hover::before,
+[tooltip][flow^="down"]:hover::after {
+  animation: tooltips-vert 300ms ease-out forwards;
+}
+
+[tooltip][flow^="left"]:hover::before,
+[tooltip][flow^="left"]:hover::after,
+[tooltip][flow^="right"]:hover::before,
+[tooltip][flow^="right"]:hover::after {
+  animation: tooltips-horz 300ms ease-out forwards;
+}
+/* End Tooltip Styles */
+
+.devlogo {
+  height: 20px !important;
+  margin-right: 5px;
+  margin-top: 5px;
+  max-width: 35px !important;
+}
