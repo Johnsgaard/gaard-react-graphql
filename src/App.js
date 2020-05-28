@@ -17,6 +17,7 @@ import MenuButton from './components/MenuButton';
 import Page from './components/Page';
 import MissingPage from './components/MissingPage';
 import DatesToRemember from './components/DatesToRemember';
+import PrivacyPolicy from './components/PrivacyPolicy';
 
 // Styles 
 import './template-css/bootstrap.min.css';
@@ -55,6 +56,7 @@ class App extends Component {
           <Switch>
             <Route path="/" exact component={Page} />
             <Route path="/dates" exact component={DatesToRemember} />
+            <Route path="/mmaempire" exact component={PrivacyPolicy} />
             <Route component={MissingPage} />
           </Switch>
         </div>
