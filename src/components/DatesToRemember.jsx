@@ -4,6 +4,7 @@ import CountUp from 'react-countup';
 import Emoji from 'react-emoji-render';
 
 import Cohen from '../images/CohenLarge.png';
+import Scout from '../images/Scout.png';
 import Wedding from '../images/wedding.png';
 import ActualWedding from '../images/actualWedding.png';
 import Becks from '../images/Becks.png';
@@ -26,41 +27,55 @@ class DatesPage extends React.Component {
           title: 'Cohen\'s Birthday',
           date: `Jul 16, ${this.currentYear}`,
           image: Cohen,
+          actualDate: 'Jul 16, 2018',
+        },
+        {
+          title: 'Scout\'s Birthday',
+          date: `Jun 19, ${this.currentYear}`,
+          image: Scout,
+          actualDate: 'Jun 19, 2020',
         },
         {
           title: 'Wedding Anniversary',
           date: `Sep 23, ${this.currentYear}`,
           image: Wedding,
+          actualDate: 'Sept 23, 2017',
         },
         {
           title: 'Actual Wedding Anniversary',
           date: `Jul 23, ${this.currentYear}`,
           image: ActualWedding,
+          actualDate: 'Jul 23, 2017',
         },
         {
           title: 'Beck\'s Birthday',
           date: `Dec 27, ${this.currentYear}`,
           image: Becks,
+          actualDate: 'Dec 27, 1991',
         },
         {
           title: 'My Birthday',
           date: `Nov 19, ${this.currentYear}`,
           image: Me,
+          actualDate: 'Nov 19, 1991',
         },
         {
           title: 'Dating Anniversary',
-          date: `${this.currentYear}-04-15`,
+          date: `Apr 15, ${this.currentYear}`,
           image: Dating,
+          actualDate: 'Apr 15, 2010',
         },
         {
           title: 'Kobber\'s Birthday',
           date: `Jul 31, ${this.currentYear}`,
           image: Kobber,
+          actualDate: 'Jul 31, 2015',
         },
         {
           title: 'X-mas',
           date: `Dec 25, ${this.currentYear}`,
           image: Xmas,
+          actualDate: 'December 25, 0',
         },
       ],
     };
@@ -76,13 +91,21 @@ class DatesPage extends React.Component {
     return Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
   }
 
+ getYearDifferenceFromNow = (date) => {
+    const now = new Date();
+    const then = new Date(date);
+    let diff =(now.getTime() - then.getTime()) / 1000;
+    diff /= (60 * 60 * 24);
+    return Math.abs(Math.round((diff/365.25) * 10) / 10);
+ }
+
   getDateItems = () => (
     this.state.events.map((event) => (
       <li key={event.title} className="clearfix">
-        <img src={event.image} alt={event.title} className="widget-posts-img" />
+        <img src={event.image} alt={event.title} className="widget-posts-img date-img" />
         <div>
           <span className="ci-title font-alt">{event.title}</span>
-          <TrackVisibility>
+          <TrackVisibility offset={200}>
             {({isVisible}) => {
               if (isVisible === true) {
                 if (this.getTimeDifference(event.date) === 0) {
@@ -103,9 +126,20 @@ class DatesPage extends React.Component {
                     </div>
                   );
                 }
-                return (<div className="hs-line-red"><CountUp start={0} end={this.getTimeDifference(event.date)} /> Days</div>)
+                return (
+                  <>
+                    <div className="hs-line-red">
+                      <br />
+                      <CountUp start={0} end={this.getTimeDifference(event.date)} />&nbsp;Days
+                    </div>
+                    <br />
+                    <div className="mb-40">
+                      <strong>{event.actualDate}</strong>
+                      <h5 className="black">{this.getYearDifferenceFromNow(event.actualDate)}&nbsp;Years</h5>
+                    </div>
+                  </>)
               }
-              return 'Uh oh! Invalid data.'
+              return <div style={{ minHeight: '80px' }}>&nbsp;</div>;
             }}
           </TrackVisibility>
         </div>
