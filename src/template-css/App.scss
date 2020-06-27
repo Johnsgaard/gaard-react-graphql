@@ -6628,4 +6628,9 @@ section:hover .small-item-carousel .owl-next{
 
 .date-img {
   max-height: 112px;
+  min-height: 112px;
+  min-width: 112px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 }

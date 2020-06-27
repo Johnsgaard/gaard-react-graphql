@@ -103,9 +103,9 @@ class DatesPage extends React.Component {
     this.state.events.map((event) => (
       <li key={event.title} className="clearfix">
         <img src={event.image} alt={event.title} className="widget-posts-img date-img" />
-        <div>
+        <div className="col-md-8 col-sm-6 mb-sm-50 mb-xs-30">
           <span className="ci-title font-alt">{event.title}</span>
-          <TrackVisibility offset={200}>
+          <TrackVisibility offset={1000}>
             {({isVisible}) => {
               if (isVisible === true) {
                 if (this.getTimeDifference(event.date) === 0) {
@@ -127,9 +127,8 @@ class DatesPage extends React.Component {
                   );
                 }
                 return (
-                  <>
+                  <div>
                     <div className="hs-line-red">
-                      <br />
                       <CountUp start={0} end={this.getTimeDifference(event.date)} />&nbsp;Days
                     </div>
                     <br />
@@ -137,7 +136,7 @@ class DatesPage extends React.Component {
                       <strong>{event.actualDate}</strong>
                       <h5 className="black">{this.getYearDifferenceFromNow(event.actualDate)}&nbsp;Years</h5>
                     </div>
-                  </>)
+                  </div>)
               }
               return <div style={{ minHeight: '80px' }}>&nbsp;</div>;
             }}
