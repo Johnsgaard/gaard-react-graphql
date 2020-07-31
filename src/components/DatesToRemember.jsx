@@ -125,7 +125,10 @@ class DatesPage extends React.Component {
                   return (
                     <div className="hs-green-n-bold">
                       <Emoji text=":sparkles:" />
-                      <CountUp start={0} end={this.getTimeDifference(event.date)} /> Days
+                      <CountUp start={0} end={this.getTimeDifference(event.date)} />
+                      {
+                        this.getTimeDifference(event.date) > 1 ? 'Days' : 'Day'
+                      }
                       <Emoji text=":sparkles:" />
                       <div className="mb-40">
                         <strong>{event.actualDate}</strong>
