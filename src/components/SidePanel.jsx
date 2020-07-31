@@ -74,6 +74,9 @@ const SidePanel = (props) => {
                   <li>
                     <Link to="/#contact" onClick={props.toggleSidePanel}>Contact</Link>
                   </li>
+                  <li>
+                    <Link to="/mmaempire" onClick={props.toggleSidePanel}>MMA Empire</Link>
+                  </li>
                 </ul>
 
                 </div>
@@ -85,7 +88,16 @@ const SidePanel = (props) => {
                   <a href="https://www.facebook.com/joshua.johnsgaard" title="Facebook" rel="noopener noreferrer" target="_blank" onClick={() => reportAnalytics('Facebook Clicked', 'Social Media', 'facebook')}><i className="fa fa-facebook"></i></a>
                   <a href="https://www.linkedin.com/in/joshua-johnsgaard-9ba83a58/" rel="noopener noreferrer" title="LinkedIn+" target="_blank" onClick={() => reportAnalytics('LinkedIn Clicked', 'Social Media', 'linkedin')}><i className="fa fa-linkedin"></i></a>
                   <a href="https://github.com/Johnsgaard" title="GitHub+" rel="noopener noreferrer" target="_blank" onClick={() => reportAnalytics('GitHub Clicked', 'Repos', 'GitHub')}><i className="fa fa-github"></i></a>
-                  <Link to="/dates" title="Countdown" onClick={props.toggleSidePanel} onClick={() => reportAnalytics('Dates Opened', 'Dates', 'viewed')}><i className="fa fa-calendar-o" ></i></Link>
+                  <Link
+                    to="/dates"
+                    title="Countdown"
+                    onClick={() => {
+                      reportAnalytics('Dates Opened', 'Dates', 'viewed');
+                      props.toggleSidePanel();
+                    }}
+                  >
+                    <i className="fa fa-calendar-o" ></i>
+                  </Link>
                 </div>
               {  /* End Social Links */ }
 
