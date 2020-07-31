@@ -1,24 +1,32 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import MyImage from '../images/surf_black-min.png';
+import SurfsOut from '../images/SurfsOut.JPG';
 
 const Error = () => (
-  <section className="page-section bg-dark bg-red" data-background="" id="home">
-      <div className="relative container">
+  <section
+    className="home-section bg-dark-alfa-30"
+    id="home"
+    style={{
+      backgroundImage: `url(${SurfsOut})`,
+      padding: '0px',
+      height: '99vh',
+    }}
+  >
+      <div className="relative container" style={{ height: '100vh' }}>
           <div className="home-content">
             <div className="home-text">
               <div className="hs-cont">
                 <div className="hs-wrap">
-                  <div className="hs-line-11 font-alt mb-10">
+                  <div className="text-left hs-line-7 mb-40 mb-xs-10 noletterspace">
                     Surfing around?
                   </div>
                   <br />
-                  <div className="hs-line-16 no-transp font-alt mb-10">
+                  <div className="text-left hs-line-10 no-transp font-alt mb-10">
                       The page you are looking for may be under construction.
                   </div>
                   <br />
-                  <p className="hs-line-8 no-transp mb-10">
+                  <p className="text-left hs-line-10 font-alt no-transp mb-10">
                       Please go back to my <Link to="/">HOME PAGE</Link> to catch some better waves.
                   </p>
                 </div>
@@ -26,9 +34,6 @@ const Error = () => (
             </div>
           </div>
           <br />
-          <div className="hs-wrap" style={{ border: 'none' }}>
-            <img src={MyImage} className="polaroid" alt=""/>
-          </div>
       </div>
   </section>
 );
