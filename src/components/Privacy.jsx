@@ -8,7 +8,7 @@ const Privacy = () => (
         <div className="home-content">
           <div className="home-text">
             <div className="hs-line-11 mb-10">
-              <h1 className="text-left hs-line-7 mb-xs-10 noletterspace">MMA Empire</h1>
+              <h1 className="text-left hs-line-7 mb-xs-10 noletterspace">MMA Empire (iOS App)</h1>
               <h2 className="section-title font-alt align-left mt-0 mb-70 mb-sm-40">Privacy Policy</h2>
             </div>
           </div>
