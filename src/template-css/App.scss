@@ -6621,9 +6621,9 @@ section:hover .small-item-carousel .owl-next{
 /* End Tooltip Styles */
 
 .devlogo {
-  height: 43px !important;
+  height: 55px !important;
   padding: 10px;
-  max-width: 43px !important;
+  max-width: 55px !important;
 }
 
 .date-img {
@@ -6633,4 +6633,10 @@ section:hover .small-item-carousel .owl-next{
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
+}
+
+.smallIcon {
+  height: 55px;
+  width: 55px;
+  display: inline-block;
 }

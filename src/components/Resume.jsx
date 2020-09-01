@@ -218,49 +218,49 @@ const Resume = () => (
                     </p>
                     <div><strong>tl;dr</strong></div>
                     <div>
-                      <a tooltip="GraphQL" flow="left" href="https://graphql.org/" rel="noopener noreferrer" target="_blank">
+                      <a className="smallIcon" tooltip="GraphQL" flow="left" href="https://graphql.org/" rel="noopener noreferrer" target="_blank">
                         <img className="devlogo" src={graphql} alt="GraphQL" />
                       </a>
-                      <a tooltip="Apollo" href="https://www.apollographql.com/" rel="noopener noreferrer" target="_blank">
+                      <a className="smallIcon" tooltip="Apollo" href="https://www.apollographql.com/" rel="noopener noreferrer" target="_blank">
                         <img className="devlogo" src={apollo} alt="Apollo" />
                       </a>
-                      <a tooltip="Prisma" href="https://www.prisma.io/" rel="noopener noreferrer" target="_blank">
+                      <a className="smallIcon" tooltip="Prisma" href="https://www.prisma.io/" rel="noopener noreferrer" target="_blank">
                         <img className="devlogo" src={prisma} alt="Prisma" />
                       </a>
-                      <a tooltip="React" href="https://reactjs.org/" rel="noopener noreferrer" target="_blank">
+                      <a className="smallIcon" tooltip="React" href="https://reactjs.org/" rel="noopener noreferrer" target="_blank">
                         <img className="devlogo" src={react} alt="React" />
                       </a>
-                      <a tooltip="Redux" href="https://redux.js.org/" rel="noopener noreferrer" target="_blank">
+                      <a className="smallIcon" tooltip="Redux" href="https://redux.js.org/" rel="noopener noreferrer" target="_blank">
                         <img className="devlogo" src={redux} alt="redux" />
                       </a>
                       <span tooltip="HTML5">
                         <img className="devlogo" src={html} alt="HTML5" />
                       </span>
-                      <a tooltip="Android" href="https://www.android.com/" rel="noopener noreferrer" target="_blank">
+                      <a className="smallIcon" tooltip="Android" href="https://www.android.com/" rel="noopener noreferrer" target="_blank">
                         <img className="devlogo" src={android} alt="Android" />
                       </a>
-                      <a tooltip="NodeJS" href="https://nodejs.org/en/" rel="noopener noreferrer" target="_blank">
+                      <a className="smallIcon" tooltip="NodeJS" href="https://nodejs.org/en/" rel="noopener noreferrer" target="_blank">
                         <img className="devlogo" src={node} alt="node" />
                       </a>
-                      <a tooltip="npm" href="https://www.npmjs.com/" rel="noopener noreferrer" target="_blank">
+                      <a className="smallIcon" tooltip="npm" href="https://www.npmjs.com/" rel="noopener noreferrer" target="_blank">
                         <img className="devlogo" src={npm} alt="npm" />
                       </a>
-                      <a tooltip="Docker" href="https://www.docker.com/" rel="noopener noreferrer" target="_blank">
+                      <a className="smallIcon" tooltip="Docker" href="https://www.docker.com/" rel="noopener noreferrer" target="_blank">
                         <img className="devlogo" src={docker} alt="docker" />
                       </a>
-                      <a tooltip="AWS" href="https://aws.amazon.com/" rel="noopener noreferrer" target="_blank">
+                      <a className="smallIcon" tooltip="AWS" href="https://aws.amazon.com/" rel="noopener noreferrer" target="_blank">
                         <img className="devlogo" src={amazon} alt="AWS" />
                       </a>
-                      <a tooltip="MySQL" href="https://www.mysql.com/" rel="noopener noreferrer" target="_blank">
+                      <a className="smallIcon" tooltip="MySQL" href="https://www.mysql.com/" rel="noopener noreferrer" target="_blank">
                         <img className="devlogo" src={mysql} alt="mysql" />
                       </a>
-                      <a tooltip="Jira" href="https://www.atlassian.com/software/jira" rel="noopener noreferrer" target="_blank">
+                      <a className="smallIcon" tooltip="Jira" href="https://www.atlassian.com/software/jira" rel="noopener noreferrer" target="_blank">
                         <img className="devlogo" src={jira} alt="jira" />
                       </a>
-                      <a tooltip="Gitlab" href="https://gitlab.com/" rel="noopener noreferrer" target="_blank">
+                      <a className="smallIcon" tooltip="Gitlab" href="https://gitlab.com/" rel="noopener noreferrer" target="_blank">
                         <img className="devlogo" src={gitlab} alt="gitlab" />
                       </a>
-                      <a tooltip="git" flow="right" href="https://git-scm.com/" rel="noopener noreferrer" target="_blank">
+                      <a className="smallIcon" tooltip="git" flow="right" href="https://git-scm.com/" rel="noopener noreferrer" target="_blank">
                         <img className="devlogo" src={git} alt="git" />
                       </a>
                     </div>
@@ -310,37 +310,37 @@ const Resume = () => (
                     </p>
                       <div><strong>tl;dr</strong></div>
                       <div>
-                        <a tooltip="Laravel" flow="left" href="https://laravel.com/" rel="noopener noreferrer" target="_blank">
+                        <a className="smallIcon" tooltip="Laravel" flow="left" href="https://laravel.com/" rel="noopener noreferrer" target="_blank">
                           <img className="devlogo" src={laravel} alt="Laravel" />
                         </a>
-                        <a tooltip="React" href="https://reactjs.org/" rel="noopener noreferrer" target="_blank">
+                        <a className="smallIcon" tooltip="React" href="https://reactjs.org/" rel="noopener noreferrer" target="_blank">
                           <img className="devlogo" src={react} alt="React" />
                         </a>
-                        <a tooltip="redux" href="https://redux.js.org/" rel="noopener noreferrer" target="_blank">
+                        <a className="smallIcon" tooltip="redux" href="https://redux.js.org/" rel="noopener noreferrer" target="_blank">
                           <img className="devlogo" src={redux} alt="redux" />
                         </a>
-                        <a tooltip="Immutable" href="https://immutable-js.github.io/immutable-js/" rel="noopener noreferrer" target="_blank">
+                        <a className="smallIcon" tooltip="Immutable" href="https://immutable-js.github.io/immutable-js/" rel="noopener noreferrer" target="_blank">
                           <img className="devlogo" src={immutable} alt="Immutable" />
                         </a>
                         <span tooltip="HTML5">
                           <img className="devlogo" src={html} alt="HTML5" />
                         </span>
-                        <a tooltip="NodeJS" href="https://nodejs.org/en/" rel="noopener noreferrer" target="_blank">
+                        <a className="smallIcon" tooltip="NodeJS" href="https://nodejs.org/en/" rel="noopener noreferrer" target="_blank">
                           <img className="devlogo" src={node} alt="node" />
                         </a>
-                        <a tooltip="npm" href="https://www.npmjs.com/" rel="noopener noreferrer" target="_blank">
+                        <a className="smallIcon" tooltip="npm" href="https://www.npmjs.com/" rel="noopener noreferrer" target="_blank">
                           <img className="devlogo" src={npm} alt="npm" />
                         </a>
-                        <a tooltip="GitHub" href="https://github.com/" rel="noopener noreferrer" target="_blank">
+                        <a className="smallIcon" tooltip="GitHub" href="https://github.com/" rel="noopener noreferrer" target="_blank">
                           <img className="devlogo" src={github} alt="gitlab" />
                         </a>
-                        <a tooltip="git" href="https://git-scm.com/" rel="noopener noreferrer" target="_blank">
+                        <a className="smallIcon" tooltip="git" href="https://git-scm.com/" rel="noopener noreferrer" target="_blank">
                           <img className="devlogo" src={git} alt="git" />
                         </a>
-                        <a tooltip="Jira" href="https://www.atlassian.com/software/jira" rel="noopener noreferrer" target="_blank">
+                        <a className="smallIcon" tooltip="Jira" href="https://www.atlassian.com/software/jira" rel="noopener noreferrer" target="_blank">
                           <img className="devlogo" src={jira} alt="jira" />
                         </a>
-                        <a tooltip="mysql" flow="right" href="https://www.mysql.com/" rel="noopener noreferrer" target="_blank">
+                        <a className="smallIcon" tooltip="mysql" flow="right" href="https://www.mysql.com/" rel="noopener noreferrer" target="_blank">
                           <img className="devlogo" src={mysql} alt="mysql" />
                         </a>
                       </div>
@@ -376,13 +376,13 @@ const Resume = () => (
                     </p>
                     <div><strong>tl;dr</strong></div>
                     <div>
-                      <a tooltip="iOS" flow="left" href="https://apple.ca/" rel="noopener noreferrer" target="_blank">
+                      <a className="smallIcon" tooltip="iOS" flow="left" href="https://apple.ca/" rel="noopener noreferrer" target="_blank">
                         <img className="devlogo" src={ios} alt="iOS" />
                       </a>
-                      <a tooltip="React" href="https://reactjs.org/" rel="noopener noreferrer" target="_blank">
+                      <a className="smallIcon" tooltip="React" href="https://reactjs.org/" rel="noopener noreferrer" target="_blank">
                         <img className="devlogo" src={react} alt="React" />
                       </a>
-                      <a tooltip="Android" flow="right" href="https://www.android.com/" rel="noopener noreferrer" target="_blank">
+                      <a className="smallIcon" tooltip="Android" flow="right" href="https://www.android.com/" rel="noopener noreferrer" target="_blank">
                         <img className="devlogo" src={android} alt="Android" />
                       </a>
                     </div>
