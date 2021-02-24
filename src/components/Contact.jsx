@@ -39,7 +39,7 @@ const Contact = () => (
                   Address
                 </div>
                 <div  className="ci-text">
-                  Calgary AB, Canada
+                  Campbell River, BC Canada
                 </div>
               </div>
             </div>
