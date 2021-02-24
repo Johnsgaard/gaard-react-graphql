@@ -8,12 +8,14 @@ const Error = () => (
     className="home-section bg-dark-alfa-30"
     id="home"
     style={{
-      backgroundImage: `url(${SurfsOut})`,
       padding: '0px',
       height: '99vh',
+      backgroundImage: `url(${SurfsOut})`,
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat'
     }}
   >
-      <div className="relative container" style={{ height: '100vh' }}>
+      <div className="relative container chill-animation" style={{ height: '100%', width: '100%' }}>
           <div className="home-content">
             <div className="home-text">
               <div className="hs-cont">

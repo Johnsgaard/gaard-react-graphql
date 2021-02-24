@@ -6640,3 +6640,53 @@ section:hover .small-item-carousel .owl-next{
   width: 55px;
   display: inline-block;
 }
+
+.chill-animation {
+    color: black;
+    background-color: ivory;
+    /*animation-iteration-count: infinite;*/
+    animation: party 40s infinite;
+    animation-fill-mode: forwards;
+  }
+  .party-animation {
+    color: black;
+    background-color: ivory;
+    /*animation-iteration-count: infinite;*/
+    animation: party 500ms infinite;
+    animation-fill-mode: forwards;
+  }
+  @keyframes party {
+    0% {
+      background-color: rgba(255, 141, 139, 0.3);
+    }
+    10% {
+      background-color: rgba(254, 214, 137, 0.3);
+    }
+    20% {
+      background-color: rgba(136, 255, 137, 0.3);
+    }
+    30% {
+      background-color: rgba(135, 255, 255, 0.3);
+    }
+    40% {
+      background-color: rgba(139, 181, 254, 0.3);
+    }
+    50% {
+      background-color: rgba(215, 140, 255, 0.3);
+    }
+    60% {
+      background-color: rgba(255, 140, 255, 0.3);
+    }
+    70% {
+      background-color: rgba(255, 104, 247, 0.3);
+    }
+    80% {
+      background-color: rgba(254, 108, 183, 0.3);
+    }
+    90% {
+      background-color: rgba(255, 105, 104, 0.3);
+    }
+    100% {
+      background-color: rgba(255, 141, 139, 0.3);
+    }
+  }
