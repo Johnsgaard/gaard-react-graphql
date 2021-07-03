@@ -7,6 +7,11 @@ import { gql } from 'apollo-boost';
 import { Query } from 'react-apollo';
 
 // software logos
+import typescript from '../images/logos/typescript.svg';
+import rancher from '../images/logos/rancher.svg';
+import scss from '../images/logos/scss.svg';
+import postgresql from '../images/logos/postgresql.svg';
+import mobx from '../images/logos/mobx.svg';
 import laravel from '../images/logos/laravel.svg';
 import react from '../images/logos/react.svg';
 import immutable from '../images/logos/immutable.svg';
@@ -96,7 +101,7 @@ const Resume = () => (
                         role="progressbar"
                         style={{ width: barPercentString}}
                       >
-                        JS / React / Node / GraphQL <span>{barPercentString}</span>
+                        JS / TS / React / Node / GraphQL <span>{barPercentString}</span>
                       </div>
                     )}}
                   </CountTo>) : null}
@@ -148,7 +153,7 @@ const Resume = () => (
                 { /* Bar Item */ }
                 <div className="progress tpl-progress">
                   {isVisible
-                    ? (<CountTo from={70} to={85} speed={100}>
+                    ? (<CountTo from={70} to={95} speed={100}>
                     {(value) => {
                       const barWidth = value ? value : 0;
                       const barPercentString = `${barWidth}%`;
@@ -204,13 +209,96 @@ const Resume = () => (
 
                 { /* Project Detail */ }
                 <div className="work-detail">
+                  <h5 className="font-alt mt-0 mb-20">INgrooves Music Group</h5>
+                  <div className="work-full-detail">
+                    <p>
+                      <strong>Project(s)</strong> INgrooves platform
+                    </p>
+                    <p>
+                      <strong>Date:</strong> June 2021 - Current
+                    </p>
+                    <p>
+                      <strong>Website:</strong>
+                      <a href="https://www.ingrooves.com/" rel="noopener noreferrer" target="_blank">ingrooves.com</a>
+                    </p>
+                    <div><strong>tl;dr</strong></div>
+                    <div>
+                      <a className="smallIcon" tooltip="TypeScript" flow="left" href="https://www.typescriptlang.org/" rel="noopener noreferrer" target="_blank">
+                        <img className="devlogo" src={typescript} alt="TypeScript" />
+                      </a>
+                      <a className="smallIcon" tooltip="React" href="https://reactjs.org/" rel="noopener noreferrer" target="_blank">
+                        <img className="devlogo" src={react} alt="React" />
+                      </a>
+                      <a className="smallIcon" tooltip="MobX" href="https://mobx.js.org/" rel="noopener noreferrer" target="_blank">
+                        <img className="devlogo" src={mobx} alt="mobx" />
+                      </a>
+                      <span tooltip="HTML5">
+                        <img className="devlogo" src={html} alt="HTML5" />
+                      </span>
+                      <a className="smallIcon" tooltip="Sass" href="https://sass-lang.com/" rel="noopener noreferrer" target="_blank">
+                        <img className="devlogo" src={scss} alt="Sass" />
+                      </a>
+                      <a className="smallIcon" tooltip="NodeJS" href="https://nodejs.org/en/" rel="noopener noreferrer" target="_blank">
+                        <img className="devlogo" src={node} alt="node" />
+                      </a>
+                      <a className="smallIcon" tooltip="npm" href="https://www.npmjs.com/" rel="noopener noreferrer" target="_blank">
+                        <img className="devlogo" src={npm} alt="npm" />
+                      </a>
+                      <a className="smallIcon" tooltip="Docker" href="https://www.docker.com/" rel="noopener noreferrer" target="_blank">
+                        <img className="devlogo" src={docker} alt="docker" />
+                      </a>
+                      <a className="smallIcon" tooltip="AWS" href="https://aws.amazon.com/" rel="noopener noreferrer" target="_blank">
+                        <img className="devlogo" src={amazon} alt="AWS" />
+                      </a>
+                      <a className="smallIcon" tooltip="PostgreSQL" href="https://www.postgresql.org/" rel="noopener noreferrer" target="_blank">
+                        <img className="devlogo" src={postgresql} alt="postgresql" />
+                      </a>
+                      <a className="smallIcon" tooltip="Jira" href="https://www.atlassian.com/software/jira" rel="noopener noreferrer" target="_blank">
+                        <img className="devlogo" src={jira} alt="jira" />
+                      </a>
+                      <a className="smallIcon" tooltip="Gitlab" href="https://gitlab.com/" rel="noopener noreferrer" target="_blank">
+                        <img className="devlogo" src={gitlab} alt="gitlab" />
+                      </a>
+                      <a className="smallIcon" tooltip="Rancher" href="https://rancher.com/" rel="noopener noreferrer" target="_blank">
+                        <img className="devlogo" src={rancher} alt="rancher" />
+                      </a>
+                      <a className="smallIcon" tooltip="git" flow="right" href="https://git-scm.com/" rel="noopener noreferrer" target="_blank">
+                        <img className="devlogo" src={git} alt="git" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                { /* End Project Detail */ }
+
+              </div>
+
+              <div className="col-md-8 col-sm-6 mb-sm-50 mb-xs-30">
+                <p>
+                  As a full stack developer at INgrooves Music Group, it is my responsibility to execute features, fixes, and design changes that are making it within each release cycle of the platform.
+                   Working with the design team, I ensure everythign being worked on is to spec and meets the acceptance criteria. Working with the internal project team we are gathered for a daily standup and communicate what our tasks are 
+                   to ensure there is no overlap work.
+                </p>
+                <p>
+                  The tech stacks vary within each segment of the INgrooves platform so there is <i>A LOT</i> of knowledge transfer between the teams. There's nothing more satisfying than working with an awesome team and working in an industry 
+                  that is fast-paced and flexible.
+                </p>
+              </div>
+            </div>
+
+            { /* Section Content */ }
+            <div className="col-sm-9 col-sm-offset-3">
+              <hr />
+              <div className="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
+
+                { /* Project Detail */ }
+                <div className="work-detail">
                   <h5 className="font-alt mt-0 mb-20">VizworX</h5>
                   <div className="work-full-detail">
                     <p>
-                      <strong>Project:</strong> Admin portal<br /> Energy artifact visualization <br />Government data visualization <br />Android App
+                      <strong>Project(s)</strong> Admin portal;<br /> Energy artifact visualization; <br />Government data visualization; <br />Android App.
                     </p>
                     <p>
-                      <strong>Date:</strong> Jan 2018 - current
+                      <strong>Date:</strong> Jan 2018 - May 2021
                     </p>
                     <p>
                       <strong>Website:</strong>
@@ -236,6 +324,9 @@ const Resume = () => (
                       <span tooltip="HTML5">
                         <img className="devlogo" src={html} alt="HTML5" />
                       </span>
+                      <a className="smallIcon" tooltip="Sass" href="https://sass-lang.com/" rel="noopener noreferrer" target="_blank">
+                        <img className="devlogo" src={scss} alt="Sass" />
+                      </a>
                       <a className="smallIcon" tooltip="Android" href="https://www.android.com/" rel="noopener noreferrer" target="_blank">
                         <img className="devlogo" src={android} alt="Android" />
                       </a>
@@ -292,6 +383,7 @@ const Resume = () => (
               </div>
             </div>
             <div className="col-sm-offset-3 col-sm-9">
+              <hr />
               <div className="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
 
                 { /* Project Detail */ }
@@ -299,7 +391,7 @@ const Resume = () => (
                   <h5 className="font-alt mt-0 mb-20">Aware 360</h5>
                   <div className="work-full-detail">
                     <p>
-                      <strong>Project:</strong> Aware360 Platform
+                      <strong>Project(s)</strong> Aware360 Platform.
                     </p>
                     <p>
                       <strong>Date:</strong> Nov 2014 - Jan 2018
@@ -325,6 +417,9 @@ const Resume = () => (
                         <span tooltip="HTML5">
                           <img className="devlogo" src={html} alt="HTML5" />
                         </span>
+                        <a className="smallIcon" tooltip="Sass" href="https://sass-lang.com/" rel="noopener noreferrer" target="_blank">
+                          <img className="devlogo" src={scss} alt="Sass" />
+                        </a>
                         <a className="smallIcon" tooltip="NodeJS" href="https://nodejs.org/en/" rel="noopener noreferrer" target="_blank">
                           <img className="devlogo" src={node} alt="node" />
                         </a>
@@ -362,6 +457,7 @@ const Resume = () => (
         <div className="section-text mb-60 mb-sm-40">
           <div className="row">
             <div className="col-sm-offset-3 col-sm-9">
+              <hr />
               <div className="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
 
                 { /* Project Detail */ }
@@ -418,7 +514,7 @@ const Resume = () => (
                               <h4 className="mt-0">SAIT, Diploma in IT Majoring in Software Development</h4>
                               <div className="section-text">
                                 <ul>
-                                  <li>Followed Optimal Flexible Architecture Standards for Oracle 11g on a Windows platform</li>
+                                  <li>Followed Optimal Flexible Architecture Standards for Oracle 11g on a Windows OS</li>
                                   <li>Developed a fully functional java enterprise application for a second-year project</li>
                                   <li>Knowledgeable and experienced with the use and application of HTML 5, CSS 3, Java Script, JQuery, Java, SQL and PLSQL</li>
                                   <li>Experience with MySQL, Oracle 10g and 11g, OEM, Netbeans, Eclipse, Glassfish 4.0, SVN, and Apache</li>

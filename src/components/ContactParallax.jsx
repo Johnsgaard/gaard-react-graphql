@@ -12,7 +12,7 @@ const ContactParallax = () => (
         <div  className="align-center">
           <h3  className="bg-light font-alt">Want to discuss your next project?</h3>
           <div>
-            <a href="mailto:hello@gaard.ca"  className="btn btn-mod btn-w btn-medium btn-round">Lets talk</a>
+            <a href="mailto:hello@gaard.ca"  className="btn btn-mod btn-w btn-circle btn-medium chill-animation" style={{ opacity: 1 }}>Lets chat</a>
           </div>
         </div>
 

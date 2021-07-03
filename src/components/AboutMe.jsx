@@ -40,7 +40,7 @@ const AboutMe = () => (
                                   </div>
                                   <div>
                                       <strong>Status: </strong>
-                                      &nbsp;Open to opportunities
+                                      &nbsp; ✨👨‍💻 Full stack developer @ INgrooves Music Group ✨
                                   </div>
                               </div>
                           </div>
