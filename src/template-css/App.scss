@@ -2799,9 +2799,37 @@ a.logo:hover{
 }
 
 .polaroid {
-    box-shadow: 0 15px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 3px;
-}
+    background: #ffffff;
+    padding: 15px 15px 110px;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+    z-index: 0;
+    position: relative;
+    max-height: 650px;
+    overflow-y: hidden;
+
+    .insetShadow {
+        position: absolute;
+        width: calc(100% - 30px);
+        margin: 15px 15px;
+        height: 560px;
+        box-shadow: inset 0px 0px 10px 0px #000000;
+        top: 0;
+        left: 0;
+    }
+
+    img {
+        z-index: 1;
+        width: 100%;
+        height: 560px;
+        object-fit: cover;
+    }
+  }
+  .polaroid :after {
+    color: #333;
+    position: relative;
+  }
 
 /* Breadcrumbs */
 

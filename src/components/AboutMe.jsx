@@ -1,6 +1,6 @@
 import React from 'react';
 import { AgeFromDateString } from 'age-calculator';
-import MyImage from '../images/surf_black-min.png';
+import MyImage from '../images/Gaard2021.jpg';
 
 const AboutMe = () => (
   <section className="page-section bg-dark bg-beige" data-background="" id="home">
@@ -9,7 +9,7 @@ const AboutMe = () => (
               <div className="home-text">
                   <div className="row mt-60 mt-xs-20">
                       
-                      <div className="col-sm-7 col-md-5 col-lg-5 align-center pt-20 pt-lg-0 mb-xs-30">
+                      <div className="col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-1 col-lg-5 align-center pt-20 pt-lg-0 mb-xs-30">
                           <div className="hs-line-4 mb-20 text-left">Joshua Johnsgaard</div>
                           <h1 className="text-left hs-line-7 mb-40 mb-xs-10 noletterspace">Mobile & Web app developer</h1>
                           <div className="row mb-70 mb-xs-40 text-justify">
@@ -46,8 +46,9 @@ const AboutMe = () => (
                           </div>
                       </div>
                       
-                      <div className="col-sm-4 col-md-6 col-sm-offset-1 col-lg-offset-1">
-                          <img src={MyImage} className="polaroid" alt=""/>
+                      <div className="col-sm-8 col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 col-sm-offset-2 col-lg-5 col-lg-offset-1 polaroid">
+                        <div className="insetShadow" />
+                        <img src={MyImage} alt="it me"/>
                       </div>
                       
                   </div>
