@@ -1,8 +1,8 @@
-const { ApolloClient, gql } = require('apollo-boost');
-const { createHttpLink } = require('apollo-link-http');
-const { InMemoryCache } = require('apollo-cache-inmemory');
-const fetch = require('node-fetch')
-const token = require('../config');
+const { ApolloClient, gql } = require("apollo-boost");
+const { createHttpLink } = require("apollo-link-http");
+const { InMemoryCache } = require("apollo-cache-inmemory");
+const fetch = require("node-fetch");
+const token = require("../config");
 
 const VIEWER = gql`
   {
@@ -30,14 +30,14 @@ const VIEWER = gql`
 `;
 
 const opts = {
-  credentials: 'same-origin',
+  credentials: "same-origin",
   headers: {
-    'authorization': `bearer ${token}`,
+    authorization: `bearer ${token}`,
   },
 };
 
- function gitConnect() {
-    const client = new ApolloClient({
+function gitConnect() {
+  const client = new ApolloClient({
     link: createHttpLink({
       uri: "https://api.github.com/graphql",
       fetch: fetch,
@@ -45,7 +45,7 @@ const opts = {
     }),
     cache: new InMemoryCache(),
   });
-  return client.query({ query: VIEWER })
- }
+  return client.query({ query: VIEWER });
+}
 
- module.exports = gitConnect;
+module.exports = gitConnect;
