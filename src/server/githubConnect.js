@@ -32,7 +32,7 @@ const VIEWER = gql`
 const opts = {
   credentials: "same-origin",
   headers: {
-    authorization: `bearer ${token}`,
+    authorization: `token ${token}`,
   },
 };
 
