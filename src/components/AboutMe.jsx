@@ -1,6 +1,6 @@
 import React from 'react';
 import { AgeFromDateString } from 'age-calculator';
-import MyImage from '../images/KobberAndMe.png';
+import MyImage from '../images/SurfsOut.JPG';
 
 const AboutMe = () => (
   <section className="page-section bg-dark bg-beige" data-background="" id="home">
