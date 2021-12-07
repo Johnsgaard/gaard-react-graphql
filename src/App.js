@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // Apollo
@@ -7,8 +7,7 @@ import ApolloClient from "apollo-boost";
 import { InMemoryCache } from "apollo-cache-inmemory";
 
 // Components
-import SidePanel from "./components/SidePanel";
-import MenuButton from "./components/MenuButton";
+import HomePage from "./components/HomePage";
 import Page from "./components/Page";
 import MissingPage from "./components/MissingPage";
 import DatesToRemember from "./components/DatesToRemember";
@@ -26,19 +25,13 @@ const client = new ApolloClient({
 });
 
 const App = () => {
-  const [spOpen, setSpOpen] = useState(false);
-  const toggleSidePanel = () => {
-    setSpOpen(!spOpen);
-  };
-
   return (
     <Router>
       <ApolloProvider client={client}>
         <div className="App">
-          <MenuButton toggleSidePanel={toggleSidePanel} />
-          <SidePanel spOpen={spOpen} toggleSidePanel={toggleSidePanel} />
           <Switch>
-            <Route path="/" exact component={Page} />
+            <Route path="/" exact component={HomePage} />
+            <Route path="/Josh" exact component={Page} />
             <Route path="/dates" exact component={DatesToRemember} />
             <Route path="/mmaempire" exact component={PrivacyPolicy} />
             <Route component={MissingPage} />
