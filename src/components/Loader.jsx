@@ -1,10 +1,10 @@
-import React from 'react';
-import '../template-css/Loader.scss';
+import React from "react";
+import "../template-css/Loader.scss";
 
 const Loader = () => (
-  <div className="page-loader">
-    <div className="loader">Loading...</div>
-  </div>
+    <div className="page-loader">
+        <div className="loader"></div>
+    </div>
 );
 
 export default Loader;

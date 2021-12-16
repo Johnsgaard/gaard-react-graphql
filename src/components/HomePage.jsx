@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import Footer from "./Footer";
 import TrackVisibility from "react-on-screen";
 
+import Loader from "./Loader";
+
 // images
 import CowboyCohen from "../images/cowboyCohen.jpg";
 import OceanScout from "../images/oceanScout.jpg";
@@ -11,7 +13,9 @@ import KobberBday from "../images/kobberBday.jpg";
 import ScoutHalloween from "../images/scoutHalloween.jpg";
 
 const HomePage = () => {
+    const [imagesLoaded, setImagesLoaded] = React.useState(false);
     const [pageScrolled, setPageScrolled] = useState(false);
+    const images = [CowboyCohen, OceanScout, ElkFalls, CohenScooter, KobberBday, ScoutHalloween];
 
     const handleScroll = () => {
         if (window.pageYOffset > 0) {
@@ -21,12 +25,43 @@ const HomePage = () => {
         }
     };
 
+    // useEffect(() => {
+    //     const image = new Image();
+    //     image.onload = () => setImagesLoaded(true);
+    //     image.src = ScoutHalloween;
+
+    //     return () => {
+    //         image.onload = null;
+    //     };
+    // }, []);
+
+    useEffect(() => {
+        Promise.all(
+            images.map(
+                (src) =>
+                    new Promise((res) => {
+                        const image = new Image();
+                        image.onload = res;
+                        image.src = src;
+                    })
+            )
+        ).then(() => {
+            setImagesLoaded(true);
+        });
+
+        // TODO: Probably need something to cancel the promises if we unmount
+    }, [images]);
+
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
     }, []);
+
+    if (!imagesLoaded) {
+        return <Loader />;
+    }
 
     return (
         <div id="home" className="appear-animate homepage">
