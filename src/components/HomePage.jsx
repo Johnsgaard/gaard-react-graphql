@@ -25,16 +25,6 @@ const HomePage = () => {
         }
     };
 
-    // useEffect(() => {
-    //     const image = new Image();
-    //     image.onload = () => setImagesLoaded(true);
-    //     image.src = ScoutHalloween;
-
-    //     return () => {
-    //         image.onload = null;
-    //     };
-    // }, []);
-
     useEffect(() => {
         Promise.all(
             images.map(
