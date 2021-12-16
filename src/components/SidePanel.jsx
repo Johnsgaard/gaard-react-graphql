@@ -88,27 +88,30 @@ const SidePanel = (props) => {
               <div className="sp-wrapper" id="side-panel-menu">
                 <ul className="sp-menu-links local-scroll">
                   <li>
-                    <Link to="/#home" onClick={props.toggleSidePanel}>
+                    <Link to="/" onClick={props.toggleSidePanel}>
                       Home
                     </Link>
                   </li>
 
                   <li>
-                    <Link to="/#resume" onClick={props.toggleSidePanel}>
+                    <Link to="/joshua/#resume" onClick={props.toggleSidePanel}>
                       Resume / CV
                     </Link>
                   </li>
 
                   {/* Item With Sub */}
                   <li>
-                    <Link to="/#services" onClick={props.toggleSidePanel}>
+                    <Link
+                      to="/joshua/#services"
+                      onClick={props.toggleSidePanel}
+                    >
                       Services
                     </Link>
                   </li>
                   {/* End Item With Sub */}
 
                   <li>
-                    <Link to="/#contact" onClick={props.toggleSidePanel}>
+                    <Link to="/joshua/#contact" onClick={props.toggleSidePanel}>
                       Contact
                     </Link>
                   </li>
