@@ -11,7 +11,7 @@
     "apollo-link-http": "1.5.17",
     "apollo-server": "2.25.3",
     "base-64": "0.1.0",
-    "graphql": "15.4.0",
+    "graphql": "15.8.0",
     "graphql-tag": "2.12.6",
     "node-fetch": "2.6.1",
     "react": "16.13.1",
