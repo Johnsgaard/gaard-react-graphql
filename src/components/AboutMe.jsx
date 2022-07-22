@@ -4,8 +4,8 @@ import MyImage from "../images/ScoutToss.jpg";
 import { gsap } from "gsap";
 
 const AboutMe = () => {
-  const offsetXMax = 100;
-  const offsetYMax = 200;
+  const offsetXMax = 60;
+  const offsetYMax = 60;
   const handleMouseMove = (e) => {
     const winHeight = window.outerHeight;
     const winWidth = window.outerWidth;
@@ -50,7 +50,7 @@ const AboutMe = () => {
     <section className="home-section" data-background="" id="home">
       <div className="container min-height-100vh d-flex align-items-center pt-100 pb-100">
         <div className="split-background d-none d-lg-block d-xl-block zen-animation" />
-        <div className="home-content text-start">
+        <div id="parallax" className="home-content text-start">
           <div className="row mt-5 mt-sm-2 mt-md-1 mt-lg-0 mt-xl-0">
             <div className="col-lg-5 d-flex mb-md-60 mt-5 mt-md-3 mt-sm-5">
               <div className="mt-sm-5 mt-md-5 mt-lg-5">
@@ -102,10 +102,7 @@ const AboutMe = () => {
                 </div>
               </div>
             </div>
-            <div
-              id="parallax"
-              className="split-image col-xl-6 col-lg-6 offset-lg-1 d-flex align-items-center polaroid"
-            >
+            <div className="split-image col-xl-6 col-lg-6 offset-lg-1 d-flex align-items-center polaroid">
               <div className="insetShadow" />
               <img
                 className="wow fadeScaleIn animated"
