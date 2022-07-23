@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { AgeFromDateString } from "age-calculator";
 import MyImage from "../images/ScoutToss.jpg";
 import { gsap } from "gsap";
+import Typist from "react-text-typist";
+import TrackVisibility from "react-on-screen";
 
 const AboutMe = () => {
   const offsetMax = 200;
@@ -57,9 +59,28 @@ const AboutMe = () => {
                 <h1 className="hs-line-10 uppercase mb-30 mt-xs-10 wow fadeInUpShort animated">
                   Joshua Johnsgaard
                 </h1>
-                <h2 className="hs-line-7 mb-60 mb-xs-40 wow fadeInUpShort animated">
-                  Mobile & Web app developer
-                </h2>
+                <TrackVisibility>
+                  {({ isVisible }) => (
+                    <h1 className="mb-60 mb-xs-40 wow fadeInUpShort animated">
+                      {isVisible && (
+                        <Typist
+                          cursorColor="#ff3333"
+                          sentences={[
+                            "Mobile",
+                            "Web Application",
+                            "Full Stack",
+                          ]}
+                          deletingSpeed={120}
+                          pauseTime={2000}
+                          cursorSmooth
+                          loop={false}
+                        />
+                      )}
+                      <br />
+                      Developer
+                    </h1>
+                  )}
+                </TrackVisibility>
                 <div className="text-justify services-descr">
                   <p>
                     <span className="dropcap font-alt">H</span>ello, I'm Joshua.
@@ -80,23 +101,30 @@ const AboutMe = () => {
                     family.
                   </p>
                   <hr />
-                  <div>
-                    <div>
-                      <strong>Age:</strong>
-                      &nbsp;{new AgeFromDateString("1991-11-19").age}
+                  <div className="row">
+                    <div className="col-sm-6 col-md-6 col-lg-3">
+                      <div className="alt-features-title">Age:</div>
+                      <div className="alt-features-desc small">
+                        {new AgeFromDateString("1991-11-19").age}
+                      </div>
                     </div>
-                    <div>
-                      <strong>Location:</strong>
-                      &nbsp;Campbell River, British Columbia Canada
+                    <div className="col-sm-6 col-md-6 col-lg-3">
+                      <div className="alt-features-title">Location:</div>
+                      <div className="alt-features-desc small">
+                        Campbell River, British Columbia Canada
+                      </div>
                     </div>
-                    <div>
-                      <strong>Email: </strong>
-                      &nbsp;hello@gaard.ca
+                    <div className="col-sm-6 col-md-6 col-lg-3">
+                      <div className="alt-features-title">Email: </div>
+                      <div className="alt-features-desc small">
+                        hello@gaard.ca
+                      </div>
                     </div>
-                    <div>
-                      <strong>Status: </strong>
-                      &nbsp; ✨👨‍💻 Full stack developer @ INgrooves Music Group
-                      ✨
+                    <div className="col-sm-6 col-md-6 col-lg-3">
+                      <div className="alt-features-title">Status: </div>
+                      <div className="alt-features-desc small">
+                        ✨👨‍💻 Full stack developer @ INgrooves Music Group ✨
+                      </div>
                     </div>
                   </div>
                 </div>
