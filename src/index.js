@@ -3,6 +3,9 @@ import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
 import Loader from "./components/Loader";
 
+//icon styles
+import "./template-css/et-line.css";
+
 // Evolution styles
 import "./template-evolution/css/bootstrap.min.css";
 import "./template-evolution/css/all.min.css";
