@@ -426,6 +426,14 @@
   display: inline-block;
 }
 
+.zen-animation {
+  color: black;
+  background-color: ivory;
+  /*animation-iteration-count: infinite;*/
+  animation: zen 20s infinite;
+  animation-fill-mode: forwards;
+}
+
 .chill-animation {
   color: black;
   background-color: ivory;
@@ -473,6 +481,24 @@
   }
   100% {
     background-color: rgba(255, 141, 139, 0.6);
+  }
+}
+
+@keyframes zen {
+  0% {
+    background-color: rgba(#f4e7d4, 0.9);
+  }
+  25% {
+    background-color: rgba(#ecdbc3, 0.9);
+  }
+  50% {
+    background-color: rgba(#e7d2b4, 0.9);
+  }
+  75% {
+    background-color: rgba(#ecdbc3, 0.9);
+  }
+  100% {
+    background-color: rgba(#f4e7d4, 0.9);
   }
 }
 
