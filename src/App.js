@@ -14,11 +14,6 @@ import MissingPage from "./components/MissingPage";
 import DatesToRemember from "./components/DatesToRemember";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 
-// Styles
-import "./template-css/bootstrap.min.css";
-import "./template-css/animate.min.css";
-import "./template-css/App.scss";
-
 // Global.Apollo
 const client = new ApolloClient({
   uri: "https://gaard.ca/gaardql",
