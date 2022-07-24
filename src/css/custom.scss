@@ -762,3 +762,9 @@
 [tooltip][flow^="right"]:hover::after {
   animation: tooltips-horz 300ms ease-out forwards;
 }
+
+.nav-link {
+  &.secondItem {
+    margin-top: 1rem;
+  }
+}

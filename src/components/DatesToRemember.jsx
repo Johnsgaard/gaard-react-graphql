@@ -192,7 +192,7 @@ class DatesPage extends React.Component {
                 <div className="home-text">
                   <div className="hs-cont">
                     <div className="hs-wrap red">
-                      <h1 className="hs-line-9 font-alt mb-5">
+                      <h1 className="hs-line-10 font-alt mb-5">
                         <Emoji text=":eye:" />
                         <Emoji text=":lips:" />
                         <Emoji text=":eye:" />

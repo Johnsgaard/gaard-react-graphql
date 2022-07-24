@@ -5,7 +5,7 @@ const Services = () => {
 
   return (
     <section className="page-section" id="services">
-      <div className="container relative">
+      <div className="container relative row">
         <h3 className="section-title font-alt mb-5">Services</h3>
 
         {/*Nav tabs  */}
@@ -18,7 +18,7 @@ const Services = () => {
               Web Design
             </a>
           </li>
-          <li className="nav-link">
+          <li className="nav-link secondItem">
             <a
               className={visibleService === "development" ? "active" : ""}
               onClick={() => setVisibleService("development")}
