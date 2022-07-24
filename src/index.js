@@ -15,6 +15,8 @@ import "./template-evolution/css/style.css";
 // custom css
 import "./css/custom.scss";
 
+import "./template-css/font-awesome.min.css";
+
 const App = React.lazy(() => import("./App"));
 
 ReactDOM.render(

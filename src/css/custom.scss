@@ -186,7 +186,7 @@
   transition: all 0.27s cubic-bezier(0, 0, 0.58, 1);
 }
 .sp-logo-wrap .logo img {
-  max-width: 100%;
+  max-width: 60%;
   padding-bottom: 4px;
 }
 
@@ -299,7 +299,7 @@
 /* Social links */
 
 .sp-social-links {
-  position: fixed;
+  position: flex;
   bottom: 0;
   left: 0;
   width: inherit;
@@ -502,6 +502,35 @@
   }
 }
 
+.label-new {
+  background: #f32929;
+  color: white;
+  padding: 2px 3px;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  &.gaard-tooltip {
+    padding: 5px 10px;
+    right: -25px;
+    &::after {
+      content: " ";
+      width: 0;
+      height: 0;
+
+      border-style: solid;
+      border-width: 6px 6.5px 0 6.5px;
+      border-color: #f32929 transparent transparent transparent;
+
+      position: absolute;
+      top: 40%;
+      left: -7px;
+      transform: rotate(90deg);
+    }
+  }
+}
+
 .polaroid {
   border-radius: 2px;
   padding: 15px 15px 110px;
@@ -540,6 +569,48 @@
 .polaroid :after {
   color: #333;
   position: relative;
+}
+
+.hs-wrap {
+  max-width: 570px;
+  margin: 0 auto;
+  padding: 47px 30px 53px;
+  position: relative;
+  text-align: center;
+
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.hs-wrap.red {
+  border: 2px solid #ff3333;
+}
+
+.hs-green-n-bold {
+  margin-top: 0;
+  position: relative;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1.8;
+  opacity: 0.9;
+  color: #1db954;
+}
+
+.hs-line-red {
+  margin-top: 0;
+  position: relative;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1.8;
+  opacity: 1;
+  color: #ff3333;
 }
 
 [tooltip] {

@@ -42,7 +42,7 @@ const SidePanel = (props) => {
               ></span>
               {/* Logo */}
               {/* Your text or image into link tag */}
-              <div className="sp-logo-wrap local-scroll mb-40 mb-md-10 mb-xs-0">
+              <div className="sp-logo-wrap local-scroll mt-5">
                 <span className="logo">
                   <img
                     src={loading || !data ? GaardLogo : data.viewer.avatarUrl}
@@ -50,13 +50,10 @@ const SidePanel = (props) => {
                     height="230"
                     alt=""
                   />
-                  <div className="ci-title font-alt">
+                  <div className="font-alt mt-3 services-title">
                     {!loading && data ? data.viewer.name : "Loading"}
                   </div>
-                  <div
-                    className="ci-title font-alt"
-                    style={{ fontWeight: 700 }}
-                  >
+                  <div className="services-descr" style={{ fontWeight: 700 }}>
                     <Emoji
                       text={
                         !loading && data ? data.viewer.status.emoji : "tada"
@@ -66,7 +63,7 @@ const SidePanel = (props) => {
                   </div>
                 </span>
                 <a
-                  className="btn btn-mod btn-glass btn-circle relative"
+                  className="btn btn-mod btn-glass btn-circle relative mb-3"
                   rel="noopener noreferrer"
                   target="_blank"
                   href="https://github.com/Johnsgaard"
@@ -86,7 +83,7 @@ const SidePanel = (props) => {
 
               {/* Menu */}
               <div className="sp-wrapper" id="side-panel-menu">
-                <ul className="sp-menu-links local-scroll">
+                <ul className="sp-menu-links local-scroll small">
                   <li>
                     <Link to="/#home" onClick={props.toggleSidePanel}>
                       Home
