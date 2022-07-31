@@ -53,7 +53,7 @@ const AboutMe = () => {
       <div className="container min-height-100vh d-flex align-items-center pt-100 pb-100">
         <div className="split-background d-none d-lg-block d-xl-block zen-animation" />
         <div className="home-content text-start">
-          <div className="row mt-5 mt-sm-2 mt-md-1 mt-lg-0 mt-xl-0">
+          <div className="row mt-5 mt-sm-2 mt-md-1 mt-lg-0 mt-xl-0 mb-5">
             <div className="col-lg-5 d-flex mb-md-60 mt-5 mt-md-3 mt-sm-5">
               <div className="mt-sm-5 mt-md-5 mt-lg-5">
                 <h1 className="hs-line-10 uppercase mb-30 mt-xs-10 wow fadeInUpShort animated">
@@ -132,7 +132,7 @@ const AboutMe = () => {
             </div>
             <div
               id="parallax"
-              className="split-image mt-3 mt-lg-5 mt-md-5 mt-xl-5 col-xl-6 col-lg-6 offset-lg-1 d-flex align-items-center polaroid"
+              className="split-image mt-3 mt-lg-5 mt-md-5 mt-xl-5 col-xl-6 col-lg-6 offset-0 offset-sm-2 offset-md-3 offset-lg-1 d-flex align-items-center polaroid"
             >
               <div className="insetShadow" />
               <img
