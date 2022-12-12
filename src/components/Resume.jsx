@@ -49,7 +49,7 @@ const CONTRIBUTIONS = gql`
 
 const Resume = () => (
   <section className="page-section" id="resume">
-    <div className="container relative">
+    <div className="col-md-8 container relative">
       <h3 className="section-title font-alt mb-70 mb-sm-40">Résumé</h3>
       {/* Experience */}
       <div className="section-text mb-20 mb-sm-10">

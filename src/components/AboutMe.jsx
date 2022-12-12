@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { AgeFromDateString } from "age-calculator";
-import MyImage from "../images/ScoutToss.jpg";
+import MyImage from "../images/surf_min.jpg";
 import { gsap } from "gsap";
 import Typist from "react-text-typist";
 import TrackVisibility from "react-on-screen";
@@ -66,8 +66,8 @@ const AboutMe = () => {
                         <Typist
                           cursorColor="#ff3333"
                           sentences={[
-                            "Mobile",
                             "Web Application",
+                            "Mobile",
                             "Full Stack",
                           ]}
                           deletingSpeed={120}
@@ -123,7 +123,16 @@ const AboutMe = () => {
                     <div className="col-sm-6 col-md-6 col-lg-3">
                       <div className="alt-features-title">Status: </div>
                       <div className="alt-features-desc small">
-                        ✨👨‍💻 Full stack developer @ INgrooves Music Group ✨
+                        <span role="img" aria-label="sparkles">
+                          ✨👨‍💻
+                        </span>
+                        <div className="alt-features-desc small">
+                          Full stack developer <strong>@</strong> INgrooves
+                          Music Group
+                        </div>
+                        <p role="img" aria-label="sparkles">
+                          ✨👨‍💻
+                        </p>
                       </div>
                     </div>
                   </div>
