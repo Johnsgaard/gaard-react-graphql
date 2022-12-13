@@ -14,7 +14,7 @@
     "graphql": "15.8.0",
     "graphql-tag": "2.12.6",
     "gsap": "^3.10.4",
-    "node-fetch": "2.6.7",
+    "node-fetch": "3.3.0",
     "react": "16.13.1",
     "react-apollo": "3.1.5",
     "react-count-to": "0.12.0",
