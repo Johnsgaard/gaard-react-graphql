@@ -49,7 +49,7 @@ const CONTRIBUTIONS = gql`
 
 const Resume = () => (
   <section className="page-section" id="resume">
-    <div className="col-md-8 container relative">
+    <div className="col-md-12 container relative">
       <h3 className="section-title font-alt mb-70 mb-sm-40">Résumé</h3>
       {/* Experience */}
       <div className="section-text mb-20 mb-sm-10">
@@ -225,7 +225,7 @@ const Resume = () => (
       <div className="section-text mb-60 mb-sm-40">
         <div className="row">
           {/* Section Title */}
-          <div className="col-sm-3">
+          <div className="col-sm-12 col-md-12">
             <h2 className="section-title font-alt align-left mt-0 mb-70 mb-sm-40">
               Work &amp; Experience
             </h2>
@@ -233,7 +233,7 @@ const Resume = () => (
           {/* End Section Title */}
 
           {/* Section Content */}
-          <div className="row col-sm-9 mt-5 mt-sm-0">
+          <div className="row col-md-12 mt-5 mt-sm-5">
             <div className="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
               {/* Project Detail */}
               <div className="work-detail">
@@ -422,7 +422,7 @@ const Resume = () => (
           </div>
 
           {/* Section Content */}
-          <div className="row mt-5 col-sm-9 offset-0 offset-sm-3">
+          <div className="row mt-5 col-md-12 offset-0 offset-sm-0">
             <hr />
             <div className="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
               {/* Project Detail */}
@@ -642,7 +642,7 @@ const Resume = () => (
               </p>
             </div>
           </div>
-          <div className="row mt-5 offset-0 offset-sm-3 col-sm-9">
+          <div className="row mt-5 col-md-12 offset-0 offset-sm-0">
             <hr />
             <div className="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
               {/* Project Detail */}
@@ -805,7 +805,7 @@ const Resume = () => (
       </div>
       <div className="section-text mb-60 mb-sm-40">
         <div className="row">
-          <div className="row mt-5 offset-0 offset-sm-3 col-sm-9">
+          <div className="row mt-5 col-md-12 offset-0 offset-sm-0">
             <hr />
             <div className="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
               {/* Project Detail */}
@@ -873,8 +873,8 @@ const Resume = () => (
       <div className="section-text mb-60 mb-sm-40">
         <div className="row">
           {/* Section Title */}
-          <div className="col-sm-3">
-            <h2 className="section-title font-alt align-left mt-0 mb-70 mb-sm-40">
+          <div className="col-sm-12 col-md-12">
+            <h2 className="section-title font-alt align-left mt-0 mb-70 mb-sm-5">
               Education
             </h2>
           </div>

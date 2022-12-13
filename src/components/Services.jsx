@@ -5,7 +5,7 @@ const Services = () => {
 
   return (
     <section className="page-section" id="services">
-      <div className="container relative row col-12 col-xl-8 col-lg-8 col-md-11 col-sm-12 offset-0 offset-md-1 offset-lg-2 offset-xl-2">
+      <div className="col-md-12 container relative">
         <h3 className="section-title font-alt mb-5">Services</h3>
 
         {/*Nav tabs  */}

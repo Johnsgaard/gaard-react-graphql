@@ -2,7 +2,7 @@ import React from "react";
 
 const Contact = () => (
   <section className="page-section" id="contact">
-    <div className="col-md-8 container relative">
+    <div className="col-md-12 container relative">
       <h3 className="section-title font-alt">Contact Information</h3>
 
       <div className="row mt-5">
