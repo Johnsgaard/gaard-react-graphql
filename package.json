@@ -46,6 +46,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "request-promise": "4.2.5"
+    "request-promise": "4.2.6"
   }
 }
