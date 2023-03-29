@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import TrackVisibility from "react-on-screen";
 import CountUp from "react-countup";
 import Emoji from "react-emoji-render";
@@ -17,70 +17,65 @@ import Xmas from "../images/xmas.png";
 import ParallaxBreak from "./ParallaxBreak";
 import Footer from "./Footer";
 
-class DatesPage extends React.Component {
-  constructor(props) {
-    super(props);
-    this.currentYear = new Date().getFullYear();
-    this.state = {
-      events: [
-        {
-          title: "Cohen's Birthday",
-          date: `Jul 16, ${this.currentYear}`,
-          image: Cohen,
-          actualDate: "Jul 16, 2018",
-        },
-        {
-          title: "Scout's Birthday",
-          date: `Jun 19, ${this.currentYear}`,
-          image: Scout,
-          actualDate: "Jun 19, 2020",
-        },
-        {
-          title: "Wedding Anniversary",
-          date: `Sep 23, ${this.currentYear}`,
-          image: Wedding,
-          actualDate: "Sept 23, 2017",
-        },
-        {
-          title: "Actual Wedding Anniversary",
-          date: `Jul 23, ${this.currentYear}`,
-          image: ActualWedding,
-          actualDate: "Jul 23, 2017",
-        },
-        {
-          title: "Beck's Birthday",
-          date: `Dec 27, ${this.currentYear}`,
-          image: Becks,
-          actualDate: "Dec 27, 1991",
-        },
-        {
-          title: "My Birthday",
-          date: `Nov 19, ${this.currentYear}`,
-          image: Me,
-          actualDate: "Nov 19, 1991",
-        },
-        {
-          title: "Dating Anniversary",
-          date: `Apr 15, ${this.currentYear}`,
-          image: Dating,
-          actualDate: "Apr 15, 2010",
-        },
-        {
-          title: "Kobber's Birthday",
-          date: `Jul 31, ${this.currentYear}`,
-          image: Kobber,
-          actualDate: "Jul 31, 2015",
-        },
-        {
-          title: "X-mas",
-          date: `Dec 25, ${this.currentYear}`,
-          image: Xmas,
-        },
-      ],
-    };
-  }
+const DatesPage = () => {
+  const currentYear = new Date().getFullYear();
+  const [events, setEvents] = useState([
+    {
+      title: "Cohen's Birthday",
+      date: `Jul 16, ${currentYear}`,
+      image: Cohen,
+      actualDate: "Jul 16, 2018",
+    },
+    {
+      title: "Scout's Birthday",
+      date: `Jun 19, ${currentYear}`,
+      image: Scout,
+      actualDate: "Jun 19, 2020",
+    },
+    {
+      title: "Wedding Anniversary",
+      date: `Sep 23, ${currentYear}`,
+      image: Wedding,
+      actualDate: "Sept 23, 2017",
+    },
+    {
+      title: "Actual Wedding Anniversary",
+      date: `Jul 23, ${currentYear}`,
+      image: ActualWedding,
+      actualDate: "Jul 23, 2017",
+    },
+    {
+      title: "Beck's Birthday",
+      date: `Dec 27, ${currentYear}`,
+      image: Becks,
+      actualDate: "Dec 27, 1991",
+    },
+    {
+      title: "My Birthday",
+      date: `Nov 19, ${currentYear}`,
+      image: Me,
+      actualDate: "Nov 19, 1991",
+    },
+    {
+      title: "Dating Anniversary",
+      date: `Apr 15, ${currentYear}`,
+      image: Dating,
+      actualDate: "Apr 15, 2010",
+    },
+    {
+      title: "Kobber's Birthday",
+      date: `Jul 31, ${currentYear}`,
+      image: Kobber,
+      actualDate: "Jul 31, 2015",
+    },
+    {
+      title: "X-mas",
+      date: `Dec 25, ${currentYear}`,
+      image: Xmas,
+    },
+  ]);
 
-  getTimeDifference = (stringDate) => {
+  const getTimeDifference = (stringDate) => {
     const currentDate = new Date();
     const formattedDate = new Date(stringDate);
     const diffTime = formattedDate.getTime() - currentDate.getTime();
@@ -90,7 +85,7 @@ class DatesPage extends React.Component {
     return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
   };
 
-  getYearDifferenceFromNow = (date) => {
+  const getYearDifferenceFromNow = (date) => {
     const now = new Date();
     const then = new Date(date);
     let diff = (now.getTime() - then.getTime()) / 1000;
@@ -101,8 +96,8 @@ class DatesPage extends React.Component {
     return Math.abs(Math.round((diff / 365.25) * 10) / 10);
   };
 
-  getDateItems = () =>
-    this.state.events.map((event) => (
+  const getDateItems = () =>
+    events.map((event) => (
       <li key={event.title} className="clearfix">
         <img
           src={event.image}
@@ -114,7 +109,7 @@ class DatesPage extends React.Component {
           <TrackVisibility offset={1000}>
             {({ isVisible }) => {
               if (isVisible === true) {
-                if (this.getTimeDifference(event.date) === 0) {
+                if (getTimeDifference(event.date) === 0) {
                   return (
                     <div className="hs-green-n-bold">
                       <Emoji text=":tada:" />
@@ -123,27 +118,24 @@ class DatesPage extends React.Component {
                       <div className="mb-40">
                         <strong>{event.actualDate}</strong>
                         <h5 className="red">
-                          {this.getYearDifferenceFromNow(event.actualDate)}
+                          {getYearDifferenceFromNow(event.actualDate)}
                           &nbsp;Years
                         </h5>
                       </div>
                     </div>
                   );
                 }
-                if (this.getTimeDifference(event.date) <= 5) {
+                if (getTimeDifference(event.date) <= 5) {
                   return (
                     <div className="hs-green-n-bold small">
                       <Emoji text=":sparkles:" />
-                      <CountUp
-                        start={0}
-                        end={this.getTimeDifference(event.date)}
-                      />
-                      {this.getTimeDifference(event.date) > 1 ? "Days" : "Day"}
+                      <CountUp start={0} end={getTimeDifference(event.date)} />
+                      {getTimeDifference(event.date) > 1 ? "Days" : "Day"}
                       <Emoji text=":sparkles:" />
                       <div className="mb-40">
                         <strong>{event.actualDate}</strong>
                         <h5 className="count-number">
-                          {this.getYearDifferenceFromNow(event.actualDate)}
+                          {getYearDifferenceFromNow(event.actualDate)}
                           &nbsp;Years
                         </h5>
                       </div>
@@ -153,17 +145,14 @@ class DatesPage extends React.Component {
                 return (
                   <div>
                     <div className="hs-line-red">
-                      <CountUp
-                        start={0}
-                        end={this.getTimeDifference(event.date)}
-                      />
+                      <CountUp start={0} end={getTimeDifference(event.date)} />
                       &nbsp;Days
                     </div>
                     <br />
                     <div className="mb-40">
                       <strong>{event.actualDate}</strong>
                       <h5 className="red">
-                        {this.getYearDifferenceFromNow(event.actualDate)}
+                        {getYearDifferenceFromNow(event.actualDate)}
                         &nbsp;Years
                       </h5>
                     </div>
@@ -178,42 +167,71 @@ class DatesPage extends React.Component {
       </li>
     ));
 
-  render() {
-    return (
-      <div className="appear-animate">
-        <div className="page" id="top">
-          <section
-            className="page-section bg-light"
-            data-background=""
-            id="home"
-          >
-            <div className="relative container">
-              <div className="home-content">
-                <div className="home-text">
-                  <div className="hs-cont">
-                    <div className="hs-wrap red">
-                      <h1 className="hs-line-10 font-alt mb-5">
-                        <Emoji text=":eye:" />
-                        <Emoji text=":lips:" />
-                        <Emoji text=":eye:" />
-                      </h1>
-                      <div className="widget-body">
-                        <ul className="clearlist widget-posts">
-                          {this.getDateItems()}
-                        </ul>
-                      </div>
+  const oneDay = 86400000;
+  useEffect(() => {
+    if (Notification.permission === "denied") {
+      Notification.requestPermission();
+    } else {
+      const interval = setInterval(() => {
+        // Every day this will check if an event is within 30 days and count down :)
+        const filteredEvents = events.filter((event) => {
+          const diffTime = Math.abs(new Date(event.date) - new Date());
+          const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+          if (diffDays < 30) {
+            return true;
+          }
+        });
+
+        if (filteredEvents.length >= 1) {
+          filteredEvents.forEach((event) => {
+            const diffTime = Math.abs(new Date(event.date) - new Date());
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            // Delay each notification by one second
+            const timer = setTimeout(() => {
+              new Notification(`👁️🫦👁️ ${event.title}`, {
+                body: `${event.title} is ${diffDays} day(s) away`,
+                icon: "https://gaard.ca/favicon.ico",
+              });
+            }, 1000);
+            return () => clearTimeout(timer);
+          });
+        }
+      }, oneDay);
+      return () => clearInterval(interval);
+    }
+  }, [Notification.permission]);
+
+  return (
+    <div className="appear-animate">
+      <div className="page" id="top">
+        <section className="page-section bg-light" data-background="" id="home">
+          <div className="relative container">
+            <div className="home-content">
+              <div className="home-text">
+                <div className="hs-cont">
+                  <div className="hs-wrap red">
+                    <input
+                      type="button"
+                      onClick={() => Notification.requestPermission()}
+                      className="hs-line-10 btn btn-mod btn-w btn-circle btn-medium chill-animation mb-5"
+                      value="👁️🫦👁️"
+                    />
+                    <div className="widget-body">
+                      <ul className="clearlist widget-posts">
+                        {getDateItems()}
+                      </ul>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </section>
-          <ParallaxBreak type="universe" size="500px" height="13px" />
-          <Footer />
-        </div>
+          </div>
+        </section>
+        <ParallaxBreak type="universe" size="500px" height="13px" />
+        <Footer />
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default DatesPage;
