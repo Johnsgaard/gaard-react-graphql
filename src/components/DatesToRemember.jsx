@@ -169,6 +169,9 @@ const DatesPage = () => {
 
   const oneDay = 86400000;
   useEffect(() => {
+    if (!Notification || Notification.permission) {
+      return;
+    }
     if (Notification.permission === "denied") {
       Notification.requestPermission();
     } else {
@@ -199,7 +202,7 @@ const DatesPage = () => {
       }, oneDay);
       return () => clearInterval(interval);
     }
-  }, [Notification.permission]);
+  }, []);
 
   return (
     <div className="appear-animate">
@@ -212,7 +215,10 @@ const DatesPage = () => {
                   <div className="hs-wrap red">
                     <input
                       type="button"
-                      onClick={() => Notification.requestPermission()}
+                      onClick={() =>
+                        Notification?.requestPermission() ||
+                        alert("Sorry no support for notifications")
+                      }
                       className="hs-line-10 btn btn-mod btn-w btn-circle btn-medium chill-animation mb-5"
                       value="👁️🫦👁️"
                     />
