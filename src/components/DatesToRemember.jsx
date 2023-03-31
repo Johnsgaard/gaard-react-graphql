@@ -167,41 +167,46 @@ const DatesPage = () => {
       </li>
     ));
 
+  const isSupported = () =>
+    "Notification" in window &&
+    "serviceWorker" in navigator &&
+    "PushManager" in window;
+
+  const sendNotification = () => {
+    if (!isSupported()) {
+      alert("Notifications not supported :(");
+    }
+    // Every day this will check if an event is within 30 days and count down :)
+    const filteredEvents = events.filter((event) => {
+      const diffTime = Math.abs(new Date(event.date) - new Date());
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      if (diffDays < 30) {
+        return true;
+      }
+    });
+
+    console.log(filteredEvents);
+
+    if (filteredEvents.length >= 1) {
+      filteredEvents.forEach((event) => {
+        const diffTime = Math.abs(new Date(event.date) - new Date());
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        // Delay each notification by one second
+        new Notification("Hi there!");
+        new Notification(`👁️🫦👁️ ${event.title}`, {
+          body: `${event.title} is ${diffDays} day(s) away`,
+          icon: "https://gaard.ca/favicon.ico",
+        });
+      });
+    }
+  };
+
   const oneDay = 86400000;
   useEffect(() => {
-    if (!Notification || Notification.permission) {
-      return;
-    }
-    if (Notification.permission === "denied") {
-      Notification.requestPermission();
-    } else {
-      const interval = setInterval(() => {
-        // Every day this will check if an event is within 30 days and count down :)
-        const filteredEvents = events.filter((event) => {
-          const diffTime = Math.abs(new Date(event.date) - new Date());
-          const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-          if (diffDays < 30) {
-            return true;
-          }
-        });
-
-        if (filteredEvents.length >= 1) {
-          filteredEvents.forEach((event) => {
-            const diffTime = Math.abs(new Date(event.date) - new Date());
-            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-            // Delay each notification by one second
-            const timer = setTimeout(() => {
-              new Notification(`👁️🫦👁️ ${event.title}`, {
-                body: `${event.title} is ${diffDays} day(s) away`,
-                icon: "https://gaard.ca/favicon.ico",
-              });
-            }, 1000);
-            return () => clearTimeout(timer);
-          });
-        }
-      }, oneDay);
-      return () => clearInterval(interval);
-    }
+    const interval = setInterval(() => {
+      sendNotification(oneDay);
+    }, oneDay);
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -215,10 +220,12 @@ const DatesPage = () => {
                   <div className="hs-wrap red">
                     <input
                       type="button"
-                      onClick={() =>
-                        Notification?.requestPermission() ||
-                        alert("Sorry no support for notifications")
-                      }
+                      onClick={() => {
+                        if (isSupported()) {
+                          Notification.requestPermission();
+                        }
+                        sendNotification(0);
+                      }}
                       className="hs-line-10 btn btn-mod btn-w btn-circle btn-medium chill-animation mb-5"
                       value="👁️🫦👁️"
                     />
