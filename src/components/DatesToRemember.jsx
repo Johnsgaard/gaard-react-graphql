@@ -185,14 +185,11 @@ const DatesPage = () => {
       }
     });
 
-    console.log(filteredEvents);
-
     if (filteredEvents.length >= 1) {
       filteredEvents.forEach((event) => {
         const diffTime = Math.abs(new Date(event.date) - new Date());
         const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
         // Delay each notification by one second
-        new Notification("Hi there!");
         new Notification(`👁️🫦👁️ ${event.title}`, {
           body: `${event.title} is ${diffDays} day(s) away`,
           icon: "https://gaard.ca/favicon.ico",
