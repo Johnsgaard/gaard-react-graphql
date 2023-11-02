@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { AgeFromDateString } from "age-calculator";
-import MyImage from "../images/surf_min.jpg";
+import MyImage from "../images/family-min.jpg";
 import { gsap } from "gsap";
 import Typist from "react-text-typist";
 import TrackVisibility from "react-on-screen";
@@ -127,8 +127,8 @@ const AboutMe = () => {
                           ✨👨‍💻
                         </span>
                         <div className="alt-features-desc small">
-                          Full stack developer <strong>@</strong> INgrooves
-                          Music Group
+                          Full stack developer <strong>@</strong> Virgin Music
+                          Group
                         </div>
                         <p role="img" aria-label="sparkles">
                           ✨👨‍💻

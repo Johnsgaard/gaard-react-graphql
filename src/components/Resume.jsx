@@ -237,10 +237,10 @@ const Resume = () => (
             <div className="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
               {/* Project Detail */}
               <div className="work-detail">
-                <h5 className="font-alt mt-0 mb-20">INgrooves Music Group</h5>
+                <h5 className="font-alt mt-0 mb-20">Virgin Music Group</h5>
                 <div className="work-full-detail">
                   <p>
-                    <strong>Project(s)</strong> INgrooves platform
+                    <strong>Project(s)</strong> Virgin platform
                   </p>
                   <p>
                     <strong>Date:</strong> June 2021 - Current
@@ -248,11 +248,11 @@ const Resume = () => (
                   <p>
                     <strong>Website:</strong>
                     <a
-                      href="https://www.ingrooves.com/"
+                      href="https://www.virginmusic.com/"
                       rel="noopener noreferrer"
                       target="_blank"
                     >
-                      ingrooves.com
+                      virginmusic.com
                     </a>
                   </p>
                   <div>
@@ -402,7 +402,7 @@ const Resume = () => (
 
             <div className="col-lg-8 col-md-8 col-sm-6 mb-sm-50 mb-xs-30 services-descr">
               <p>
-                As a full stack developer at INgrooves Music Group, it is my
+                As a full stack developer at Virgin Music Group, it is my
                 responsibility to execute features, fixes, and design changes
                 that are making it within each release cycle of the platform.
                 Working with the design team, I ensure everythign being worked
@@ -412,7 +412,7 @@ const Resume = () => (
                 work.
               </p>
               <p>
-                The tech stacks vary within each segment of the INgrooves
+                The tech stacks vary within each segment of the Virgin Music
                 platform so there is <i>A LOT</i> of knowledge transfer between
                 the teams. There's nothing more satisfying than working with an
                 awesome team and working in an industry that is fast-paced and
