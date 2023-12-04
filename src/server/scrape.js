@@ -5,11 +5,18 @@ const fetch = (...args) =>
 
 const prisma = new PrismaClient();
 
-const grabBuoyDetailsFromSource = async () => {
+const buoyUrls = [
+  'https://weather.gc.ca/marine/weatherConditions-currentConditions_e.html?mapID=02&siteID=06800&stationID=46131',
+  'https://weather.gc.ca/marine/weatherConditions-currentConditions_e.html?mapID=02&siteID=06800&stationID=46132',
+  'https://weather.gc.ca/marine/weatherConditions-currentConditions_e.html?mapID=02&siteID=06800&stationID=46206',
+  'https://weather.gc.ca/marine/weatherConditions-currentConditions_e.html?mapID=02&siteID=06800&stationID=46146',
+  'https://weather.gc.ca/marine/weatherConditions-currentConditions_e.html?mapID=02&siteID=06800&stationID=46304',
+  'https://weather.gc.ca/marine/weatherConditions-currentConditions_e.html?mapID=02&siteID=06800&stationID=46303',
+];
+
+const grabBuoyDetailsFromSource = async (buoyUrl) => {
   try {
-    const res = await fetch(
-      `https://weather.gc.ca/marine/weatherConditions-currentConditions_e.html?mapID=02&siteID=06800&stationID=46131`,
-    );
+    const res = await fetch(buoyUrl);
 
     const rawDOM = await res.text();
 
@@ -58,16 +65,22 @@ const grabBuoyDetailsFromSource = async () => {
 
 const callEveryHalfHour = () => {
   setInterval(async () => {
-    const buoy = await grabBuoyDetailsFromSource();
+    for (const buoyUrl of buoyUrls) {
+      const buoy = await grabBuoyDetailsFromSource(buoyUrl);
 
-    if (!buoy || typeof buoy === 'undefined') {
-      return;
+      if (!buoy || typeof buoy === 'undefined') {
+        return;
+      }
+      await prisma.buoy.upsert({
+        where: { code: buoy?.code },
+        update: { ...buoy },
+        create: {
+          name: buoy?.name || 'n/a',
+          code: buoy?.code || 'n/a',
+          ...buoy,
+        },
+      });
     }
-    await prisma.buoy.upsert({
-      where: { code: buoy?.code },
-      update: { ...buoy },
-      create: { name: buoy?.name || 'n/a', code: buoy?.code || 'n/a', ...buoy },
-    });
   }, 1000 * 60 * 30);
 };
 
