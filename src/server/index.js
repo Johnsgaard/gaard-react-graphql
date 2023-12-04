@@ -87,7 +87,7 @@ const resolvers = {
     buoys: async () => {
       return await prisma.buoy.findMany();
     },
-    buoyByCode: (parent, args, context, info) => {
+    buoyByCode: async (parent, args, context, info) => {
       const { code } = args;
       return await prisma.buoy.findUnique({
         where: {
