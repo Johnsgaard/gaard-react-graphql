@@ -68,7 +68,11 @@ const getFreshData = () => {
     const dateObj = new Date();
     const min = dateObj.getMinutes();
     const sec = dateObj.getSeconds();
-    if (min === '01' && sec === '01') {
+    if (
+      (min === '01' && sec === '01') ||
+      (min === '10' && sec === '01') ||
+      (min === '30' && sec === '01')
+    ) {
       for (const buoyUrl of buoyUrls) {
         const buoy = await grabBuoyDetailsFromSource(buoyUrl);
 
