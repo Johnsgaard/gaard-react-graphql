@@ -63,29 +63,34 @@ const grabBuoyDetailsFromSource = async (buoyUrl) => {
   }
 };
 
-const callEveryHalfHour = () => {
+const getFreshData = () => {
   setInterval(async () => {
-    for (const buoyUrl of buoyUrls) {
-      const buoy = await grabBuoyDetailsFromSource(buoyUrl);
+    const dateObj = new Date();
+    const min = dateObj.getMinutes();
+    const sec = dateObj.getSeconds();
+    if (min === '01' && sec === '01') {
+      for (const buoyUrl of buoyUrls) {
+        const buoy = await grabBuoyDetailsFromSource(buoyUrl);
 
-      if (!buoy || typeof buoy === 'undefined') {
-        return;
+        if (!buoy || typeof buoy === 'undefined') {
+          return;
+        }
+        await prisma.buoy.upsert({
+          where: { code: buoy?.code },
+          update: { ...buoy },
+          create: {
+            name: buoy?.name || 'n/a',
+            code: buoy?.code || 'n/a',
+            ...buoy,
+          },
+        });
       }
-      await prisma.buoy.upsert({
-        where: { code: buoy?.code },
-        update: { ...buoy },
-        create: {
-          name: buoy?.name || 'n/a',
-          code: buoy?.code || 'n/a',
-          ...buoy,
-        },
-      });
     }
-  }, 1000 * 60 * 30);
+  }, 1000);
 };
 
 const main = async () => {
-  callEveryHalfHour();
+  getFreshData();
 };
 
 module.exports = main;
