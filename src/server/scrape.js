@@ -60,6 +60,9 @@ const callEveryHalfHour = () => {
   setInterval(async () => {
     const buoy = await grabBuoyDetailsFromSource();
 
+    if (!buoy.code) {
+      return;
+    }
     await prisma.buoy.upsert({
       where: { code: buoy?.code },
       update: { ...buoy },
