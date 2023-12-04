@@ -1,0 +1,47 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Buoy {
+  id          Int       @id @default(autoincrement())
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  name        String    @db.VarChar(255)
+  code        String    @unique
+  wind        String?   @db.VarChar(255)
+  pressure    String?   @db.VarChar(255)
+  waveHeight  String?   @db.VarChar(255)
+  wavePeriod  String?   @db.VarChar(255)
+  airTemp     String?   @db.VarChar(255)
+  waterTemp   String?   @db.VarChar(255)
+  pageTime    String?   @db.VarChar(255)
+
+}
+
+model PushToken {
+  id      Int     @id @default(autoincrement())
+  token   String  @unique
+}
+
+model Profile {
+  id      Int     @id @default(autoincrement())
+  bio     String?
+  picture String?
+  user    User    @relation(fields: [userId], references: [id])
+  userId  Int     @unique
+}
+
+model User {
+  id      Int      @id @default(autoincrement())
+  email   String   @unique
+  name    String?
+  profile Profile?
+}
