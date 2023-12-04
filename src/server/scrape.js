@@ -1,5 +1,7 @@
 const { PrismaClient } = require('@prisma/client');
 const cheerio = require('cheerio');
+const fetch = (...args) =>
+  import('node-fetch').then(({ default: fetch }) => fetch(...args));
 
 const prisma = new PrismaClient();
 
