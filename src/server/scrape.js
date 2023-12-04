@@ -65,32 +65,23 @@ const grabBuoyDetailsFromSource = async (buoyUrl) => {
 
 const getFreshData = () => {
   setInterval(async () => {
-    const dateObj = new Date();
-    const min = dateObj.getMinutes();
-    const sec = dateObj.getSeconds();
-    if (
-      (min === '01' && sec === '01') ||
-      (min === '10' && sec === '01') ||
-      (min === '30' && sec === '01')
-    ) {
-      for (const buoyUrl of buoyUrls) {
-        const buoy = await grabBuoyDetailsFromSource(buoyUrl);
+    for (const buoyUrl of buoyUrls) {
+      const buoy = await grabBuoyDetailsFromSource(buoyUrl);
 
-        if (!buoy || typeof buoy === 'undefined') {
-          return;
-        }
-        await prisma.buoy.upsert({
-          where: { code: buoy?.code },
-          update: { ...buoy },
-          create: {
-            name: buoy?.name || 'n/a',
-            code: buoy?.code || 'n/a',
-            ...buoy,
-          },
-        });
+      if (!buoy || typeof buoy === 'undefined') {
+        return;
       }
+      await prisma.buoy.upsert({
+        where: { code: buoy?.code },
+        update: { ...buoy },
+        create: {
+          name: buoy?.name || 'n/a',
+          code: buoy?.code || 'n/a',
+          ...buoy,
+        },
+      });
     }
-  }, 1000);
+  }, 1000 * 60 * 10);
 };
 
 const main = async () => {
