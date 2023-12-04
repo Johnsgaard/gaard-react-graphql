@@ -58,7 +58,7 @@ const typeDefs = gql`
   type Query {
     viewer: GitGaard
     buoys: [Buoy]
-    buoyByCode: Buoy
+    buoyByCode(code: String!): Buoy
   }
 `;
 
