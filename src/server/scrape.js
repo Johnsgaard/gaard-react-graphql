@@ -14,14 +14,14 @@ const grabBuoyDetailsFromSource = async () => {
     const rawDOM = await res.text();
 
     const code = cheerio.load(rawDOM)('h3').first().text();
-    const pageTime = cherrio.load(rawDOM)('.issuedTime').first().text();
+    const pageTime = cheerio.load(rawDOM)('.issuedTime').first().text();
     const domTable = cheerio.load(rawDOM)('table');
     const [wind, pressure, waveHeight, airTemp, wavePeriod, waterTemp] =
       domTable.find('td').map((_, element) => domTable.find(element).text());
 
     console.log(
       '------------------------------------\n',
-      '🔎🕞: ',
+      '\n🔎🕞: ',
       pageTime,
       '\n💨: ',
       wind,
@@ -60,7 +60,7 @@ const callEveryHalfHour = () => {
   setInterval(async () => {
     const buoy = await grabBuoyDetailsFromSource();
 
-    if (!buoy.code) {
+    if (!buoy || typeof buoy === 'undefined') {
       return;
     }
     await prisma.buoy.upsert({
