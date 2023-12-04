@@ -68,7 +68,7 @@ const callEveryHalfHour = () => {
       update: { ...buoy },
       create: { name: buoy?.name || 'n/a', code: buoy?.code || 'n/a', ...buoy },
     });
-  }, 1000 * 30);
+  }, 1000 * 60 * 30);
 };
 
 const main = async () => {
