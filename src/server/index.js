@@ -1,5 +1,9 @@
 const { ApolloServer, gql } = require('apollo-server');
+const { PrismaClient } = require('@prisma/client');
 const gitConnect = require('./githubConnect');
+const main = require('./scrape');
+
+const prisma = new PrismaClient();
 
 // Type definitions define the "shape" of your data and specify
 // which ways the data can be fetched from the GraphQL server.
@@ -25,6 +29,22 @@ const typeDefs = gql`
     contributionsCollection: Contributions
   }
 
+  # Buoy
+  type Buoy {
+    id: ID!
+    createdAt: String!
+    updatedAt: String!
+    name: String
+    code: String!
+    wind: String
+    pressure: String
+    waveHeight: String
+    wavePeriod: String
+    airTemp: String
+    waterTemp: String
+    pageTime: String
+  }
+
   type Contributions {
     totalIssueContributions: Int!
     totalCommitContributions: Int!
@@ -37,6 +57,8 @@ const typeDefs = gql`
   # The "Query" type is the root of all GraphQL queries.
   type Query {
     viewer: GitGaard
+    buoys: [Buoy]
+    buoyByCode: Buoy
   }
 `;
 
@@ -51,16 +73,26 @@ const resolvers = {
   Query: {
     viewer(root, args, context, info) {
       let fetchPromise = Promise.resolve();
-      if (!cache.data || !cache.time || cache.time < Date.now() - (5 * 1000)) {
+      if (!cache.data || !cache.time || cache.time < Date.now() - 5 * 1000) {
         // fetch apollo and add it to the cache
         fetchPromise = gitConnect().then(({ data, error, loading }) => {
           cache = {
             time: Date.now(),
             data,
-          }
+          };
         });
       }
       return fetchPromise.then(() => cache.data.viewer);
+    },
+    buoys: async () => {
+      return await prisma.buoy.findMany();
+    },
+    buoyByCode: async (code) => {
+      return await prisma.buoy.findUnique({
+        where: {
+          code,
+        },
+      });
     },
   },
 };
@@ -75,3 +107,13 @@ const server = new ApolloServer({ typeDefs, resolvers });
 server.listen().then(({ url }) => {
   console.log(`🚀  Server ready at ${url}`);
 });
+
+main()
+  .then(async () => {
+    await prisma.$disconnect();
+  })
+  .catch(async (e) => {
+    console.error(e);
+    await prisma.$disconnect();
+    process.exit(1);
+  });
