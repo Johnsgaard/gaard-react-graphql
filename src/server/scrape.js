@@ -30,7 +30,7 @@ const grabBuoyDetailsFromSource = async (buoyUrl) => {
       domTable.find('td').map((_, element) => domTable.find(element).text());
     const nextScrape = new Date(
       new Date().getTime() + WAIT_TIME,
-    ).toLocaleString();
+    ).toLocaleString('en-US', { timeZone: 'America/Vancouver' });
 
     console.log(
       '------------------------------------\n',
