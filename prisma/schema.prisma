@@ -22,7 +22,8 @@ model Buoy {
   wavePeriod  String?   
   airTemp     String?
   waterTemp   String?   
-  pageTime    String?   
+  pageTime    String?
+  nextScrape  String?
 
 }
 

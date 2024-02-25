@@ -43,6 +43,7 @@ const typeDefs = gql`
     airTemp: String
     waterTemp: String
     pageTime: String
+    nextScrape: String
   }
 
   type Contributions {

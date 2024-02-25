@@ -14,6 +14,9 @@ const buoyUrls = [
   'https://weather.gc.ca/marine/weatherConditions-currentConditions_e.html?mapID=02&siteID=06800&stationID=46303',
 ];
 
+// 5 minutes
+const WAIT_TIME = 1000 * 60 * 5;
+
 const grabBuoyDetailsFromSource = async (buoyUrl) => {
   try {
     const res = await fetch(buoyUrl);
@@ -25,6 +28,9 @@ const grabBuoyDetailsFromSource = async (buoyUrl) => {
     const domTable = cheerio.load(rawDOM)('table');
     const [wind, pressure, waveHeight, airTemp, wavePeriod, waterTemp] =
       domTable.find('td').map((_, element) => domTable.find(element).text());
+    const nextScrape = new Date(
+      new Date().getTime() + WAIT_TIME,
+    ).toLocaleString();
 
     console.log(
       '------------------------------------\n',
@@ -42,6 +48,8 @@ const grabBuoyDetailsFromSource = async (buoyUrl) => {
       wavePeriod,
       '\n💧🌡️: ',
       waterTemp,
+      '\n next srape time:',
+      nextScrape,
       '\n------------------------------------\n',
     );
 
@@ -55,6 +63,7 @@ const grabBuoyDetailsFromSource = async (buoyUrl) => {
       airTemp,
       wavePeriod,
       waterTemp,
+      nextScrape,
     };
   } catch (error) {
     console.error(
@@ -81,7 +90,7 @@ const getFreshData = () => {
         },
       });
     }
-  }, 1000 * 60 * 10);
+  }, WAIT_TIME);
 };
 
 const main = async () => {
