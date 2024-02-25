@@ -6,7 +6,7 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "sqlite"
   url      = env("DATABASE_URL")
 }
 
@@ -14,15 +14,15 @@ model Buoy {
   id          Int       @id @default(autoincrement())
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
-  name        String    @db.VarChar(255)
+  name        String    
   code        String    @unique
-  wind        String?   @db.VarChar(255)
-  pressure    String?   @db.VarChar(255)
-  waveHeight  String?   @db.VarChar(255)
-  wavePeriod  String?   @db.VarChar(255)
-  airTemp     String?   @db.VarChar(255)
-  waterTemp   String?   @db.VarChar(255)
-  pageTime    String?   @db.VarChar(255)
+  wind        String?   
+  pressure    String?   
+  waveHeight  String?   
+  wavePeriod  String?   
+  airTemp     String?
+  waterTemp   String?   
+  pageTime    String?   
 
 }
 
