@@ -15,7 +15,7 @@ const buoyUrls = [
 ];
 
 // 5 minutes
-const WAIT_TIME = 1000 * 60 * 5;
+const WAIT_TIME = 1000 * 60 * 15;
 
 const grabBuoyDetailsFromSource = async (buoyUrl) => {
   try {
