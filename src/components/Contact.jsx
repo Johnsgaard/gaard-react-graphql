@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Contact = () => (
   <section className="page-section" id="contact">
@@ -15,7 +15,7 @@ const Contact = () => (
                   <i className="fa fa-phone"></i>
                 </div>
                 <div className="ci-title font-alt">Call</div>
-                <div className="ci-text">+1(403)999-8577</div>
+                <div className="ci-text">+1(250)201-1110</div>
               </div>
             </div>
             {/* End Phone  */}
