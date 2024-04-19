@@ -13,6 +13,7 @@ import Page from "./components/Page";
 import MissingPage from "./components/MissingPage";
 import DatesToRemember from "./components/DatesToRemember";
 import PrivacyPolicy from "./components/PrivacyPolicy";
+import SurfReport from "./components/SurfReport";
 
 // Global.Apollo
 const client = new ApolloClient({
@@ -36,6 +37,7 @@ const App = () => {
             <Route path="/" exact component={Page} />
             <Route path="/dates" exact component={DatesToRemember} />
             <Route path="/mmaempire" exact component={PrivacyPolicy} />
+            <Route path="/surf" exact component={SurfReport} />
             <Route component={MissingPage} />
           </Switch>
         </div>

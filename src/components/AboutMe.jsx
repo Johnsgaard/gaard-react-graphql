@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
-import { AgeFromDateString } from "age-calculator";
-import MyImage from "../images/family-min.jpg";
-import { gsap } from "gsap";
-import Typist from "react-text-typist";
-import TrackVisibility from "react-on-screen";
+import React, { useEffect } from 'react';
+import { AgeFromDateString } from 'age-calculator';
+import MyImage from '../images/family-min.jpg';
+
+import { gsap } from 'gsap';
+import Typist from 'react-text-typist';
+import TrackVisibility from 'react-on-screen';
 
 const AboutMe = () => {
   const offsetMax = 200;
@@ -13,7 +14,7 @@ const AboutMe = () => {
     if (winWidth <= 1000) {
       return;
     }
-    const parallaxItem = document.getElementById("parallax");
+    const parallaxItem = document.getElementById('parallax');
     const dx = 0.5 - e.pageX / winWidth;
     const dy = 0.5 - e.pageY / winHeight;
 
@@ -42,9 +43,9 @@ const AboutMe = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove);
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
 
@@ -66,9 +67,9 @@ const AboutMe = () => {
                         <Typist
                           cursorColor="#ff3333"
                           sentences={[
-                            "Web Application",
-                            "Mobile",
-                            "Full Stack",
+                            'Web Application',
+                            'Mobile',
+                            'Full Stack',
                           ]}
                           deletingSpeed={120}
                           pauseTime={2000}
@@ -105,7 +106,7 @@ const AboutMe = () => {
                     <div className="col-sm-6 col-md-6 col-lg-3">
                       <div className="alt-features-title">Age:</div>
                       <div className="alt-features-desc small">
-                        {new AgeFromDateString("1991-11-19").age}
+                        {new AgeFromDateString('1991-11-19').age}
                       </div>
                     </div>
                     <div className="col-sm-6 col-md-6 col-lg-3">

@@ -601,6 +601,12 @@
   color: #1db954;
 }
 
+.hs-red-rainbow {
+  background-image: linear-gradient(to left, #D633FF, #F933FF, #FF33E2, #FF33BF, #FF339C, #FF3379, #FF3356, #FF3333);  
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
 .hs-line-red {
   margin-top: 0;
   position: relative;

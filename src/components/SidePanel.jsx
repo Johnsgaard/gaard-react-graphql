@@ -114,6 +114,11 @@ const SidePanel = (props) => {
                       MMA Empire
                     </Link>
                   </li>
+                  <li>
+                    <Link to="/surf" onClick={props.toggleSidePanel}>
+                      Surf Report
+                    </Link>
+                  </li>
                 </ul>
               </div>
               {/* End Menu */}
