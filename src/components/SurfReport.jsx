@@ -111,7 +111,7 @@ const SurfReport = () => {
       <div className="page" id="top" />
       <section class="page-section pt-0">
         <div class="container">
-          <Query pollInterval={180000} query={BUOYS}>
+          <Query pollInterval={30000} query={BUOYS}>
             {({ loading, error, data }) => {
               if (loading) {
                 return <div className="loading-spinner" />;
