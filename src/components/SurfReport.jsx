@@ -174,15 +174,12 @@ const SurfReport = () => {
         <div className="container">
           <Query pollInterval={30000} query={BUOYS}>
             {({ loading, error, data }) => {
-              if (loading) {
-                return <div className="loading-spinner" />;
-              }
-              if (error) {
+              if (loading || error) {
                 return <div className="loading-spinner" />;
               }
               const { buoys } = data;
               return (
-                <div className="row">
+                <div className="row mt-4">
                   {buoys
                     .filter((buoy) => buoy.waveHeight)
                     .map((buoyItem) => (
