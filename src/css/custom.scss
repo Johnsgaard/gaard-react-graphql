@@ -77,7 +77,7 @@
   transform: rotate(45deg);
 }
 .sp-close-button:before {
-  content: "";
+  content: '';
   position: absolute;
   top: 50%;
   left: 50%;
@@ -87,7 +87,7 @@
   background: #fff;
 }
 .sp-close-button:after {
-  content: "";
+  content: '';
   position: absolute;
   top: 50%;
   left: 50%;
@@ -143,7 +143,7 @@
 }
 .sp-button span:before,
 .sp-button span:after {
-  content: "";
+  content: '';
   display: block;
   width: 100%;
   height: 2px;
@@ -515,7 +515,7 @@
     padding: 5px 10px;
     right: -25px;
     &::after {
-      content: " ";
+      content: ' ';
       width: 0;
       height: 0;
 
@@ -602,9 +602,43 @@
 }
 
 .hs-red-rainbow {
-  background-image: linear-gradient(to left, #D633FF, #F933FF, #FF33E2, #FF33BF, #FF339C, #FF3379, #FF3356, #FF3333);  
+  background-image: linear-gradient(
+    to left,
+    #d633ff,
+    #f933ff,
+    #ff33e2,
+    #ff33bf,
+    #ff339c,
+    #ff3379,
+    #ff3356,
+    #ff3333
+  );
   -webkit-background-clip: text;
   color: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+.hs-green-rainbow {
+  background-image: linear-gradient(
+    to left,
+    #1e4efa,
+    #2167e6,
+    #2580d3,
+    #2899bf,
+    #2cb1ac,
+    #2fca98,
+    #33e385,
+    #36fc71
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .hs-line-red {
@@ -635,7 +669,7 @@
   opacity: 0;
 }
 [tooltip]::before {
-  content: "";
+  content: '';
   border: 5px solid transparent; /* opinion 4 */
   z-index: 1001; /* absurdity 1 */
 }
@@ -670,68 +704,68 @@
 }
 
 /* don't show empty tooltips */
-[tooltip=""]::before,
-[tooltip=""]::after {
+[tooltip='']::before,
+[tooltip='']::after {
   display: none !important;
 }
 
 /* FLOW: UP */
 [tooltip]:not([flow])::before,
-[tooltip][flow^="up"]::before {
+[tooltip][flow^='up']::before {
   bottom: 100%;
   border-bottom-width: 0;
   border-top-color: #333;
 }
 [tooltip]:not([flow])::after,
-[tooltip][flow^="up"]::after {
+[tooltip][flow^='up']::after {
   bottom: calc(100% + 5px);
 }
 [tooltip]:not([flow])::before,
 [tooltip]:not([flow])::after,
-[tooltip][flow^="up"]::before,
-[tooltip][flow^="up"]::after {
+[tooltip][flow^='up']::before,
+[tooltip][flow^='up']::after {
   left: 50%;
   transform: translate(-50%, -0.5em);
 }
 
 /* FLOW: DOWN */
-[tooltip][flow^="down"]::before {
+[tooltip][flow^='down']::before {
   top: 100%;
   border-top-width: 0;
   border-bottom-color: #333;
 }
-[tooltip][flow^="down"]::after {
+[tooltip][flow^='down']::after {
   top: calc(100% + 5px);
 }
-[tooltip][flow^="down"]::before,
-[tooltip][flow^="down"]::after {
+[tooltip][flow^='down']::before,
+[tooltip][flow^='down']::after {
   left: 50%;
   transform: translate(-50%, -1em);
 }
 
 /* FLOW: LEFT */
-[tooltip][flow^="left"]::before {
+[tooltip][flow^='left']::before {
   top: 50%;
   border-right-width: 0;
   border-left-color: #333;
   left: calc(0em - 5px);
   transform: translate(-0.5em, -50%);
 }
-[tooltip][flow^="left"]::after {
+[tooltip][flow^='left']::after {
   top: 50%;
   right: calc(100% + 5px);
   transform: translate(-0.5em, -50%);
 }
 
 /* FLOW: RIGHT */
-[tooltip][flow^="right"]::before {
+[tooltip][flow^='right']::before {
   top: 50%;
   border-left-width: 0;
   border-right-color: #333;
   right: calc(0em - 5px);
   transform: translate(0.5em, -50%);
 }
-[tooltip][flow^="right"]::after {
+[tooltip][flow^='right']::after {
   top: 50%;
   left: calc(100% + 5px);
   transform: translate(0.5em, -50%);
@@ -755,17 +789,17 @@
 /* FX All The Things */
 [tooltip]:not([flow]):hover::before,
 [tooltip]:not([flow]):hover::after,
-[tooltip][flow^="up"]:hover::before,
-[tooltip][flow^="up"]:hover::after,
-[tooltip][flow^="down"]:hover::before,
-[tooltip][flow^="down"]:hover::after {
+[tooltip][flow^='up']:hover::before,
+[tooltip][flow^='up']:hover::after,
+[tooltip][flow^='down']:hover::before,
+[tooltip][flow^='down']:hover::after {
   animation: tooltips-vert 300ms ease-out forwards;
 }
 
-[tooltip][flow^="left"]:hover::before,
-[tooltip][flow^="left"]:hover::after,
-[tooltip][flow^="right"]:hover::before,
-[tooltip][flow^="right"]:hover::after {
+[tooltip][flow^='left']:hover::before,
+[tooltip][flow^='left']:hover::after,
+[tooltip][flow^='right']:hover::before,
+[tooltip][flow^='right']:hover::after {
   animation: tooltips-horz 300ms ease-out forwards;
 }
 
