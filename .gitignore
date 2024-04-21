@@ -28,6 +28,7 @@ yarn-error.log*
 
 # database
 /prisma/dev.db
+prisma/*
 
 #logs
 /src/server/stdout.txt
