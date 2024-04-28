@@ -44,7 +44,9 @@ const BuoyItem = (data) => {
 
   return (
     <div className="col-md-4">
-      <div className="pricing-item">
+      <div
+        className={`pricing-item ${data.theme ? 'bg-dark light-content' : ''}`}
+      >
         <div className="pricing-item-inner round red">
           <div className="pricing-wrap">
             <div className="pricing-icon">
@@ -167,8 +169,30 @@ const SurfReport = () => {
       }
     }
   `;
+
+  const [theme, setTheme] = useState(
+    window.matchMedia('(prefers-color-scheme: dark)').matches,
+  );
+
+  useEffect(() => {
+    // Function to update state when OS preference changes
+    const handleChange = (e) => {
+      setTheme(e.matches);
+    };
+
+    // Listen for changes in OS preference
+    const darkModeMediaQuery = window.matchMedia(
+      '(prefers-color-scheme: dark)',
+    );
+    darkModeMediaQuery.addEventListener('change', handleChange);
+
+    return () => {
+      darkModeMediaQuery.removeEventListener('change', handleChange);
+    };
+  }, []);
+
   return (
-    <div className="appear-animate">
+    <div className={`appear-animate ${theme ? 'bg-dark-lighter' : ''}`}>
       <div className="page" id="top" />
       <section className="page-section pt-0">
         <div className="container">
@@ -183,7 +207,11 @@ const SurfReport = () => {
                   {buoys
                     .filter((buoy) => buoy.waveHeight)
                     .map((buoyItem) => (
-                      <BuoyItem key={buoyItem.code} {...buoyItem} />
+                      <BuoyItem
+                        theme={theme}
+                        key={buoyItem.code}
+                        {...buoyItem}
+                      />
                     ))}
                 </div>
               );
@@ -192,7 +220,7 @@ const SurfReport = () => {
         </div>
       </section>
       <ParallaxBreak type="universe" size="500px" height="13px" />
-      <Footer />
+      <Footer theme={theme} />
     </div>
   );
 };

@@ -1,21 +1,25 @@
-import React from "react";
-import GaardLogo from "../images/logo.png";
-import TrackVisibility from "react-on-screen";
-import { HashLink as Link } from "react-router-hash-link";
-import { reportAnalytics } from "../utilities";
+import React from 'react';
+import GaardLogo from '../images/logo.png';
+import TrackVisibility from 'react-on-screen';
+import { HashLink as Link } from 'react-router-hash-link';
+import { reportAnalytics } from '../utilities';
 
 const Footer = (props) => (
-  <footer className="page-section bg-gray-lighter footer pb-60">
+  <footer
+    className={`page-section ${
+      props.theme ? 'bg-dark light-content' : 'bg-gray-lighter'
+    } footer pb-60`}
+  >
     <div className="container">
       {/*  Footer Logo  */}
       <TrackVisibility partialVisibility>
         {({ isVisible }) => (
           <div
-            className={`local-scroll mb-5 ${isVisible ? "fadeInUp" : ""}`}
+            className={`local-scroll mb-5 ${isVisible ? 'fadeInUp' : ''}`}
             style={{
-              visibility: "visible",
-              animationDuration: "1.5s",
-              animationName: isVisible ? "fadeInUp" : "",
+              visibility: 'visible',
+              animationDuration: '1.5s',
+              animationName: isVisible ? 'fadeInUp' : '',
             }}
           >
             {isVisible ? (
@@ -31,14 +35,18 @@ const Footer = (props) => (
       {/*  End Footer Logo  */}
 
       {/*  Social Links  */}
-      <div className="footer-social-links mb-110 mb-xs-60">
+      <div
+        className={`footer-social-links light-content mb-110 mb-xs-60 ${
+          props.theme ? 'bg-dark' : ''
+        }`}
+      >
         <a
           href="https://www.facebook.com/joshua.johnsgaard"
           rel="noopener noreferrer"
           title="Facebook"
           target="_blank"
           onClick={() =>
-            reportAnalytics("Facebook Clicked", "Social Media", "facebook")
+            reportAnalytics('Facebook Clicked', 'Social Media', 'facebook')
           }
         >
           <i className="fa fa-facebook"></i>
@@ -49,7 +57,7 @@ const Footer = (props) => (
           title="LinkedIn+"
           target="_blank"
           onClick={() =>
-            reportAnalytics("LinkedIn Clicked", "Social Media", "linkedin")
+            reportAnalytics('LinkedIn Clicked', 'Social Media', 'linkedin')
           }
         >
           <i className="fa fa-linkedin"></i>
@@ -62,7 +70,7 @@ const Footer = (props) => (
         >
           <i
             className="fa fa-github"
-            onClick={() => reportAnalytics("GitHub Clicked", "Repos", "GitHub")}
+            onClick={() => reportAnalytics('GitHub Clicked', 'Repos', 'GitHub')}
           ></i>
         </a>
       </div>
