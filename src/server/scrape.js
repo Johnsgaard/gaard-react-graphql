@@ -22,7 +22,7 @@ const grabBuoyDetailsFromSource = async (buoyUrl) => {
     const res = await fetch(buoyUrl);
 
     const rawDOM = await res.text();
-    const code = cheerio.load(rawDOM)('main.h3').first().text();
+    const code = cheerio.load(rawDOM)('main').find('h3').text();
     const pageTime = cheerio.load(rawDOM)('.issuedTime').first().text();
     const domTable = cheerio.load(rawDOM)('table');
     const [wind, pressure, waveHeight, airTemp, wavePeriod, waterTemp] =
@@ -33,6 +33,8 @@ const grabBuoyDetailsFromSource = async (buoyUrl) => {
 
     console.log(
       '------------------------------------\n',
+      '\n⚓️: ',
+      code,
       '\n🔎🕞: ',
       pageTime,
       '\n💨: ',
@@ -72,7 +74,7 @@ const grabBuoyDetailsFromSource = async (buoyUrl) => {
 };
 
 const getFreshData = () => {
-  setInterval(async () => {
+  const updateData = async () => {
     for (const buoyUrl of buoyUrls) {
       const buoy = await grabBuoyDetailsFromSource(buoyUrl);
 
@@ -89,7 +91,9 @@ const getFreshData = () => {
         },
       });
     }
-  }, WAIT_TIME);
+  };
+  updateData();
+  setInterval(updateData, WAIT_TIME);
 };
 
 const main = async () => {
