@@ -60,6 +60,7 @@ const typeDefs = gql`
     viewer: GitGaard
     buoys: [Buoy]
     buoyByCode(code: String!): Buoy
+    deleteBuoyByCode(code: String!): Buoy
   }
 `;
 
@@ -91,6 +92,14 @@ const resolvers = {
     buoyByCode: async (parent, args, context, info) => {
       const { code } = args;
       return await prisma.buoy.findUnique({
+        where: {
+          code,
+        },
+      });
+    },
+    deleteBuoyByCode: async (parent, args, context, info) => {
+      const { code } = args;
+      return await prisma.buoy.delete({
         where: {
           code,
         },

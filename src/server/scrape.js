@@ -22,8 +22,7 @@ const grabBuoyDetailsFromSource = async (buoyUrl) => {
     const res = await fetch(buoyUrl);
 
     const rawDOM = await res.text();
-
-    const code = cheerio.load(rawDOM)('h3').first().text();
+    const code = cheerio.load(rawDOM)('main.h3').first().text();
     const pageTime = cheerio.load(rawDOM)('.issuedTime').first().text();
     const domTable = cheerio.load(rawDOM)('table');
     const [wind, pressure, waveHeight, airTemp, wavePeriod, waterTemp] =
