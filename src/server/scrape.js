@@ -15,7 +15,7 @@ const buoyUrls = [
 ];
 
 // 5 minutes
-const WAIT_TIME = 1000 * 60 * 15;
+const WAIT_TIME = 1000 * 60 * 5;
 
 const grabBuoyDetailsFromSource = async (buoyUrl) => {
   try {
@@ -81,6 +81,7 @@ const getFreshData = () => {
       if (!buoy || typeof buoy === 'undefined') {
         return;
       }
+
       await prisma.buoy.upsert({
         where: { code: buoy?.code },
         update: { ...buoy },
@@ -90,6 +91,14 @@ const getFreshData = () => {
           ...buoy,
         },
       });
+
+      if (typeof buoy.waveHeight === 'undefined' || !buoy.waveheight) {
+        await prisma.buoy.delete({
+          where: {
+            code: buoy.code,
+          },
+        });
+      }
     }
   };
   updateData();
