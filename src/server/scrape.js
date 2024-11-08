@@ -91,14 +91,6 @@ const getFreshData = () => {
           ...buoy,
         },
       });
-
-      if (typeof buoy.waveHeight === 'undefined' || !buoy.waveheight) {
-        await prisma.buoy.delete({
-          where: {
-            code: buoy.code,
-          },
-        });
-      }
     }
   };
   updateData();
