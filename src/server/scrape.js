@@ -10,7 +10,7 @@ const buoyUrls = [
   'https://weather.gc.ca/marine/weatherConditions-currentConditions_e.html?mapID=02&siteID=06800&stationID=46132',
   'https://weather.gc.ca/marine/weatherConditions-currentConditions_e.html?mapID=02&siteID=06800&stationID=46206',
   'https://weather.gc.ca/marine/weatherConditions-currentConditions_e.html?mapID=02&siteID=06800&stationID=46146',
-  'https://weather.gc.ca/marine/weatherConditions-currentConditions_e.html?mapID=02&siteID=06800&stationID=46304',
+  'https://weather.gc.ca/marine/weatherConditions-currentConditions_e.html?mapID=02&siteID=14305&stationID=46304',
   'https://weather.gc.ca/marine/weatherConditions-currentConditions_e.html?mapID=02&siteID=06800&stationID=46303',
 ];
 
