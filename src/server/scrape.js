@@ -14,8 +14,8 @@ const buoyUrls = [
   'https://weather.gc.ca/marine/weatherConditions-currentConditions_e.html?mapID=02&siteID=06800&stationID=46303',
 ];
 
-// 5 minutes
-const WAIT_TIME = 1000 * 60 * 5;
+// 1 minute
+const WAIT_TIME = 1000 * 60;
 
 const grabBuoyDetailsFromSource = async (buoyUrl) => {
   try {
