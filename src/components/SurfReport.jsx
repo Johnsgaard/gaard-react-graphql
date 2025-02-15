@@ -3,7 +3,6 @@ import TrackVisibility from 'react-on-screen';
 import CountUp from 'react-countup';
 import { gql } from 'apollo-boost';
 import { Query } from 'react-apollo';
-import Typist from 'react-text-typist';
 
 // page components
 import ParallaxBreak from './ParallaxBreak';
@@ -35,12 +34,42 @@ const BuoyItem = (data) => {
       })
       .filter((key) => key !== undefined);
     setDataLoading(changedKeys);
+    // how long should the updated text colour remain
     const updateDataLoading = setTimeout(() => {
       setDataLoading([]);
       setNextState(data);
-    }, 105000);
+    }, 60000);
     return () => clearTimeout(updateDataLoading);
   }, [data]);
+
+  const [timeLeft, setTimeLeft] = useState(
+    Math.round((new Date(nextScrape).getTime() - new Date().getTime()) / 1000),
+  );
+
+  useEffect(() => {
+    if (dataLoading.includes('nextScrape')) {
+      setTimeLeft(
+        Math.round(
+          (new Date(nextScrape).getTime() - new Date().getTime()) / 1000,
+        ),
+      );
+    }
+
+    if (!timeLeft) {
+      return;
+    }
+
+    const intervalId = setInterval(() => {
+      setTimeLeft(Math.round(timeLeft) - 1);
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, [data, timeLeft, dataLoading]);
+
+  // for all out of date buoys
+  if (timeLeft < 0) {
+    return null;
+  }
 
   return (
     <div className="col-md-4">
@@ -111,17 +140,9 @@ const BuoyItem = (data) => {
                   <span className="alt-features-descr">Page Time -- </span>
                   {pageTime}
                 </li>
-                <li
-                  className={`${
-                    dataLoading.includes('nextScrape') ? 'hs-green-rainbow' : ''
-                  }`}
-                >
+                <li className="hs-green-rainbow">
                   <span className="alt-features-descr">Next Scrape -- </span>
-                  <Typist
-                    hideCursorOnFinish
-                    sentences={[nextScrape]}
-                    loop={false}
-                  />
+                  {timeLeft ? `${timeLeft} Seconds` : 'Now! 🤙🏻'}
                 </li>
               </ul>
             </div>
@@ -196,7 +217,7 @@ const SurfReport = () => {
       <div className="page" id="top" />
       <section className="page-section pt-0">
         <div className="container">
-          <Query pollInterval={30000} query={BUOYS}>
+          <Query pollInterval={5000} query={BUOYS}>
             {({ loading, error, data }) => {
               if (loading || error) {
                 return <div className="loading-spinner" />;
