@@ -27,9 +27,7 @@ const grabBuoyDetailsFromSource = async (buoyUrl) => {
     const domTable = cheerio.load(rawDOM)('table');
     const [wind, pressure, waveHeight, airTemp, wavePeriod, waterTemp] =
       domTable.find('td').map((_, element) => domTable.find(element).text());
-    const nextScrape = new Date(
-      new Date().getTime() + WAIT_TIME,
-    ).toLocaleString('en-US', { timeZone: 'America/Vancouver' });
+    const nextScrape = new Date(new Date().getTime() + WAIT_TIME).toISOString();
 
     console.log(
       '------------------------------------\n',

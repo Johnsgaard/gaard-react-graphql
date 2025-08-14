@@ -1,36 +1,36 @@
-import React from "react";
-import TrackVisibility from "react-on-screen";
-import { AgeFromDateString } from "age-calculator";
-import CountUp from "react-countup";
-import CountTo from "react-count-to";
-import { gql } from "apollo-boost";
-import { Query } from "react-apollo";
+import React from 'react';
+import TrackVisibility from 'react-on-screen';
+import { AgeFromDateString } from 'age-calculator';
+import CountUp from 'react-countup';
+import CountTo from 'react-count-to';
+import { gql } from 'apollo-boost';
+import { Query } from 'react-apollo';
 
 // software logos
-import typescript from "../images/logos/typescript.svg";
-import rancher from "../images/logos/rancher.svg";
-import scss from "../images/logos/scss.svg";
-import postgresql from "../images/logos/postgresql.svg";
-import mobx from "../images/logos/mobx.svg";
-import laravel from "../images/logos/laravel.svg";
-import react from "../images/logos/react.svg";
-import immutable from "../images/logos/immutable.svg";
-import node from "../images/logos/nodejs.svg";
-import npm from "../images/logos/npm.svg";
-import html from "../images/logos/html.svg";
-import redux from "../images/logos/redux.svg";
-import git from "../images/logos/git.svg";
-import mysql from "../images/logos/mysql.svg";
-import ios from "../images/logos/ios.svg";
-import android from "../images/logos/android.svg";
-import graphql from "../images/logos/graphql.svg";
-import apollo from "../images/logos/apollo.svg";
-import docker from "../images/logos/docker.svg";
-import github from "../images/logos/github.svg";
-import gitlab from "../images/logos/gitlab.svg";
-import jira from "../images/logos/jira.svg";
-import prisma from "../images/logos/prisma.svg";
-import amazon from "../images/logos/amazon.svg";
+import typescript from '../images/logos/typescript.svg';
+import rancher from '../images/logos/rancher.svg';
+import scss from '../images/logos/scss.svg';
+import postgresql from '../images/logos/postgresql.svg';
+import mobx from '../images/logos/mobx.svg';
+import laravel from '../images/logos/laravel.svg';
+import react from '../images/logos/react.svg';
+import immutable from '../images/logos/immutable.svg';
+import node from '../images/logos/nodejs.svg';
+import npm from '../images/logos/npm.svg';
+import html from '../images/logos/html.svg';
+import redux from '../images/logos/redux.svg';
+import git from '../images/logos/git.svg';
+import mysql from '../images/logos/mysql.svg';
+import ios from '../images/logos/ios.svg';
+import android from '../images/logos/android.svg';
+import graphql from '../images/logos/graphql.svg';
+import apollo from '../images/logos/apollo.svg';
+import docker from '../images/logos/docker.svg';
+import github from '../images/logos/github.svg';
+import gitlab from '../images/logos/gitlab.svg';
+import jira from '../images/logos/jira.svg';
+import prisma from '../images/logos/prisma.svg';
+import amazon from '../images/logos/amazon.svg';
 
 const CONTRIBUTIONS = gql`
   {
@@ -105,7 +105,7 @@ const Resume = () => (
                             style={{ width: barPercentString }}
                           >
                             <div className="mt-1 alt-features-desc small">
-                              JS / TS / React / Node / GraphQL{" "}
+                              JS / TS / React / Node / GraphQL{' '}
                             </div>
                             <span>{barPercentString}</span>
                           </div>
@@ -206,7 +206,7 @@ const Resume = () => (
                             style={{ width: barPercentString }}
                           >
                             <div className="mt-1 alt-features-desc small">
-                              Team player / Enjoy what I do{" "}
+                              Team player / Enjoy what I do{' '}
                             </div>
                             <span>{barPercentString}</span>
                           </div>
@@ -945,7 +945,7 @@ const Resume = () => (
                     {isVisible ? (
                       <CountUp
                         start={0}
-                        end={new AgeFromDateString("1991-11-19").age}
+                        end={new AgeFromDateString('1991-11-19').age}
                       />
                     ) : (
                       0
@@ -964,7 +964,7 @@ const Resume = () => (
                     {isVisible ? (
                       <CountUp
                         start={0}
-                        end={new AgeFromDateString("2014-01-01").age}
+                        end={new AgeFromDateString('2014-01-01').age}
                       />
                     ) : (
                       0
@@ -1013,7 +1013,7 @@ const Resume = () => (
                   <div className="count-descr font-alt">
                     <i className="fa fa-github"></i>
                     <span className="count-title">
-                      {" "}
+                      {' '}
                       GitHub Contributions This Year
                     </span>
                   </div>

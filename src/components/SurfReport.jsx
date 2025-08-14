@@ -50,7 +50,9 @@ const BuoyItem = (data) => {
     if (dataLoading.includes('nextScrape')) {
       setTimeLeft(
         Math.round(
-          (new Date(nextScrape).getTime() - new Date().getTime()) / 1000,
+          (new Date(nextScrape).getTimezoneOffset() -
+            new Date().getTimezoneOffset()) /
+            1000,
         ),
       );
     }
