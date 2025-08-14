@@ -405,7 +405,7 @@ const Resume = () => (
                 As a full stack developer at Virgin Music Group, it is my
                 responsibility to execute features, fixes, and design changes
                 that are making it within each release cycle of the platform.
-                Working with the design team, I ensure everythign being worked
+                Working with the design team, I ensure everything being worked
                 on is to spec and meets the acceptance criteria. Working with
                 the internal project team we are gathered for a daily standup
                 and communicate what our tasks are to ensure there is no overlap
