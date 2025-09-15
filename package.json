@@ -11,7 +11,7 @@
     "apollo-link-context": "1.0.20",
     "apollo-link-http": "1.5.17",
     "apollo-server": "3.12.1",
-    "base-64": "0.1.0",
+    "base-64": "1.0.0",
     "cheerio": "^1.0.0-rc.12",
     "graphql": "15.8.0",
     "graphql-tag": "2.12.6",
